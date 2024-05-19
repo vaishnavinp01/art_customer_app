@@ -35,7 +35,7 @@ const Login = () => {
       .then((result) => {
         console.log("DATA", result.data);
         dispatcher(register(result.data));
-        if (Type == "ArtWorks") {
+        if (Type == "Artist") {
           navigator("/addartist");
         } else {
           navigator("/addcustomer");
