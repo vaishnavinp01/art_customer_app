@@ -5,12 +5,11 @@ import {
   calculateTotal,
   decrementQuantity,
   incrementQuantity,
-  removeQuantity,
 } from "../reduxwork/CartSlice";
 import axios from "axios";
 import { Button, Card, Col, Row } from "react-bootstrap";
 
-const Cart = ({amount}) => {
+const Cart = () => {
   const { CartItems, CartTotalAmount } = useSelector((state) => state.cart);
   const { UserData } = useSelector((state) => state.user);
 
@@ -60,12 +59,7 @@ const Cart = ({amount}) => {
                   <Button
                     className="cart-button"
                     onClick={() => {
-                      if (amount === 1) {
-                        dispatcher(removeQuantity({ artid }));
-                        return;
-                      } else {
-                        dispatcher(decrementQuantity({ artid }));
-                      }
+                      dispatcher(decrementQuantity({ artid }));
                     }}
                   >
                     -
