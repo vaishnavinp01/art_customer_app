@@ -1,0 +1,65 @@
+* {
+  font-family: "Times New Roman", Times, serif;
+}
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  width: 100vw;
+  width: 100%;
+  z-index: 999;
+}
+.nav-brand {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+.artstation {
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+.nav-div {
+  font-size: 17px;
+}
+.nav-link {
+  display: flex;
+  margin-bottom: 2px;
+  text-decoration: none;
+  color: #000;
+}
+.nav-icon {
+  display: flex;
+  margin-right: 5px;
+  margin-left: 15px;
+  margin-bottom: 5px;
+  margin-top: 3px;
+}
+.div-links {
+  display: inline-block;
+  position: relative;
+  /* color: #0087ca; */
+}
+
+.div-links::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.div-links:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

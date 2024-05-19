@@ -1,0 +1,32 @@
+.addartist-container {
+  background-color: aliceblue;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.addartist-form {
+  display: flex;
+  flex-direction: column;
+}
+.addartist-input {
+  border-radius: 20px;
+  border: 2px solid gray;
+  padding-left: 10px;
+}
+.addartist-input{
+    border-radius: 20px;
+    border: 2px solid gray;
+}
+.addartist-file {
+  border-radius: 20px;
+  border: 2px solid gray;
+  padding-left: 10px;
+  background-color: #fff;
+}
+.addartist-button {
+  color: #fff;
+  background-color: blueviolet;
+  font-style: uppercase;
+  margin-top: 10px;
+}

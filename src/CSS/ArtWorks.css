@@ -1,0 +1,53 @@
+.artworks-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.artworks-card {
+  width: clamp(200%, 50%, 500%);
+  height: 670px;
+  background-color: #dddddd;
+  border-radius: 40px;
+  border: 1px solid #4f46e5;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+  display: grid;
+  grid-template-rows: 220px auto;
+  overflow: auto;
+}
+.artworks-header {
+  background: url(../images/banner.jpg) center;
+  background-size: cover;
+  margin: 2px;
+  border-radius: 30px 30px 0 0;
+  position: relative;
+}
+.artworks-profile {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  inset: calc(100% - 75px) 70px auto auto;
+}
+.artworks-img {
+  width: 150px;
+  height: 150px;
+  background: url(../images/art.png) center;
+  background-size: cover;
+  border-radius: 50%;
+  border: 2px solid #dddddd;
+}
+.artworks-info {
+  margin-top: 50px;
+  margin-left: 5px;
+}
+.artworks-button {
+  margin-top: 35px;
+  margin-left: 5px;
+  border: 1px solid #d41333;
+  background-color: #db2947;
+  border-radius: 20px;
+  padding-top: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
