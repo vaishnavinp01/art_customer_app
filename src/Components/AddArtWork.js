@@ -7,7 +7,6 @@ import "../CSS/AddArtWork.css";
 
 const AddArtWork = () => {
   const { UserData } = useSelector((state) => state.user);
-
   const dispatcher = useDispatch([]);
 
   const [Name, setName] = useState("");
@@ -18,13 +17,12 @@ const AddArtWork = () => {
   const [CanvasType, setCanvasType] = useState("");
 
   const doArtWork = () => {
-    
     const addData = {
       ArtWorkName: Name,
       ArtWorkType: Type,
       ArtWorkImage: Image,
       ArtWorkPrice: Number(Price),
-      ArtWorkFrameSize: FrameSize,
+      ArtWorkFrameSize: Number(FrameSize),
       ArtWorkCanvasType: CanvasType,
       ArtistId: UserData.data._id,
     };

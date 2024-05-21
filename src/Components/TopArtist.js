@@ -29,7 +29,7 @@ const TopArtist = () => {
               <Card className="topartist-card">
                 <Card.Img
                   className="topartist-img"
-                  src={`http://localhost:5000${art.ArtistAdharCardImage}`}
+                  src={`http://localhost:5000${art.ArtistProfile}`}
                 />
                 <Card.Body className="topartist-body">
                   <Card.Text className="topartist-text">

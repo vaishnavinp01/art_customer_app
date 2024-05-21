@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link as RouteLink, useNavigate } from "react-router-dom";
 import "../CSS/MyNavBar.css";
@@ -13,7 +13,7 @@ import { BiLogIn } from "react-icons/bi";
 import { Link } from "react-scroll";
 import { useSelector } from "react-redux";
 
-const MyNavBar = () => {
+const ArtistNavBar = () => {
   // Scrolling Navbar
   const [scrollChangeColor, setscrollChangeColor] = useState(false);
   const ChangeBackground = () => {
@@ -109,4 +109,4 @@ const MyNavBar = () => {
   );
 };
 
-export default MyNavBar;
+export default ArtistNavBar;

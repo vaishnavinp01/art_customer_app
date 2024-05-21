@@ -20,7 +20,7 @@ const ArtOrderTab = () => {
       .catch((err) => {
         console.log(err);
       });
-  });
+  }, []);
 
   return (
     <div>
@@ -55,7 +55,7 @@ const ArtOrderTab = () => {
                     <button
                       className="order-button"
                       onClick={() => {
-                        onShowDelete(true)
+                        onShowDelete(true);
                       }}
                     >
                       Delete
@@ -77,10 +77,11 @@ const ArtOrderTab = () => {
           <h4>Are you sure to delete this Dish?</h4>
         </Modal.Body>
         <Modal.Footer>
-          <button className="artordertab-button">
-            Yes
-          </button>
-          <button className="artordertab-button" onClick={()=>setonShowDelete(false)}>
+          <button className="artordertab-button">Yes</button>
+          <button
+            className="artordertab-button"
+            onClick={() => setonShowDelete(false)}
+          >
             No
           </button>
         </Modal.Footer>
