@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import "../CSS/AddArtist.css";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../reduxwork/UserSlice";
@@ -132,11 +132,11 @@ const AddArtist = () => {
                 placeholder="City"
                 onChange={(e) => setCity(e.target.value)}
               >
-                <option className="addartist-option">Yawal</option>
-                <option className="addartist-option">Jalgaon</option>
-                <option className="addartist-option">Mahasamund</option>
-                <option className="addartist-option">Aurangabad</option>
-                <option className="addartist-option">Jaipur</option>
+                <option>Yawal</option>
+                <option>Jalgaon</option>
+                <option>Mahasamund</option>
+                <option>Aurangabad</option>
+                <option>Jaipur</option>
               </select>
             </Col>
             <Col>
@@ -163,10 +163,10 @@ const AddArtist = () => {
             placeholder="State"
             onChange={(e) => setState(e.target.value)}
           >
-            <option className="addartist-option">Maharashtra</option>
-            <option className="addartist-option">Chhattisgarh</option>
-            <option className="addartist-option">Gujarat</option>
-            <option className="addartist-option">Rajasthan</option>
+            <option>Maharashtra</option>
+            <option>Chhattisgarh</option>
+            <option>Gujarat</option>
+            <option>Rajasthan</option>
           </select>
           <label className="addartist-label">Pin Code</label>
           <input
