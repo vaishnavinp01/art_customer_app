@@ -39,6 +39,7 @@ const Cart = () => {
   };
   return (
     <div className="cart-container">
+      {UserData._id}
       <Row>
         {CartItems.map((art) => {
           const artid = art._id;

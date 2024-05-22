@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { register } from "../reduxwork/UserSlice";
 import "../CSS/AddCustomer.css";
 import axios from "axios";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 const AddCustomer = () => {
@@ -64,48 +64,57 @@ const AddCustomer = () => {
 
   return (
     <div>
-      <h4 className="addcustomer-h4">AddCustomer</h4>
       <Container className="addcustomer-container">
+        <h4 className="addcustomer-h4">AddCustomer</h4>
         <form className="addcustomer-form">
+        <Row>
+            <Col>
           <label className="addcustomer-label">Name</label>
           <input
             className="addcustomer-input"
             type="text"
-            placeholder="Name"
+            placeholder="Enter Name"
             onChange={(e) => setName(e.target.value)}
           />
+          </Col><Col>
           <label className="addcustomer-label">Mobile No</label>
           <input
             className="addcustomer-input"
             type="number"
-            placeholder="MobileNo"
+            placeholder="Enter MobileNo"
             onChange={(e) => setMobileNo(e.target.value)}
-          />
+          /></Col>
+          </Row>
           <label className="addcustomer-label">Address</label>
           <input
             className="addcustomer-input"
             type="text"
-            placeholder="Address"
+            placeholder="Enter Address"
             onChange={(e) => setAddress(e.target.value)}
           />
-          <label className="addcustomer-label">DOB</label>
-          <input
-            className="addcustomer-input"
-            type="date"
-            placeholder="DOB"
-            onChange={(e) => setDOB(e.target.value)}
-          />
-          <label className="addcustomer-label">City</label>
-          <select
-            className="addcustomer-input"
-            onChange={(e) => setCity(e.target.value)}
-          >
-            <option>Mahasamund</option>
-            <option>Yawal</option>
-            <option>Bhusawal</option>
-            <option>Jalgaon</option>
-            <option>Jaipur</option>
-          </select>
+          <Row>
+            <Col>
+              <label className="addcustomer-label">DOB</label>
+              <input
+                className="addcustomer-input"
+                type="date"
+                onChange={(e) => setDOB(e.target.value)}
+              />
+            </Col>
+            <Col>
+              <label className="addcustomer-label">City</label>
+              <select
+                className="addcustomer-input"
+                onChange={(e) => setCity(e.target.value)}
+              >
+                <option>Mahasamund</option>
+                <option>Yawal</option>
+                <option>Bhusawal</option>
+                <option>Jalgaon</option>
+                <option>Jaipur</option>
+              </select>
+            </Col>
+          </Row>
           <label className="addcustomer-label">State</label>
           <select
             className="addcustomer-input"
