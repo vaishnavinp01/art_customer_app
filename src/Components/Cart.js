@@ -38,59 +38,70 @@ const Cart = () => {
     } catch (error) {}
   };
   return (
-    <div className="cart-container">
-      {UserData._id}
-      <Row>
-        {CartItems.map((art) => {
-          const artid = art._id;
-          return (
-            <Col sm={12} md={9} lg={3}>
-              <Card className="cart-card">
-                <Card.Img
+    <div style={{ marginTop: "40px" }}>
+      {CartItems.map((art) => {
+        const artid = art._id;
+        return (
+          <div>
+            <div className="cart-div">
+              <span className="cart-span">Order</span>
+              <span className="cart-span">Quantity</span>
+              <span className="cart-span">Price</span>
+              <span className="cart-span">OrderDate</span>
+              <span className="cart-span">Total Price</span>
+            </div>
+            <div className="cart-divv"></div>
+            <div className="cart-card">
+              <span>
+                <img
                   className="cart-img"
                   src={`http://localhost:5000${art.ArtWorkImage}`}
                 />
-                <Card.Body className="cart-body">
-                  <Card.Text className="cart-text">{art.ArtWorkName}</Card.Text>
-                  <Card.Subtitle className="cart-subtitle">
-                    &#8377; {art.ArtWorkPrice}
-                  </Card.Subtitle>
-                </Card.Body>
-                <Card.Footer className="cart-footer">
-                  <Button
-                    className="cart-button"
-                    onClick={() => {
-                      dispatcher(decrementQuantity({ artid }));
-                    }}
-                  >
-                    -
-                  </Button>
-                  <span className="cart-span">{art.quantity}</span>
-                  <Button
-                    className="cart-btn"
-                    onClick={() => {
-                      dispatcher(incrementQuantity({ artid }));
-                    }}
-                  >
-                    +
-                  </Button>
-                </Card.Footer>
-              </Card>
-            </Col>
-          );
-        })}
-      </Row>
-
-      <Row className="cart-row">
-        <Col>
-          <h4 className="cart-h4">Total Price: {CartTotalAmount}</h4>
-        </Col>
-        <Col>
-          <Button className="cart-btnss" onClick={() => placeOrder()}>
-            Place Order
-          </Button>
-        </Col>
-      </Row>
+              </span>
+              <span>
+                <button
+                  className="cart-btn"
+                  onClick={() => {
+                    dispatcher(decrementQuantity({ artid }));
+                  }}
+                >
+                  -
+                </button>
+              </span>
+              <span className="cart-spans">{art.quantity}</span>
+              <span>
+                <button
+                  className="cart-btn"
+                  onClick={() => {
+                    dispatcher(incrementQuantity({ artid }));
+                  }}
+                >
+                  +
+                </button>
+              </span>
+              {/* <span className="cart-spans"> */}
+                &#8377;
+                {/* </span>{" "} */}
+              <span className="cart-spanss">{art.ArtWorkPrice}</span>
+              <span className="cart-spanss">{art?.UserData?.OrderDate}</span>
+              {/* <span className="cart-spans"> */}
+                &#8377;
+                {/* </span>{" "} */}
+              <span className="cart-spanss" style={{ marginBottom: "20px" }}>
+                {CartTotalAmount}
+              </span>
+            </div>
+            <div className="cart-divv"></div>
+          </div>
+        );
+      })}
+      <button
+        style={{ marginTop: "20px" }}
+        className="cart-btnss"
+        onClick={() => placeOrder()}
+      >
+        Place Order
+      </button>
     </div>
   );
 };

@@ -67,23 +67,21 @@ const AddCustomer = () => {
       <Container className="addcustomer-container">
         <h4 className="addcustomer-h4">AddCustomer</h4>
         <form className="addcustomer-form">
-        <Row>
-            <Col>
-          <label className="addcustomer-label">Name</label>
-          <input
-            className="addcustomer-input"
-            type="text"
-            placeholder="Enter Name"
-            onChange={(e) => setName(e.target.value)}
-          />
-          </Col><Col>
-          <label className="addcustomer-label">Mobile No</label>
-          <input
-            className="addcustomer-input"
-            type="number"
-            placeholder="Enter MobileNo"
-            onChange={(e) => setMobileNo(e.target.value)}
-          /></Col>
+          <Row>
+            <label className="addcustomer-label">Name</label>
+            <input
+              className="addcustomer-input"
+              type="text"
+              placeholder="Enter Name"
+              onChange={(e) => setName(e.target.value)}
+            />
+            <label className="addcustomer-label">Mobile No</label>
+            <input
+              className="addcustomer-input"
+              type="number"
+              placeholder="Enter Mobile No"
+              onChange={(e) => setMobileNo(e.target.value)}
+            />
           </Row>
           <label className="addcustomer-label">Address</label>
           <input
@@ -104,7 +102,7 @@ const AddCustomer = () => {
             <Col>
               <label className="addcustomer-label">City</label>
               <select
-                className="addcustomer-input"
+                className="addcustomer-select"
                 onChange={(e) => setCity(e.target.value)}
               >
                 <option>Mahasamund</option>
@@ -117,7 +115,7 @@ const AddCustomer = () => {
           </Row>
           <label className="addcustomer-label">State</label>
           <select
-            className="addcustomer-input"
+            className="addcustomer-select"
             onChange={(e) => setState(e.target.value)}
           >
             <option>Chhattisgarh</option>
@@ -129,14 +127,14 @@ const AddCustomer = () => {
           <input
             className="addcustomer-input"
             type="number"
-            placeholder="Pin Code"
+            placeholder="Enter Pin Code"
             onChange={(e) => setPinCode(e.target.value)}
           />
           <label className="addcustomer-label">Email</label>
           <input
             className="addcustomer-input"
             type="email"
-            placeholder="Email"
+            placeholder="Enter Email"
             onChange={(e) => setEmail(e.target.value)}
           />
           <label className="addcustomer-label">Profile</label>

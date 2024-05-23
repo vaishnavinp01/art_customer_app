@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { register, login } from "../reduxwork/UserSlice";
-import { FaFacebook } from 'react-icons/fa'
-import { FcGoogle } from 'react-icons/fc'
-import { AiFillLinkedin } from 'react-icons/ai'
+import { FaFacebook } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import { AiFillLinkedin } from "react-icons/ai";
+
 const Login = () => {
   const navigator = useNavigate();
   const dispatcher = useDispatch();

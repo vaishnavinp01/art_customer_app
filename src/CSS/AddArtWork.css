@@ -1,0 +1,42 @@
+.addartwork-container {
+  background-color: burlywood;
+  width: 600px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.96);
+}
+.addartwork-div {
+  margin-top: 180px;
+}
+.addartwork-form {
+}
+.addartwork-label {
+  margin-left: 40px;
+}
+.addartwork-input {
+  width: 35vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+}
+.addartwork-check {
+  margin-left: 50px;
+}
+.addartwork-file {
+  /* width: 40vw; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 40px;
+}
+.addartwork-select {
+  width: 35vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+}
+.addartwork-button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}

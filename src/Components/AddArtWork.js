@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../reduxwork/UserSlice";
 import "../CSS/AddArtWork.css";
@@ -56,13 +56,15 @@ const AddArtWork = () => {
   return (
     <div>
       <Container className="addartwork-container">
+      <div className="addartwork-div">
         <form className="addartwork-form">
+          <Row>
           <h4 className="addartwork-h4">AddArtWork</h4>
           <label className="addartwork-label">Name</label>
           <input
             className="addartwork-input"
             type="text"
-            placeholder="Name"
+            placeholder="Enter Name"
             onChange={(e) => setName(e.target.value)}
           />
           <label className="addartwork-label">Type</label>
@@ -75,7 +77,7 @@ const AddArtWork = () => {
               inline
               onChange={(e) => setType(e.target.value)}
             />
-            <label className="addartwork-labels" style={{ marginLeft: "5px" }}>
+            <label className="addartwork-label" style={{ marginLeft: "5px" }}>
               Painting
             </label>
             <input
@@ -86,7 +88,7 @@ const AddArtWork = () => {
               inline
               onChange={(e) => setType(e.target.value)}
             />
-            <label className="addartwork-labels" style={{ marginLeft: "5px" }}>
+            <label className="addartwork-label" style={{ marginLeft: "5px" }}>
               Drawing
             </label>
           </div>
@@ -96,11 +98,11 @@ const AddArtWork = () => {
             type="file"
             onChange={uploadArtWork}
           />
-          <label>Price</label>
+          <label className="addartwork-label">Price</label>
           <input
             className="addartwork-input"
             type="number"
-            placeholder="Price"
+            placeholder="Enter Price"
             onChange={(e) => setPrice(e.target.value)}
           />
           <label className="addartwork-label">Frame Size</label>
@@ -108,24 +110,26 @@ const AddArtWork = () => {
             className="addartwork-select"
             onChange={(e) => setFrameSize(e.target.value)}
           >
-            <option className="addartwork-option">5"x7"</option>
-            <option className="addartwork-option">8"x10"</option>
-            <option className="addartwork-option">11"x14"</option>
+            <option>5"x7"</option>
+            <option>8"x10"</option>
+            <option>11"x14"</option>
           </select>
           <label className="addartwork-label">Canvas Type</label>
           <select
             className="addartwork-select"
             onChange={(e) => setCanvasType(e.target.value)}
           >
-            <option className="addartwork-option">Canvas Paper</option>
-            <option className="addartwork-option">Polyster Canvas</option>
-            <option className="addartwork-option">Syntheric Canvas</option>
+            <option>Canvas Paper</option>
+            <option>Polyster Canvas</option>
+            <option>Syntheric Canvas</option>
           </select>
+          </Row>
         </form>
         <div className="addartwork-btn-div">
           <button className="addartwork-button" onClick={() => doArtWork()}>
             Submit
           </button>
+        </div>
         </div>
       </Container>
     </div>
