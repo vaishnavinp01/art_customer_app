@@ -43,54 +43,63 @@ const Cart = () => {
         const artid = art._id;
         return (
           <div>
-            <div className="cart-div">
-              <span className="cart-span">Order</span>
-              <span className="cart-span">Quantity</span>
-              <span className="cart-span">Price</span>
-              <span className="cart-span">OrderDate</span>
-              <span className="cart-span">Total Price</span>
-            </div>
-            <div className="cart-divv"></div>
-            <div className="cart-card">
-              <span>
-                <img
-                  className="cart-img"
-                  src={`http://localhost:5000${art.ArtWorkImage}`}
-                />
-              </span>
-              <span>
-                <button
-                  className="cart-btn"
-                  onClick={() => {
-                    dispatcher(decrementQuantity({ artid }));
-                  }}
-                >
-                  -
-                </button>
-              </span>
-              <span className="cart-spans">{art.quantity}</span>
-              <span>
-                <button
-                  className="cart-btn"
-                  onClick={() => {
-                    dispatcher(incrementQuantity({ artid }));
-                  }}
-                >
-                  +
-                </button>
-              </span>
-              {/* <span className="cart-spans"> */}
-                &#8377;
-                {/* </span>{" "} */}
-              <span className="cart-spanss">{art.ArtWorkPrice}</span>
-              <span className="cart-spanss">{art?.UserData?.OrderDate}</span>
-              {/* <span className="cart-spans"> */}
-                &#8377;
-                {/* </span>{" "} */}
-              <span className="cart-spanss" style={{ marginBottom: "20px" }}>
-                {CartTotalAmount}
-              </span>
-            </div>
+            <table className="cart-">
+              <tr>
+                <th scope="col" className="cart-th">
+                  Order
+                </th>
+                <th scope="col" className="cart-th">
+                  Quantity
+                </th>
+                <th scope="col" className="cart-th">
+                  Price
+                </th>
+                <th scope="col" className="cart-th">
+                  Total Price
+                </th>
+              </tr>
+            </table>
+            <tbody className="cart-card">
+              <tr>
+                <td className="cart-item">
+                  <div className="">
+                    <img
+                      className="cart-img"
+                      src={`http://localhost:5000${art.ArtWorkImage}`}
+                    />
+                    <h4>{art.ArtWorkId.ArtWorkName}</h4>
+                  </div>
+                  <button
+                    className="cart-btn"
+                    onClick={() => {
+                      dispatcher(decrementQuantity({ artid }));
+                    }}
+                  >
+                    -
+                  </button>
+                  <span className="cart-spans">{art.quantity}</span>
+                  <span>
+                    <button
+                      className="cart-btn"
+                      onClick={() => {
+                        dispatcher(incrementQuantity({ artid }));
+                      }}
+                    >
+                      +
+                    </button>
+                  </span>
+                  &#8377;
+                  <span className="cart">{art.ArtWorkPrice}</span>
+                  &#8377;
+                  <span
+                    className="cart-spanss"
+                    style={{ marginBottom: "20px" }}
+                  >
+                    {CartTotalAmount}
+                  </span>
+                </td>
+              </tr>
+            </tbody>
             <div className="cart-divv"></div>
           </div>
         );
