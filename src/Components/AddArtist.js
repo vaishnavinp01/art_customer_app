@@ -99,12 +99,13 @@ const AddArtist = () => {
   }
 
   return (
-    <div>
-      <h4 className="addartist-h4">AddArtist</h4>
-      <Container className="addartist-container">
-        <form className="addartist-form">
-          <Row>
-            <Col>
+    <div className="addartist-main">
+      <div className="addartist-container">
+      <h4 className="addartist">AddArtist</h4>
+      <Container>
+        <form >
+          <Row >
+            <Col >
               <label className="addartist-label">Full Name</label>
               <input
                 className="addartist-input"
@@ -113,7 +114,7 @@ const AddArtist = () => {
                 onChange={(e) => setFullName(e.target.value)}
               />
             </Col>
-            <Col>
+            <Col >
               <label className="addartist-label">Address</label>
               <input
                 className="addartist-input"
@@ -122,9 +123,43 @@ const AddArtist = () => {
                 onChange={(e) => setAddress(e.target.value)}
               />
             </Col>
-          </Row>
-          <Row>
+            <Col >
+              <label className="addartist-label">Mobile No</label>
+              <input
+                className="addartist-input"
+                type="number"
+                placeholder="Mobile No"
+                onChange={(e) => setMobileNo(e.target.value)}
+              />
+            </Col>
             <Col>
+            <label className="addartist-label">Email</label>
+          <input
+            className="addartist-input"
+            type="email"
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          </Col>
+           <Col>
+          <label className="addartist-label">Adhar Card No</label>
+          <input
+            className="addartist-input"
+            type="number"
+            placeholder="Adhar Card No"
+            onChange={(e) => setAdharCardNo(e.target.value)}
+          />
+        </Col>
+        <Col>
+        <label className="addartist-label">Pin Code</label>
+          <input
+            className="addartist-input"
+            type="number"
+            placeholder="Pin Code"
+            onChange={(e) => setPinCode(e.target.value)}
+          />
+        </Col>
+        <Col >
               <label className="addartist-label">City</label>
               <select
                 className="addartist-input"
@@ -140,23 +175,7 @@ const AddArtist = () => {
               </select>
             </Col>
             <Col>
-              <label className="addartist-label">Mobile No</label>
-              <input
-                className="addartist-input"
-                type="number"
-                placeholder="Mobile No"
-                onChange={(e) => setMobileNo(e.target.value)}
-              />
-            </Col>
-          </Row>
-          <label className="addartist-label">Email</label>
-          <input
-            className="addartist-input"
-            type="email"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <label className="addartist-label">State</label>
+            <label className="addartist-label">State</label>
           <select
             className="addartist-input"
             type="state"
@@ -168,44 +187,39 @@ const AddArtist = () => {
             <option className="addartist-option">Gujarat</option>
             <option className="addartist-option">Rajasthan</option>
           </select>
-          <label className="addartist-label">Pin Code</label>
-          <input
-            className="addartist-input"
-            type="number"
-            placeholder="Pin Code"
-            onChange={(e) => setPinCode(e.target.value)}
-          />
-          <label className="addartist-label">Adhar Card No</label>
-          <input
-            className="addartist-input"
-            type="number"
-            placeholder="Adhar Card No"
-            onChange={(e) => setAdharCardNo(e.target.value)}
-          />
-          <label className="addartist-label">Adhar Card Image</label>
-          <input
+            </Col>
+            <Col>
+            <label className="addartist-label">Adhar Card Image</label>
+            <input
             className="addartist-file"
             type="file"
             onChange={uploadAdhar}
-          />
-          <label className="addartist-label">Handicap Certificate Image</label>
+            />
+            </Col>
+           <Col>
+           <label className="addartist-label">Handicap Certificate Image</label>
           <input
             className="addartist-file"
             type="file"
             onChange={uploadCertificate}
           />
-          <label className="addartist-label">Profile</label>
+         </Col>
+         <Col>
+         <label className="addartist-label">Profile</label>
           <input
             className="addartist-file"
             type="file"
             onChange={uploadProfile}
           />
-        </form>
+       </Col>
+        </Row>
+      </form>
         <button className="addartist-button" onClick={() => doArtist()}>
           Submit
         </button>
       </Container>
     </div>
+     </div>
   );
 };
 

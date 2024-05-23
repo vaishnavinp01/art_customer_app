@@ -1,4 +1,66 @@
-.addartist-container {
+.addartist-main{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.addartist-container{
+  content: '';
+  max-width: 700px;
+  width: 100%;
+  background:  #CDB4DB;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  padding: 25px 30px;
+  border-radius: 5px;  
+}
+.addartist-container .addartist-main{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.addartist-container .addartist-main::before{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background: linear-gradient(135deg , #71b7e6 , #9b59b6);
+}
+.addartist-container form .addartist-label{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .addartist-label .addartist-input{
+  margin-bottom: 15px;
+  width: calc(100% /2 - 20px);
+}
+.addartist-label .addartist-input{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.addartist-label .addartist-input input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.addartist-label .addartist-input input:focus,
+.addartist-label .addartist-input input:valid{
+  border-color: #9b59b6;
+}
+.addartist-button{
+  margin-top: 5px;
+}
+/* .addartist-container {
   background-color: aliceblue;
   margin: 10px 10px 10px 10px;
   padding: 10px 10px 10px 10px;
@@ -29,4 +91,4 @@
   background-color: blueviolet;
   font-style: uppercase;
   margin-top: 10px;
-}
+} */
