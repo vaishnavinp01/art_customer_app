@@ -34,7 +34,7 @@
   margin: 20px 0 12px 0;
 }
 form .addartist-label .addartist-input{
-  margin-bottom: 15px;
+   margin-bottom: 15px;
   width: calc(100% /2 - 20px);
 }
 .addartist-label .addartist-input{
@@ -60,35 +60,3 @@ form .addartist-label .addartist-input{
 .addartist-button{
   margin-top: 5px;
 }
-/* .addartist-container {
-  background-color: aliceblue;
-  margin: 10px 10px 10px 10px;
-  padding: 10px 10px 10px 10px;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-.addartist-form {
-  display: flex;
-  flex-direction: column;
-}
-.addartist-input {
-  border-radius: 20px;
-  border: 2px solid gray;
-  padding-left: 10px;
-}
-.addartist-input{
-    border-radius: 20px;
-    border: 2px solid gray;
-}
-.addartist-file {
-  border-radius: 20px;
-  border: 2px solid gray;
-  padding-left: 10px;
-  background-color: #fff;
-}
-.addartist-button {
-  color: #fff;
-  background-color: blueviolet;
-  font-style: uppercase;
-  margin-top: 10px;
-} */

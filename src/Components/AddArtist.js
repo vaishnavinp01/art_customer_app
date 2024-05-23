@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import "../CSS/AddArtist.css";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../reduxwork/UserSlice";
@@ -103,7 +103,7 @@ const AddArtist = () => {
       <div className="addartist-container">
       <h4 className="addartist">AddArtist</h4>
       <Container>
-        <form >
+        <Form >
           <Row >
             <Col >
               <label className="addartist-label">Full Name</label>
@@ -213,7 +213,7 @@ const AddArtist = () => {
           />
        </Col>
         </Row>
-      </form>
+      </Form>
         <button className="addartist-button" onClick={() => doArtist()}>
           Submit
         </button>
