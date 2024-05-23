@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { register } from "../reduxwork/UserSlice";
 import "../CSS/AddCustomer.css";
 import axios from "axios";
-import { Col, Container, Form, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 const AddCustomer = () => {
@@ -63,13 +63,10 @@ const AddCustomer = () => {
   }
 
   return (
-    <div className="addcustomer-main">
-      <div className="addcustomer-container">
-      <h4 className="addcustomer">AddCustomer</h4>
-      <Container >
-        <Form >
-          <Row>
-            <Col>
+    <div>
+      <h4 className="addcustomer-h4">AddCustomer</h4>
+      <Container className="addcustomer-container">
+        <form className="addcustomer-form">
           <label className="addcustomer-label">Name</label>
           <input
             className="addcustomer-input"
@@ -77,26 +74,6 @@ const AddCustomer = () => {
             placeholder="Name"
             onChange={(e) => setName(e.target.value)}
           />
-          </Col>
-          <Col>
-          <label className="addcustomer-label">Email</label>
-          <input
-            className="addcustomer-input"
-            type="email"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-         </Col>
-         <Col>
-         <label className="addcustomer-label">Address</label>
-          <input
-            className="addcustomer-input"
-            type="text"
-            placeholder="Address"
-            onChange={(e) => setAddress(e.target.value)}
-          />
-         </Col>
-         <Col>
           <label className="addcustomer-label">Mobile No</label>
           <input
             className="addcustomer-input"
@@ -104,8 +81,13 @@ const AddCustomer = () => {
             placeholder="MobileNo"
             onChange={(e) => setMobileNo(e.target.value)}
           />
-          </Col>
-          <Col>
+          <label className="addcustomer-label">Address</label>
+          <input
+            className="addcustomer-input"
+            type="text"
+            placeholder="Enter Address"
+            onChange={(e) => setAddress(e.target.value)}
+          />
           <label className="addcustomer-label">DOB</label>
           <input
             className="addcustomer-input"
@@ -113,17 +95,6 @@ const AddCustomer = () => {
             placeholder="DOB"
             onChange={(e) => setDOB(e.target.value)}
           />
-          </Col>
-          <Col>
-          <label className="addcustomer-label">Pin Code</label>
-          <input
-            className="addcustomer-input"
-            type="number"
-            placeholder="Pin Code"
-            onChange={(e) => setPinCode(e.target.value)}
-          />
-       </Col>
-          <Col>
           <label className="addcustomer-label">City</label>
           <select
             className="addcustomer-input"
@@ -135,12 +106,9 @@ const AddCustomer = () => {
             <option>Jalgaon</option>
             <option>Jaipur</option>
           </select>
-          </Col>
-          
-       <Col>
           <label className="addcustomer-label">State</label>
           <select
-            className="addcustomer-input"
+            className="addcustomer-select"
             onChange={(e) => setState(e.target.value)}
           >
             <option>Chhattisgarh</option>
@@ -148,8 +116,20 @@ const AddCustomer = () => {
             <option>Gujarat</option>
             <option>Rajasthan</option>
           </select>
-          </Col>
-          <Col>
+          <label className="addcustomer-label">Pin Code</label>
+          <input
+            className="addcustomer-input"
+            type="number"
+            placeholder="Pin Code"
+            onChange={(e) => setPinCode(e.target.value)}
+          />
+          <label className="addcustomer-label">Email</label>
+          <input
+            className="addcustomer-input"
+            type="email"
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
           <label className="addcustomer-label">Profile</label>
           <input
             className="addcustomer-file"

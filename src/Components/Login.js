@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import "../CSS/Login.css";
-import { FaFacebook, FaRegUser } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import { register, login } from "../reduxwork/UserSlice";
+import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillLinkedin } from "react-icons/ai";
-import { login, register } from "../reduxwork/UserSlice";
-import axios from "axios";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { BiLock } from "react-icons/bi";
-import { CgUser } from "react-icons/cg";
-import { CiLock } from "react-icons/ci";
 
 const Login = () => {
   const navigator = useNavigate();
@@ -133,7 +130,9 @@ const Login = () => {
                   inline
                   onChange={(e) => setType(e.target.value)}
                 />
-                <label className="reg-label">Customer</label>
+                <label className="reg-label" style={{ marginLeft: "5px" }}>
+                  Customer
+                </label>
                 <input
                   type="radio"
                   value="Artist"
@@ -142,7 +141,9 @@ const Login = () => {
                   inline
                   onChange={(e) => setType(e.target.value)}
                 />
-                <label className="reg-label">Artist</label>
+                <label className="reg-label" style={{ marginLeft: "5px" }}>
+                  Artist
+                </label>
               </div>
               <button className="reg-button" onClick={() => doRegister()}>
                 Register
@@ -166,24 +167,18 @@ const Login = () => {
               </div>
 
               <span className="reg-span">or use your account</span>
-              {/* <div className="reg-div"> */}
-                {/* <FaRegUser className="reg-icon" /> */}
-                <input
-                  className="reg-input"
-                  type="email"
-                  placeholder="Email"
-                  onChange={(e) => setLoginEmail(e.target.value)}
-                />
-              {/* </div> */}
-              {/* <div className="reg-div"> */}
-                {/* <CiLock className="reg-icon" /> */}
-                <input
-                  className="reg-input"
-                  type="password"
-                  placeholder="Password"
-                  onChange={(e) => setLoginPassword(e.target.value)}
-                />
-              {/* </div> */}
+              <input
+                className="reg-input"
+                type="email"
+                placeholder="Email"
+                onChange={(e) => setLoginEmail(e.target.value)}
+              />
+              <input
+                className="reg-input"
+                type="password"
+                placeholder="Password"
+                onChange={(e) => setLoginPassword(e.target.value)}
+              />
               <a className="reg-a" href="#">
                 Forgot your password?
               </a>

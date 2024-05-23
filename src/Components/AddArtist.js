@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Col, Container, Form, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import "../CSS/AddArtist.css";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../reduxwork/UserSlice";

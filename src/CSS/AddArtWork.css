@@ -1,49 +1,42 @@
-.artwork-container {
-  background-color: aliceblue;
-  margin-top: 70px;
-  padding: 10px 10px 10px 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  padding: 30PX;
-  width: 30vw;
-  height: 60vh;
-  box-sizing: border-box;
-  border-radius: 20px;
+.addartwork-container {
+  background-color: burlywood;
+  width: 600px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.96);
 }
-.artwork-form {
+.addartwork-div {
+  margin-top: 180px;
+}
+.addartwork-form {
+}
+.addartwork-label {
+  margin-left: 40px;
+}
+.addartwork-input {
+  width: 35vw;
   display: flex;
-  flex-direction: column;
-}
-.artwork-input {
-  border-radius: 20px;
-  border: 2px solid gray;
-  padding-left: 10px;
-}
-.artwork-select {
-  border-radius: 20px;
-  border: 2px solid gray;
-  padding-right: 10px;
-  padding-left: 5px;
-}
-.artwork-option {
-  padding-left: 10px;
-}
-.artwork-check {
-  margin-left: 20px;
-}
-.artwork-file {
-  border-radius: 20px;
-  border: 2px solid gray;
-  background-color: #fff;
-}
-.artwork-btn-div {
-  display: flex;
+  align-items: center;
   justify-content: center;
+  margin-left: 50px;
 }
-.artwork-button {
-  color: #fff;
-  background-color: blueviolet;
-  font-style: uppercase;
-  margin-top: 20px;
-  border-radius: 20px;
+.addartwork-check {
+  margin-left: 50px;
+}
+.addartwork-file {
+  /* width: 40vw; */
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 40px;
+}
+.addartwork-select {
+  width: 35vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+}
+.addartwork-button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 50px;
 }

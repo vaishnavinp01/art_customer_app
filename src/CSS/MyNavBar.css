@@ -10,7 +10,7 @@
   align-items: center;
   height: 10%;
   width: 100vw;
-  width: 100%;
+  /* width: 100%; */
   z-index: 999;
 }
 .nav-brand {
@@ -45,7 +45,6 @@
   position: relative;
   /* color: #0087ca; */
 }
-
 .div-links::after {
   content: "";
   position: absolute;
@@ -58,7 +57,6 @@
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
-
 .div-links:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;

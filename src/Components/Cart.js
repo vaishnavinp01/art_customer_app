@@ -5,12 +5,11 @@ import {
   calculateTotal,
   decrementQuantity,
   incrementQuantity,
-  removeQuantity,
 } from "../reduxwork/CartSlice";
 import axios from "axios";
 import { Button, Card, Col, Row } from "react-bootstrap";
 
-const Cart = ({amount}) => {
+const Cart = () => {
   const { CartItems, CartTotalAmount } = useSelector((state) => state.cart);
   const { UserData } = useSelector((state) => state.user);
 
@@ -39,63 +38,79 @@ const Cart = ({amount}) => {
     } catch (error) {}
   };
   return (
-    <div className="cart-container">
-      <Row>
-        {CartItems.map((art) => {
-          const artid = art._id;
-          return (
-            <Col sm={12} md={9} lg={3}>
-              <Card className="cart-card">
-                <Card.Img
-                  className="cart-img"
-                  src={`http://localhost:5000${art.ArtWorkImage}`}
-                />
-                <Card.Body className="cart-body">
-                  <Card.Text className="cart-text">{art.ArtWorkName}</Card.Text>
-                  <Card.Subtitle className="cart-subtitle">
-                    &#8377; {art.ArtWorkPrice}
-                  </Card.Subtitle>
-                </Card.Body>
-                <Card.Footer className="cart-footer">
-                  <Button
-                    className="cart-button"
+    <div style={{ marginTop: "40px" }}>
+      {CartItems.map((art) => {
+        const artid = art._id;
+        return (
+          <div>
+            <table className="cart-">
+              <tr>
+                <th scope="col" className="cart-th">
+                  Order
+                </th>
+                <th scope="col" className="cart-th">
+                  Quantity
+                </th>
+                <th scope="col" className="cart-th">
+                  Price
+                </th>
+                <th scope="col" className="cart-th">
+                  Total Price
+                </th>
+              </tr>
+            </table>
+            <tbody className="cart-card">
+              <tr>
+                <td className="cart-item">
+                  <div className="">
+                    <img
+                      className="cart-img"
+                      src={`http://localhost:5000${art.ArtWorkImage}`}
+                    />
+                    <h4>{art.ArtWorkId.ArtWorkName}</h4>
+                  </div>
+                  <button
+                    className="cart-btn"
                     onClick={() => {
-                      if (amount === 1) {
-                        dispatcher(removeQuantity({ artid }));
-                        return;
-                      } else {
-                        dispatcher(decrementQuantity({ artid }));
-                      }
+                      dispatcher(decrementQuantity({ artid }));
                     }}
                   >
                     -
-                  </Button>
-                  <span className="cart-span">{art.quantity}</span>
-                  <Button
-                    className="cart-btn"
-                    onClick={() => {
-                      dispatcher(incrementQuantity({ artid }));
-                    }}
+                  </button>
+                  <span className="cart-spans">{art.quantity}</span>
+                  <span>
+                    <button
+                      className="cart-btn"
+                      onClick={() => {
+                        dispatcher(incrementQuantity({ artid }));
+                      }}
+                    >
+                      +
+                    </button>
+                  </span>
+                  &#8377;
+                  <span className="cart">{art.ArtWorkPrice}</span>
+                  &#8377;
+                  <span
+                    className="cart-spanss"
+                    style={{ marginBottom: "20px" }}
                   >
-                    +
-                  </Button>
-                </Card.Footer>
-              </Card>
-            </Col>
-          );
-        })}
-      </Row>
-
-      <Row className="cart-row">
-        <Col>
-          <h4 className="cart-h4">Total Price: {CartTotalAmount}</h4>
-        </Col>
-        <Col>
-          <Button className="cart-btnss" onClick={() => placeOrder()}>
-            Place Order
-          </Button>
-        </Col>
-      </Row>
+                    {CartTotalAmount}
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+            <div className="cart-divv"></div>
+          </div>
+        );
+      })}
+      <button
+        style={{ marginTop: "20px" }}
+        className="cart-btnss"
+        onClick={() => placeOrder()}
+      >
+        Place Order
+      </button>
     </div>
   );
 };
