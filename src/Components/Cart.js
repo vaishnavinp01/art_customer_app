@@ -7,7 +7,8 @@ import {
   incrementQuantity,
 } from "../reduxwork/CartSlice";
 import axios from "axios";
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { BiMinus, BiPlus } from "react-icons/bi";
+import { register } from "../reduxwork/UserSlice";
 
 const Cart = () => {
   const { CartItems, CartTotalAmount } = useSelector((state) => state.cart);
@@ -18,15 +19,15 @@ const Cart = () => {
 
   //create place order function
   const placeOrder = async () => {
-    let finalOrderItems = [];
+    let finalArtItems = [];
     CartItems.map((art) => {
-      finalOrderItems.push({ Qty: art.quantity, ArtWorkId: art._id });
+      finalArtItems.push({ Qty: art.quantity, ArtWorkId: art._id });
     });
 
     const orderData = {
       CustId: UserData.data._id,
       OrderTotalAmount: CartTotalAmount,
-      OrderItems: finalOrderItems,
+      OrderItems: finalArtItems,
     };
     try {
       const result = await axios.post(
@@ -34,83 +35,68 @@ const Cart = () => {
         orderData
       );
       console.log(result.data);
+      dispatcher(register(result.data));
       alert("Order Added");
     } catch (error) {}
   };
   return (
-    <div style={{ marginTop: "40px" }}>
-      {CartItems.map((art) => {
-        const artid = art._id;
-        return (
-          <div>
-            <table className="cart-">
-              <tr>
-                <th scope="col" className="cart-th">
-                  Order
-                </th>
-                <th scope="col" className="cart-th">
-                  Quantity
-                </th>
-                <th scope="col" className="cart-th">
-                  Price
-                </th>
-                <th scope="col" className="cart-th">
-                  Total Price
-                </th>
-              </tr>
-            </table>
-            <tbody className="cart-card">
-              <tr>
-                <td className="cart-item">
-                  <div className="">
-                    <img
-                      className="cart-img"
-                      src={`http://localhost:5000${art.ArtWorkImage}`}
-                    />
-                    <h4>{art.ArtWorkId.ArtWorkName}</h4>
-                  </div>
+    <div className="cart-main-div">
+      <div style={{ marginTop: "40px" }}>
+        <div className="cart-div">
+          <span className="cart-span">Order</span>
+          <span className="cart-span">ArtWork Name</span>
+          <span className="cart-span">Quantity</span>
+          <span className="cart-span">Price</span>
+          <span className="cart-span">Total Price</span>
+        </div>
+        <div className="cart-divv"></div>
+        {CartItems.map((art) => {
+          const artid = art._id;
+          return (
+            <div>
+              <div className="cart-card">
+                <span>
+                  <img
+                    className="cart-img"
+                    src={`http://localhost:5000${art.ArtWorkImage}`}
+                  />
+                </span>
+                <span>{art.ArtWorkName}</span>
+                <div>
                   <button
                     className="cart-btn"
                     onClick={() => {
                       dispatcher(decrementQuantity({ artid }));
                     }}
                   >
-                    -
+                    <BiMinus />
                   </button>
                   <span className="cart-spans">{art.quantity}</span>
-                  <span>
-                    <button
-                      className="cart-btn"
-                      onClick={() => {
-                        dispatcher(incrementQuantity({ artid }));
-                      }}
-                    >
-                      +
-                    </button>
-                  </span>
-                  &#8377;
-                  <span className="cart">{art.ArtWorkPrice}</span>
-                  &#8377;
-                  <span
-                    className="cart-spanss"
-                    style={{ marginBottom: "20px" }}
+                  <button
+                    className="cart-btn"
+                    onClick={() => {
+                      dispatcher(incrementQuantity({ artid }));
+                    }}
                   >
-                    {CartTotalAmount}
-                  </span>
-                </td>
-              </tr>
-            </tbody>
-            <div className="cart-divv"></div>
-          </div>
-        );
-      })}
-      <button
-        style={{ marginTop: "20px" }}
-        className="cart-btnss"
-        onClick={() => placeOrder()}
-      >
-        Place Order
-      </button>
+                    <BiPlus />
+                  </button>
+                </div>
+                <span>&#8377;{art.ArtWorkPrice}</span>
+                <span>&#8377;{CartTotalAmount}</span>
+              </div>
+              <div className="cart-divs"></div>
+            </div>
+          );
+        })}
+        {/* <div className="cart-divs"></div> */}
+        <button
+          style={{ marginTop: "20px" }}
+          className="cart-btnss"
+          onClick={() => placeOrder()}
+        >
+          Place Order
+        </button>
+      </div>
     </div>
   );
 };

@@ -7,7 +7,7 @@
   margin: 0;
 }
 .reg-p {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 100;
   line-height: 20px;
   letter-spacing: 0.5px;
@@ -43,7 +43,6 @@
   z-index: 1;
 }
 .Login_Form {
-  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,6 +50,13 @@
   padding: 0 50px;
   height: 100%;
   text-align: center;
+}
+.reg-div{
+  background-color: #ffffff;
+  margin-top: 50px;
+}
+.log-div{
+  margin-top: 90px;
 }
 .social-container {
   margin: 20px 0;
@@ -100,6 +106,10 @@
 }
 .reg-check:checked {
   accent-color: #6f5c8c;
+}
+.reg-button{
+  margin-left: 35%;
+  margin-top: 20px;
 }
 .reg-button,
 .ghost {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Tab, Tabs } from "react-bootstrap";
 import CustOrderTab from "../CustomerTabs/CustOrderTab";
-import ProfileTab from "../CustomerTabs/ProfileTab";
+import CustProfileTab from "../CustomerTabs/CustProfileTab";
 
 const CustomersProfile = () => {
   return (
@@ -12,7 +12,7 @@ const CustomersProfile = () => {
           <CustOrderTab />
         </Tab>
         <Tab eventKey="Profile" title="Profile">
-          <ProfileTab />
+          <CustProfileTab />
         </Tab>
       </Tabs>
     </div>

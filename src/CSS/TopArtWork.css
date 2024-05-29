@@ -8,7 +8,7 @@
   position: relative;
   overflow: hidden;
 }
-.topimg {
+.topartwork-image {
   transition: transform 0.3s;
   overflow: hidden;
   height: 250px;

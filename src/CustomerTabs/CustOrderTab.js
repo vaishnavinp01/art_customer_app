@@ -2,12 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Modal, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import "../CSS/CustOrderTab.css";
 
 const CustOrderTab = () => {
   // AllOrders
-  const [AllOrders, setAllOrders] = useState([]);
-  const [onShowDelete, setonShowDelete] = useState(false);
-
+  const [CustOrders, setCustOrders] = useState([]);
+  // const [onShowDelete, setonShowDelete] = useState(false);
   const navigator = useNavigate();
 
   // AlllOrders
@@ -15,52 +15,52 @@ const CustOrderTab = () => {
     axios
       .get("http://localhost:5000/artapi/allorders")
       .then((result) => {
-        setAllOrders(result.data);
+        setCustOrders(result.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  });
+  }, []);
 
   return (
     <div>
       <h4>CustOrderTab</h4>
 
-      {/* AllOrders */}
+      {/* CustOrders */}
       <Container>
         <Row>
-          {AllOrders.map((order) => {
+          {CustOrders.map((order) => {
             return (
               <Col sm={12} md={6} lg={4}>
-                <Card className="artordertab-card">
-                  <Card.Body className="artordertab-body">
-                    <Card.Text className="artordertab-text">
+                <Card className="custordertab-card">
+                  <Card.Body className="custordertab-body">
+                    <Card.Text className="custordertab-text">
                       Date:{order.OrderDate}
                     </Card.Text>
-                    <Card.Text className="artordertab-text">
-                      Status:{order.OrdererStatus}
+                    <Card.Text className="custordertab-text">
+                      Status:{order.OrderStatus}
                     </Card.Text>
-                    <Card.Text className="artordertab-text">
+                    <Card.Text className="custordertab-text">
                       Total:{order.OrderTotalAmount}
                     </Card.Text>
                   </Card.Body>
-                  <div className="artordertab-div">
+                  <div className="custordertab-div">
                     <button
-                      className="artordertab-button"
+                      className="custordertab-button"
                       onClick={() =>
                         navigator("/custorderdetails", { state: order })
                       }
                     >
                       OrderDetails
                     </button>
-                    <button
+                    {/* <button
                       className="order-button"
                       onClick={() => {
                         onShowDelete(true);
                       }}
                     >
                       Delete
-                    </button>
+                    </button> */}
                   </div>
                 </Card>
               </Col>
@@ -70,7 +70,7 @@ const CustOrderTab = () => {
       </Container>
 
       {/* Delete */}
-      <Modal show={onShowDelete} onHide={() => setonShowDelete(false)}>
+      {/* <Modal show={onShowDelete} onHide={() => setonShowDelete(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Order Delete</Modal.Title>
         </Modal.Header>
@@ -78,15 +78,15 @@ const CustOrderTab = () => {
           <h4>Are you sure to delete this Dish?</h4>
         </Modal.Body>
         <Modal.Footer>
-          <button className="artordertab-button">Yes</button>
+          <button className="custordertab-button">Yes</button>
           <button
-            className="artordertab-button"
+            className="custordertab-button"
             onClick={() => setonShowDelete(false)}
           >
             No
           </button>
         </Modal.Footer>
-      </Modal>
+      </Modal> */}
     </div>
   );
 };

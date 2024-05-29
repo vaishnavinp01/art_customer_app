@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Modal, Nav, Navbar } from "react-bootstrap";
 import { Link as RouteLink, useNavigate } from "react-router-dom";
 import "../CSS/MyNavBar.css";
 
@@ -29,6 +29,7 @@ const ArtistNavBar = () => {
   // });
 
   const { UserData } = useSelector((state) => state.user);
+  const { CartItems } = useSelector((state) => state.cart);
   const navigator = useNavigate();
 
   return (
@@ -75,7 +76,8 @@ const ArtistNavBar = () => {
               <Nav.Link>
                 <RouteLink className="nav-link" to="/cart">
                   <CgShoppingCart className="nav-icon" />
-                  <div className="div-links">Cart</div>
+                  <div className="div-linkss">Cart</div>
+                  <span className="nav-noOfCart"> {CartItems.length}</span>
                 </RouteLink>
               </Nav.Link>
             </Nav>

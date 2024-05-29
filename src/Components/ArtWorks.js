@@ -4,7 +4,7 @@ import { Card, Tab, Tabs } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import ArtWorkTab from "../ArtistTabs/ArtWorkTab";
 import ArtOrderTab from "../ArtistTabs/ArtOrderTab";
-import ProfileTab from "../ArtistTabs/ProfileTab";
+import ArtProfileTab from "../ArtistTabs/ArtProfileTab";
 
 const ArtWorks = () => {
   const navigator = useNavigate();
@@ -35,7 +35,7 @@ const ArtWorks = () => {
               </Tab>
 
               <Tab eventKey="Profile" title="Profile">
-                <ProfileTab />
+                <ArtProfileTab />
               </Tab>
             </Tabs>
           </div>

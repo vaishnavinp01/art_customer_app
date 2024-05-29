@@ -37,7 +37,7 @@ const AddCustomer = () => {
     axios
       .post("http://localhost:5000/artapi/addcustomer", addData)
       .then((result) => {
-        console.log("DATA", result.data);
+        // console.log("DATA", result.data);
         dispatcher(register(result.data));
         // alert("Register Successfully");
         navigator("/");
@@ -65,105 +65,105 @@ const AddCustomer = () => {
   return (
     <div className="addcustomer-main">
       <div className="addcustomer-container">
-      <h4 className="addcustomer">AddCustomer</h4>
-      <Container >
-        <Form >
-          <Row>
-            <Col>
-          <label className="addcustomer-label">Name</label>
-          <input
-            className="addcustomer-input"
-            type="text"
-            placeholder="Name"
-            onChange={(e) => setName(e.target.value)}
-          />
-          </Col>
-          <Col>
-          <label className="addcustomer-label">Email</label>
-          <input
-            className="addcustomer-input"
-            type="email"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-         </Col>
-         <Col>
-         <label className="addcustomer-label">Address</label>
-          <input
-            className="addcustomer-input"
-            type="text"
-            placeholder="Address"
-            onChange={(e) => setAddress(e.target.value)}
-          />
-         </Col>
-         <Col>
-          <label className="addcustomer-label">Mobile No</label>
-          <input
-            className="addcustomer-input"
-            type="number"
-            placeholder="MobileNo"
-            onChange={(e) => setMobileNo(e.target.value)}
-          />
-          </Col>
-          <Col>
-          <label className="addcustomer-label">DOB</label>
-          <input
-            className="addcustomer-input"
-            type="date"
-            placeholder="DOB"
-            onChange={(e) => setDOB(e.target.value)}
-          />
-          </Col>
-          <Col>
-          <label className="addcustomer-label">Pin Code</label>
-          <input
-            className="addcustomer-input"
-            type="number"
-            placeholder="Pin Code"
-            onChange={(e) => setPinCode(e.target.value)}
-          />
-       </Col>
-          <Col>
-          <label className="addcustomer-label">City</label>
-          <select
-            className="addcustomer-input"
-            onChange={(e) => setCity(e.target.value)}
-          >
-            <option>Mahasamund</option>
-            <option>Yawal</option>
-            <option>Bhusawal</option>
-            <option>Jalgaon</option>
-            <option>Jaipur</option>
-          </select>
-          </Col>
-          
-       <Col>
-          <label className="addcustomer-label">State</label>
-          <select
-            className="addcustomer-select"
-            onChange={(e) => setState(e.target.value)}
-          >
-            <option>Chhattisgarh</option>
-            <option>Maharashtra</option>
-            <option>Gujarat</option>
-            <option>Rajasthan</option>
-          </select>
-          </Col>
-          <Col>
-          <label className="addcustomer-label">Profile</label>
-          <input
-            className="addcustomer-file"
-            type="file"
-            onChange={uploadProfile}
-          />
-          </Col>
-          </Row>
-        </Form>
-        <button className="addcustomer-button" onClick={() => doCustomer()}>
-          Submit
-        </button>
-      </Container>
-    </div>
+        <h4 className="addcustomer">AddCustomer</h4>
+        <Container>
+          <Form>
+            <Row>
+              <Col>
+                <label className="addcustomer-label">Name</label>
+                <input
+                  className="addcustomer-input"
+                  type="text"
+                  placeholder="Name"
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </Col>
+              <Col>
+                <label className="addcustomer-label">Email</label>
+                <input
+                  className="addcustomer-input"
+                  type="email"
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </Col>
+              <Col>
+                <label className="addcustomer-label">Address</label>
+                <input
+                  className="addcustomer-input"
+                  type="text"
+                  placeholder="Address"
+                  onChange={(e) => setAddress(e.target.value)}
+                />
+              </Col>
+              <Col>
+                <label className="addcustomer-label">Mobile No</label>
+                <input
+                  className="addcustomer-input"
+                  type="number"
+                  placeholder="MobileNo"
+                  onChange={(e) => setMobileNo(e.target.value)}
+                />
+              </Col>
+              <Col>
+                <label className="addcustomer-label">DOB</label>
+                <input
+                  className="addcustomer-input"
+                  type="date"
+                  placeholder="DOB"
+                  onChange={(e) => setDOB(e.target.value)}
+                />
+              </Col>
+              <Col>
+                <label className="addcustomer-label">Pin Code</label>
+                <input
+                  className="addcustomer-input"
+                  type="number"
+                  placeholder="Pin Code"
+                  onChange={(e) => setPinCode(e.target.value)}
+                />
+              </Col>
+              <Col>
+                <label className="addcustomer-label">City</label>
+                <select
+                  className="addcustomer-input"
+                  onChange={(e) => setCity(e.target.value)}
+                >
+                  <option>Mahasamund</option>
+                  <option>Yawal</option>
+                  <option>Bhusawal</option>
+                  <option>Jalgaon</option>
+                  <option>Jaipur</option>
+                </select>
+              </Col>
+
+              <Col>
+                <label className="addcustomer-label">State</label>
+                <select
+                  className="addcustomer-input"
+                  onChange={(e) => setState(e.target.value)}
+                >
+                  <option>Chhattisgarh</option>
+                  <option>Maharashtra</option>
+                  <option>Gujarat</option>
+                  <option>Rajasthan</option>
+                </select>
+              </Col>
+              <Col>
+                <label className="addcustomer-label">Profile</label>
+                <input
+                  className="addcustomer-input"
+                  type="file"
+                  onChange={uploadProfile}
+                />
+              </Col>
+            </Row>
+          </Form>
+          <button className="addcustomer-button" onClick={() => doCustomer()}>
+            Submit
+          </button>
+        </Container>
+      </div>
     </div>
   );
 };

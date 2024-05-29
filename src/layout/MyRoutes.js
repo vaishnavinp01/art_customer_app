@@ -9,8 +9,8 @@ import AddArtWork from "../Components/AddArtWork";
 import ArtWorks from "../Components/ArtWorks";
 import CustomersProfile from "../Components/CustomersProfile";
 import Cart from "../Components/Cart";
-import ArtOrderTab from "../ArtistTabs/ArtOrderTab";
-import CustOrderTab from "../CustomerTabs/CustOrderTab";
+// import ArtOrderTab from "../ArtistTabs/ArtOrderTab";
+// import CustOrderTab from "../CustomerTabs/CustOrderTab";
 import ArtOrderDetails from "../ArtistTabs/ArtOrderDetails";
 import CustOrderDetails from "../CustomerTabs/CustOrderDetails";
 
@@ -27,9 +27,9 @@ const MyRoutes = () => {
           <Route path="/addartwork" element={<AddArtWork />} />
           <Route path="/addcustomer" element={<AddCustomer />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/artordertab" element={<ArtOrderTab />} />
+          {/* <Route path="/artordertab" element={<ArtOrderTab />} /> */}
           <Route path="/artorderdetails" element={<ArtOrderDetails />} />
-          <Route path="/custordertab" element={<CustOrderTab />} />
+          {/* <Route path="/custordertab" element={<CustOrderTab />} /> */}
           <Route path="/custorderdetails" element={<CustOrderDetails />} />
         </Routes>
       </Container>

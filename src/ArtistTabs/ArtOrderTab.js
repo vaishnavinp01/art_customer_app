@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const ArtOrderTab = () => {
   // AllOrders
   const [AllOrders, setAllOrders] = useState([]);
-  const [onShowDelete, setonShowDelete] = useState(false);
+  // const [onShowDelete, setonShowDelete] = useState(false);
 
   const navigator = useNavigate();
 
@@ -25,7 +25,7 @@ const ArtOrderTab = () => {
   return (
     <div>
       <h5>ArtOrderTab</h5>
-      {/* AllOrders */}
+      {/* ArtOrders */}
       <Container>
         <Row>
           {AllOrders.map((order) => {
@@ -34,13 +34,13 @@ const ArtOrderTab = () => {
                 <Card className="artordertab-card">
                   <Card.Body className="artordertab-body">
                     <Card.Text className="artordertab-text">
-                      Date:{order.OrderDate}
+                      Date: {order.OrderDate}
                     </Card.Text>
                     <Card.Text className="artordertab-text">
-                      Status:{order.OrdererStatus}
+                      Status: {order.OrderStatus}
                     </Card.Text>
                     <Card.Text className="artordertab-text">
-                      Total:{order.OrderTotalAmount}
+                      Total: {order.OrderTotalAmount}
                     </Card.Text>
                   </Card.Body>
                   <div className="artordertab-div">
@@ -52,14 +52,14 @@ const ArtOrderTab = () => {
                     >
                       OrderDetails
                     </button>
-                    <button
+                    {/* <button
                       className="order-button"
                       onClick={() => {
                         onShowDelete(true);
                       }}
                     >
                       Delete
-                    </button>
+                    </button> */}
                   </div>
                 </Card>
               </Col>
@@ -69,7 +69,7 @@ const ArtOrderTab = () => {
       </Container>
 
       {/* Delete */}
-      <Modal show={onShowDelete} onHide={() => setonShowDelete(false)}>
+      {/* <Modal show={onShowDelete} onHide={() => setonShowDelete(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Order Delete</Modal.Title>
         </Modal.Header>
@@ -85,7 +85,7 @@ const ArtOrderTab = () => {
             No
           </button>
         </Modal.Footer>
-      </Modal>
+      </Modal> */}
     </div>
   );
 };

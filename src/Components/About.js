@@ -4,9 +4,20 @@ import "../CSS/About.css";
 const About = () => {
   return (
     <div className="about-div">
-      <h4>About</h4>
+      <h4
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          width: "80vw",
+          marginTop: "100px",
+        }}
+      >
+        About
+      </h4>
 
-      <div className="about-wrapper">
+      {/* <div className="about-wrapper">
         <div className="about-container">
           <input className="about-input" type="radio" name="slide" id="c1" checked />
           <label for="c1" className="about-card">
@@ -69,7 +80,7 @@ const About = () => {
             </div>
           </label>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

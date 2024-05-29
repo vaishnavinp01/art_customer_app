@@ -43,9 +43,9 @@ const AddArtist = () => {
     axios
       .post("http://localhost:5000/artapi/addartist", addData)
       .then((result) => {
-        console.log("DATA", result.data);
+        // console.log("DATA", result.data);
         dispatcher(register(result.data));
-        alert("Register Successfully");
+        // alert("Register Successfully");
         navigator("/");
       })
       .catch((err) => {

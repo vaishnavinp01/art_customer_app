@@ -1,4 +1,4 @@
-.artorderdetails-card {
+/* .artorderdetails-card {
   display: flex;
   justify-content: center;
   margin-left: 50%;
@@ -23,4 +23,28 @@
   padding-bottom: 2px;
   top: 0;
   bottom: 0;
+} */
+.artorderdetatils-div span {
+  margin-left: 140px;
+}
+.artorderdetails-divv {
+  border: 0.96px solid gray;
+}
+.artorderdetails-card {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 155px;
+  margin-left: 120px;
+}
+.artorderdetails-img {
+  width: 80px;
+  height: 80px;
+}
+.orderdetails-card span {
+  /* margin-left: 300px; */
+}
+.artorderdetails-divs {
+  border: 0.96px solid gray;
+  margin-top: 10px;
 }

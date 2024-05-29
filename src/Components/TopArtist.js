@@ -27,10 +27,12 @@ const TopArtist = () => {
           return (
             <Col sm={12} md={8} lg={4}>
               <Card className="topartist-card">
-                <Card.Img
-                  className="topartist-img"
-                  src={`http://localhost:5000${art.ArtistProfile}`}
-                />
+                <div className="topartist-image">
+                  <Card.Img
+                    className="topartist-img"
+                    src={`http://localhost:5000${art.ArtistProfile}`}
+                  />
+                </div>
                 <Card.Body className="topartist-body">
                   <Card.Text className="topartist-text">
                     {art.ArtistFullName}

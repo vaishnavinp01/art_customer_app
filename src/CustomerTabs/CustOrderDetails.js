@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Card } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
-
+import "../CSS/CustOrderDetails.css";
 const CustOrderDetails = () => {
   // useLocation
   const orderData = useLocation().state;
@@ -11,7 +10,7 @@ const CustOrderDetails = () => {
   // useEffect
   useEffect(() => {
     axios
-      .post("http://localhost:5000/artapi/artorderbyid", {
+      .post("http://localhost:5000/artapi/custorderbyid", {
         orderid: orderData._id,
       })
       .then((result) => {
@@ -26,38 +25,49 @@ const CustOrderDetails = () => {
   return (
     <div>
       <h4>CustOrderDetails</h4>
-      <p>{orderData._id}</p>
-
+      <p>
+        <span
+          style={{ fontWeight: "bold", fontStyle: "italic", fontSize: "20px" }}
+        >
+          OrderId:
+        </span>{" "}
+        {orderData._id}
+      </p>
       <div>
-        <h6>ArtWork Name:{orderData?.CustId?.UserName}</h6>
-        <h6>ArtWork Type:{orderData?.CustId?.User_Type}</h6>
-        {/* <h6>ArtWork Name:{orderData?.CustId?.CustomerName}</h6> */}
-        {/* <h6>ArtWork Type:{orderData?.CustId?.CustomerEmail}</h6> */}
-      </div>
-      <div>
+        <div>
+          <h6>User Name: {orderData?.CustId?.UserName}</h6>
+          <h6>User Email: {orderData?.CustId?.UserEmail}</h6>
+          <h6>User Mobile No: {orderData?.CustId?.UserMobileNo}</h6>
+          <h6>User Type: {orderData?.CustId?.User_Type}</h6>
+          {/* <h6>ArtWork Name:{orderData?.CustId?.CustomerName}</h6> */}
+          {/* <h6>ArtWork Type:{orderData?.CustId?.CustomerEmail}</h6> */}
+        </div>
+        <div className="custorderdetatils-div">
+          <span className="custorderdetails-span">Order</span>
+          <span className="custorderdetails-span">Quantity</span>
+          <span className="custorderdetails-span">Price</span>
+          <span className="custorderdetails-span">OrderStatus</span>
+          <span className="custorderdetails-span">OrderDate</span>
+        </div>
+        <div className="custorderdetails-divv"></div>
+        {/* <div className="orderdetails-divs"> */}
         {orderData.OrderItems.map((order) => {
-           return (
-            <div>
-              <Card className="artorderdetails-card">
-                <Card.Body className="artorderdetails-body">
-                  <Card.Img
-                    className="artorderdetails-img"
-                    src={`http://localhost:5000${order.ArtWorkId.ArtWorkImage}`}
-                  />
-                  <div className="artorderdetails-div">
-                    <p className="artorederdetails-p">Quantity: {order.Qty}</p>
-                    <p className="artorderdetails-p">
-                      Name: {order.ArtWorkId.ArtWorkName}
-                    </p>
-                    <p className="artorderdetails-p">
-                      Price: {order.ArtWorkId.ArtWorkPrice}
-                    </p>
-                  </div>
-                </Card.Body>
-              </Card>
+          return (
+            <div className="custorderdetails-card">
+              <span>
+                <img
+                  className="custorderdetails-img"
+                  src={`http://localhost:5000${order.ArtWorkId.ArtWorkImage}`}
+                />
+              </span>
+              <span>{order.Qty}</span>
+              <span>&#8377;{order.ArtWorkId.ArtWorkPrice}</span>
+              <span>{orderData?.OrderStatus}</span>
+              <span>{orderData?.OrderDate}</span>
             </div>
           );
         })}
+        <div className="custorderdetails-divs"></div>
       </div>
     </div>
   );
