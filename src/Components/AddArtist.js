@@ -9,8 +9,8 @@ import { useNavigate } from "react-router-dom";
 const AddArtist = () => {
   const navigator = useNavigate();
   const dispatcher = useDispatch("");
-
   const { UserData } = useSelector((state) => state.user);
+  
   // AddArtist
   const [FullName, setFullName] = useState("");
   const [Address, setAddress] = useState("");

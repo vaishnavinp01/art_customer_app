@@ -10,7 +10,7 @@ const CustOrderDetails = () => {
   // useEffect
   useEffect(() => {
     axios
-      .post("http://localhost:5000/artapi/custorderbyid", {
+      .post("http://localhost:5000/artapi/artorderbyid", {
         orderid: orderData._id,
       })
       .then((result) => {

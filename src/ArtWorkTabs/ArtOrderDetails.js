@@ -15,7 +15,7 @@ const ArtOrderDetails = () => {
         orderid: orderData._id,
       })
       .then((result) => {
-        setorderDetails(result.data.data);
+        setorderDetails(result.data);
         console.log("order", result.data);
       })
       .catch((err) => {
@@ -36,7 +36,7 @@ const ArtOrderDetails = () => {
       </p>
 
       <div>
-        <h6>User Name:{orderData?.CustId?.UserName}</h6>
+        <h6>User Name:{orderData?.data?.CustId?.UserName}</h6>
         <h6>User Email:{orderData?.CustId?.UserEmail}</h6>
         <h6>User Mobile No:{orderData?.CustId?.UserMobileNo}</h6>
         <h6>User Type:{orderData?.CustId?.User_Type}</h6>

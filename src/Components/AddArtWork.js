@@ -15,7 +15,7 @@ const AddArtWork = () => {
   const [Type, setType] = useState("");
   const [Image, setImage] = useState("");
   const [Price, setPrice] = useState(0);
-  const [FrameSize, setFrameSize] = useState(0);
+  const [FrameSize, setFrameSize] = useState("");
   const [CanvasType, setCanvasType] = useState("");
 
   const doArtWork = () => {
@@ -24,7 +24,7 @@ const AddArtWork = () => {
       ArtWorkType: Type,
       ArtWorkImage: Image,
       ArtWorkPrice: Number(Price),
-      ArtWorkFrameSize: Number(FrameSize),
+      ArtWorkFrameSize: FrameSize,
       ArtWorkCanvasType: CanvasType,
       ArtistId: UserData.data._id,
     };

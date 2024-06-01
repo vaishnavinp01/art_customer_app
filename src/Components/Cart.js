@@ -25,7 +25,7 @@ const Cart = () => {
     });
 
     const orderData = {
-      CustId: UserData.data._id,
+      CustId: UserData._id,
       OrderTotalAmount: CartTotalAmount,
       OrderItems: finalArtItems,
     };

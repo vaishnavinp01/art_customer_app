@@ -3,7 +3,7 @@ import { Tab, Tabs } from "react-bootstrap";
 import CustOrderTab from "../CustomerTabs/CustOrderTab";
 import CustProfileTab from "../CustomerTabs/CustProfileTab";
 
-const CustomersProfile = () => {
+const Customers = () => {
   return (
     <div>
       <h4>Customers Profile</h4>
@@ -19,4 +19,4 @@ const CustomersProfile = () => {
   );
 };
 
-export default CustomersProfile;
+export default Customers;

@@ -11,7 +11,19 @@ const Loading = () => {
       {/* <div class="loader"></div> */}
       {/* <div class="loader" style={{ color: "green;" }}></div> */}
       {/* <div class="loader" style={{ color: "red", width: "120px" }}></div> */}
-      <div class="loader" style={{ color: "purple" }} />
+      {/* <div class="loader" style={{ color: "purple" }} /> */}
+      <div class="spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   );
 };

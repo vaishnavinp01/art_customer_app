@@ -63,7 +63,7 @@ const Login = () => {
         console.log("DATA", result.data);
         dispatcher(login(result.data));
         navigator("/");
-        alert("Login Successfully");
+        //alert("Login Successfully");
       })
       .catch((err) => {
         console.log(err);

@@ -13,14 +13,12 @@ const ArtProfileTab = ({ data }) => {
           <Row className="profile-p">
             <Col>Adhar Card Image: </Col>
             <Col>
-              {" "}
               <img src={`http://localhost:5000${data?.ArtistAdharCardImage}`} />
             </Col>
           </Row>
           <Row className="profile-p">
             <Col> Handicap Certificate Image:</Col>
             <Col>
-              {" "}
               <img
                 src={`http://localhost:5000${data?.ArtistHandicapCertificateImage}`}
               />

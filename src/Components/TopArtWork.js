@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../CSS/TopArtWork.css";
 import axios from "axios";
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 import { addItem } from "../reduxwork/CartSlice";
 import { useDispatch } from "react-redux";
 
