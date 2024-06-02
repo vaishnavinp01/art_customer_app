@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { register } from "../reduxwork/UserSlice";
+import { addCustomerProfile, register } from "../reduxwork/UserSlice";
 import "../CSS/AddCustomer.css";
 import axios from "axios";
 import { Col, Container, Form, Row } from "react-bootstrap";
@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const AddCustomer = () => {
   const navigator = useNavigate();
-  const dispatcher = useDispatch([]);
+  const dispatcher = useDispatch();
   const { UserData } = useSelector((state) => state.user);
 
   const [Name, setName] = useState("");
@@ -38,7 +38,7 @@ const AddCustomer = () => {
       .post("http://localhost:5000/artapi/addcustomer", addData)
       .then((result) => {
         // console.log("DATA", result.data);
-        dispatcher(register(result.data));
+        dispatcher(addCustomerProfile(result.data));
         // alert("Register Successfully");
         navigator("/");
       })

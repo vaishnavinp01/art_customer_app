@@ -2,15 +2,20 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import "../CSS/ArtWorkTab.css";
+import { useSelector } from "react-redux";
 
 const ArtWorkTab = () => {
   // AllArtWorks
   const [AllArtWorks, setAllArtWorks] = useState([]);
+  const { UserData } = useSelector((state) => state.user);
 
   // AllArtWorks
   useEffect(() => {
+    const artIdData = {
+      ArtistId: UserData?.ArtistProfile?._id,
+    };
     axios
-      .get("http://localhost:5000/artapi/allartworks")
+      .post("http://localhost:5000/artapi/getartworksbyartistid", artIdData)
       .then((result) => {
         setAllArtWorks(result.data);
       })
@@ -21,7 +26,8 @@ const ArtWorkTab = () => {
 
   return (
     <div>
-      {/* <h4 className="artworktab-h4">ArtWorkTab</h4> */}
+      <h4 className="artworktab-h4">ArtistId: </h4>
+      <span>{UserData._id}</span>
       <Container>
         <Row>
           {AllArtWorks.map((art) => {
