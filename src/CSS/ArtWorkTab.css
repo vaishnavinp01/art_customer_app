@@ -1,16 +1,29 @@
+/* cardsetup */
 .artworktab-card {
-  display: flex;
-  margin-top: 5px;
+  /* display: flex; */
+  /* margin-top: 5px; */
+  margin-top: 10px;
+  height: 330px;
+  width: 250px;
+}
+.artworktab-image {
+  transition: transform 0.3s;
+  overflow: hidden;
+  height: 250px;
+  width: 100%;
+  position: relative;
 }
 .artworktab-img {
-  width: 100%;
+  width: 280px;
   height: 250px;
   object-fit: cover;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s;
 }
-.artworktab-body {
+.artworktab-img:hover {
+  transform: scale(1.1);
 }
 .artworktab-text {
   display: flex;

@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import "../CSS/TopArtist.css";
 import { Card, Col, Row } from "react-bootstrap";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const TopArtist = () => {
   // AllArtists
   const [AllArtists, setAllArtists] = useState([]);
-
+  const navigator = useNavigate();
   // AllArtists
   useEffect(() => {
     axios
@@ -27,10 +28,12 @@ const TopArtist = () => {
           return (
             <Col sm={12} md={8} lg={4}>
               <Card className="topartist-card">
-                <Card.Img
-                  className="topartist-img"
-                  src={`http://localhost:5000${art.ArtistProfile}`}
-                />
+                <div className="topartist-image">
+                  <Card.Img
+                    className="topartist-img"
+                    src={`http://localhost:5000${art.ArtistProfile}`}
+                  />
+                </div>
                 <Card.Body className="topartist-body">
                   <Card.Text className="topartist-text">
                     {art.ArtistFullName}
@@ -42,6 +45,14 @@ const TopArtist = () => {
                     {art.ArtistCity}
                   </Card.Text>
                 </Card.Body>
+                <Card.Footer>
+                  <button
+                    className="topartist-button"
+                    onClick={() => navigator("/artists")}
+                  >
+                    <span className="topartist-span">»</span>
+                  </button>
+                </Card.Footer>
               </Card>
             </Col>
           );

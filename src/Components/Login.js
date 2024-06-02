@@ -10,7 +10,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 
 const Login = () => {
   const navigator = useNavigate();
-  const dispatcher = useDispatch();
+  const dispatcher = useDispatch([]);
 
   // Register
   const [Name, setName] = useState("");
@@ -63,7 +63,7 @@ const Login = () => {
         console.log("DATA", result.data);
         dispatcher(login(result.data));
         navigator("/");
-        alert("Login Successfully");
+        //alert("Login Successfully");
       })
       .catch((err) => {
         console.log(err);
@@ -80,112 +80,116 @@ const Login = () => {
       <div className="Main_Container">
         <div className="logcontainer" id="logcontainer">
           <div className="form-container register-container">
-            <form action="#" className="Login_Form">
-              <h1 className="reg-h1">Register</h1>
-              <div className="social-container">
-                <a href="https://www.facebook.com/" className="social">
-                  <FaFacebook fontSize="25px" />
-                </a>
-                <a href="https://www.google.com/" className="social">
-                  <FcGoogle fontSize="25px" />
-                </a>
-                <a href="https://www.linkedin.com/" className="social">
-                  <AiFillLinkedin fontSize="25px" />
-                </a>
-              </div>
+            <div className="reg-div">
+              <form action="#" className="Login_Form">
+                <h1 className="reg-h1">Register</h1>
+                <div className="social-container">
+                  <a href="https://www.facebook.com/" className="social">
+                    <FaFacebook fontSize="25px" />
+                  </a>
+                  <a href="https://www.google.com/" className="social">
+                    <FcGoogle fontSize="25px" />
+                  </a>
+                  <a href="https://www.linkedin.com/" className="social">
+                    <AiFillLinkedin fontSize="25px" />
+                  </a>
+                </div>
 
-              <span className="reg-span">
-                or use your email for registration
-              </span>
-              <input
-                className="reg-input"
-                type="text"
-                placeholder="Name"
-                onChange={(e) => setName(e.target.value)}
-              />
-              <input
-                className="reg-input"
-                type="email"
-                placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <input
-                className="reg-input"
-                type="password"
-                placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <input
-                className="reg-input"
-                type="Number"
-                placeholder="Enter Mobile No"
-                onChange={(e) => setMobileNo(e.target.value)}
-              />
-              <div className="login-div">
+                <span className="reg-span">
+                  or use your email for registration
+                </span>
                 <input
-                  type="radio"
-                  value="Customer"
-                  name="status, color"
-                  className="reg-check"
-                  inline
-                  onChange={(e) => setType(e.target.value)}
+                  className="reg-input"
+                  type="text"
+                  placeholder="Enter Name"
+                  onChange={(e) => setName(e.target.value)}
                 />
-                <label className="reg-label" style={{ marginLeft: "5px" }}>
-                  Customer
-                </label>
                 <input
-                  type="radio"
-                  value="Artist"
-                  name="status, color"
-                  className="reg-check"
-                  inline
-                  onChange={(e) => setType(e.target.value)}
+                  className="reg-input"
+                  type="email"
+                  placeholder="Enter Email"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
-                <label className="reg-label" style={{ marginLeft: "5px" }}>
-                  Artist
-                </label>
-              </div>
+                <input
+                  className="reg-input"
+                  type="password"
+                  placeholder="Enter Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <input
+                  className="reg-input"
+                  type="Number"
+                  placeholder="Enter Mobile No"
+                  onChange={(e) => setMobileNo(e.target.value)}
+                />
+                <div className="login-div">
+                  <input
+                    type="radio"
+                    value="Customer"
+                    name="status, color"
+                    className="reg-check"
+                    inline
+                    onChange={(e) => setType(e.target.value)}
+                  />
+                  <label className="reg-label" style={{ marginLeft: "5px" }}>
+                    Customer
+                  </label>
+                  <input
+                    type="radio"
+                    value="Artist"
+                    name="status, color"
+                    className="reg-check"
+                    inline
+                    onChange={(e) => setType(e.target.value)}
+                  />
+                  <label className="reg-label" style={{ marginLeft: "5px" }}>
+                    Artist
+                  </label>
+                </div>
+              </form>
               <button className="reg-button" onClick={() => doRegister()}>
                 Register
               </button>
-            </form>
+            </div>
           </div>
 
           <div className="form-container login-container">
-            <form className="Login_Form" onSubmit={(e) => e.preventDefault()}>
-              <h1 className="reg-h1">Login</h1>
-              <div className="social-container">
-                <a href="https://www.facebook.com/" className="social">
-                  <FaFacebook fontSize="25px" />
-                </a>
-                <a href="https://www.google.com/" className="social">
-                  <FcGoogle fontSize="25px" />
-                </a>
-                <a href="https://www.linkedin.com/" className="social">
-                  <AiFillLinkedin fontSize="25px" />
-                </a>
-              </div>
+            <div className="log-div">
+              <form className="Login_Form" onSubmit={(e) => e.preventDefault()}>
+                <h1 className="reg-h1">Login</h1>
+                <div className="social-container">
+                  <a href="https://www.facebook.com/" className="social">
+                    <FaFacebook fontSize="25px" />
+                  </a>
+                  <a href="https://www.google.com/" className="social">
+                    <FcGoogle fontSize="25px" />
+                  </a>
+                  <a href="https://www.linkedin.com/" className="social">
+                    <AiFillLinkedin fontSize="25px" />
+                  </a>
+                </div>
 
-              <span className="reg-span">or use your account</span>
-              <input
-                className="reg-input"
-                type="email"
-                placeholder="Email"
-                onChange={(e) => setLoginEmail(e.target.value)}
-              />
-              <input
-                className="reg-input"
-                type="password"
-                placeholder="Password"
-                onChange={(e) => setLoginPassword(e.target.value)}
-              />
-              <a className="reg-a" href="#">
-                Forgot your password?
-              </a>
+                <span className="reg-span">or use your account</span>
+                <input
+                  className="reg-input"
+                  type="email"
+                  placeholder="Enter Email"
+                  onChange={(e) => setLoginEmail(e.target.value)}
+                />
+                <input
+                  className="reg-input"
+                  type="password"
+                  placeholder="Enter Password"
+                  onChange={(e) => setLoginPassword(e.target.value)}
+                />
+                <a className="reg-a" href="#">
+                  Forgot your password?
+                </a>
+              </form>
               <button className="reg-button" onClick={() => doLogin()}>
                 Login
               </button>
-            </form>
+            </div>
           </div>
 
           <div className="overlay-container">

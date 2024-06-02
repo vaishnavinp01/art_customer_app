@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Modal, Nav, Navbar } from "react-bootstrap";
 import { Link as RouteLink, useNavigate } from "react-router-dom";
 import "../CSS/MyNavBar.css";
-
+import img1 from "../images/Art_visions__1_-removebg-preview.png";
 import { IoHome } from "react-icons/io5";
 import { FcAbout } from "react-icons/fc";
 import { CgProfile, CgShoppingCart } from "react-icons/cg";
@@ -29,6 +29,7 @@ const ArtistNavBar = () => {
   // });
 
   const { UserData } = useSelector((state) => state.user);
+  const { CartItems } = useSelector((state) => state.cart);
   const navigator = useNavigate();
 
   return (
@@ -37,13 +38,16 @@ const ArtistNavBar = () => {
         className="nav-bar"
         expand="lg"
         style={{
-          backgroundColor: scrollChangeColor ? "#B8BEDD" : "",
+          backgroundColor: scrollChangeColor ? "#9C89B8" : "",
         }}
       >
         <Container className="nav-container">
           <Navbar.Brand className="nav-brand">
-            <FaArtstation className="artstation" />
-            <div className="nav-div">Art Visions</div>
+            {/* <div className="nav-div_brand"> */}
+              {/* <FaArtstation className="artstation" /> */}
+              <img className="nav-div" src={img1} />
+              <span className="nav-div">Art Visions</span>
+            {/* </div> */}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -75,7 +79,8 @@ const ArtistNavBar = () => {
               <Nav.Link>
                 <RouteLink className="nav-link" to="/cart">
                   <CgShoppingCart className="nav-icon" />
-                  <div className="div-links">Cart</div>
+                  <div className="div-linkss">Cart</div>
+                  <span className="nav-noOfCart"> {CartItems.length}</span>
                 </RouteLink>
               </Nav.Link>
             </Nav>
@@ -87,20 +92,20 @@ const ArtistNavBar = () => {
                   <div className="div-links">Login</div>
                 </RouteLink>
               </Nav.Link>
-              <Nav.Link>
-                <div className="nav-link">
-                  <CgProfile
-                    className="nav-icon"
-                    onClick={() => {
-                      if (UserData.data.User_Type == "Customer") {
-                        navigator("/customersprofile");
-                      } else {
-                        navigator("/artworks");
-                      }
-                    }}
-                  />
-                </div>
-              </Nav.Link>
+              {/* <Nav.Link> */}
+              <div className="nav-profile">
+                <CgProfile
+                  className="nav-icons"
+                  onClick={() => {
+                    if (UserData.User_Type == "Customer") {
+                      navigator("/customers");
+                    } else {
+                      navigator("/artworks");
+                    }
+                  }}
+                />
+              </div>
+              {/* </Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../CSS/TopArtWork.css";
 import axios from "axios";
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 import { addItem } from "../reduxwork/CartSlice";
 import { useDispatch } from "react-redux";
 
@@ -31,7 +31,7 @@ const TopArtWork = () => {
           return (
             <Col sm={12} md={8} lg={4}>
               <Card className="topartwork-card">
-                <div className="topimg">
+                <div className="topartwork-image">
                 <Card.Img
                   className="topartwork-img"
                   src={`http://localhost:5000${art.ArtWorkImage}`}
@@ -53,7 +53,7 @@ const TopArtWork = () => {
                 </Card.Body>
                 <Card.Footer>
                   <Card.Text>
-                    <Button
+                    <button
                       className="topartwork-button"
                       onClick={() => {
                         dispatcher(addItem(art));
@@ -61,7 +61,7 @@ const TopArtWork = () => {
                       }}
                     >
                       Add to Cart
-                    </Button>
+                    </button>
                   </Card.Text>
                 </Card.Footer>
               </Card>
