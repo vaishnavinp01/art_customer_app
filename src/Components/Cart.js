@@ -67,7 +67,7 @@ const Cart = () => {
                       className="cart-img"
                       src={`http://localhost:5000${art.ArtWorkImage}`}
                     />
-                    <h4>{art.ArtWorkId.ArtWorkName}</h4>
+                    <h4>{art.ArtWorkName}</h4>
                   </div>
                   <button
                     className="cart-btn"
