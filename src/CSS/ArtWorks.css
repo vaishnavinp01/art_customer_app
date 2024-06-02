@@ -5,7 +5,8 @@
   align-items: center;
 }
 .artworks-card {
-  width: clamp(200%, 50%, 500%);
+  /* width: clamp(200%, 50%, 500%); */
+  width: 100vw;
   height: 659px;
   /* background-color: #dddddd; */
   /* border-radius: 40px; */

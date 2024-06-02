@@ -4,14 +4,14 @@ import { Route, Routes } from "react-router-dom";
 import MainLayout from "./MainLayout";
 import Cart from "../Components/Cart";
 import Login from "../Components/Login";
-import AddArtWork from "../ArtWorkTabs/AddArtWork";
-import ArtWorks from "../ArtWorkTabs/ArtWorks";
-import ArtOrderDetails from "../ArtWorkTabs/ArtOrderDetails";
-import AddCustomer from "../CustomerTabs/AddCustomer";
-import Customers from "../CustomerTabs/Customers";
-import CustOrderDetails from "../CustomerTabs/CustOrderDetails";
-import AddArtist from "../ArtistTabs/AddArtist";
-import Artists from "../ArtistTabs/Artists";
+import AddArtWork from "../ArtWorkTab/AddArtWork";
+import ArtWorks from "../ArtWorkTab/ArtWorks";
+import ArtOrderDetails from "../ArtWorkTab/ArtOrderDetails";
+import AddCustomer from "../CustomerTab/AddCustomer";
+import Customers from "../CustomerTab/Customers";
+import CustOrderDetails from "../CustomerTab/CustOrderDetails";
+import AddArtist from "../ArtistTab/AddArtist";
+import Artists from "../ArtistTab/Artists";
 
 const MyRoutes = () => {
   return (

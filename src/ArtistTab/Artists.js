@@ -1,7 +1,7 @@
 import React from "react";
 import { Tab, Tabs } from "react-bootstrap";
-import ArtWorkTab from "../ArtistTabs/ArtWorkTab";
-import ArtistProfileTab from "../ArtistTabs/ArtistProfileTab";
+import ArtWorkTab from "../ArtistTab/ArtWorkTab";
+import ArtistProfileTab from "../ArtistTab/ArtistProfileTab";
 import "../CSS/Artists.css";
 import { useLocation } from "react-router-dom";
 

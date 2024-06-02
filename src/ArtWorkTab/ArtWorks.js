@@ -2,9 +2,9 @@ import React from "react";
 import "../CSS/ArtWorks.css";
 import { Card, Tab, Tabs } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import ArtWorkTab from "../ArtWorkTabs/ArtWorkTab";
-import ArtOrderTab from "../ArtWorkTabs/ArtOrderTab";
-import ArtProfileTab from "../ArtWorkTabs/ArtProfileTab";
+import ArtWorkTab from "../ArtWorkTab/ArtWorkTab";
+import ArtOrderTab from "../ArtWorkTab/ArtOrderTab";
+import ArtProfileTab from "../ArtWorkTab/ArtProfileTab";
 
 const ArtWorks = () => {
   const navigator = useNavigate();
