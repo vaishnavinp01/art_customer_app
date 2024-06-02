@@ -7,16 +7,16 @@ const ArtProfileTab = ({ data }) => {
     <div className="">
       {console.log(data)}
 
-      <h4 className="profile-h4">ArtProfileTab</h4>
-      <div className="profile-div">
-        <Card className="profile-card">
-          <Row className="profile-p">
+      <h4 className="artprofiletab-h4">ArtProfileTab</h4>
+      <div className="artprofiletab-div">
+        <Card className="artprofiletab-card">
+          <Row className="artprofiletab-p">
             <Col>Adhar Card Image: </Col>
             <Col>
               <img src={`http://localhost:5000${data?.ArtistAdharCardImage}`} />
             </Col>
           </Row>
-          <Row className="profile-p">
+          <Row className="artprofiletab-p">
             <Col> Handicap Certificate Image:</Col>
             <Col>
               <img
@@ -25,35 +25,35 @@ const ArtProfileTab = ({ data }) => {
             </Col>
           </Row>
         </Card>
-        <Card className="profile-cards">
-          <p className="profile-p">
+        <Card className="artprofiletab-cards">
+          <p className="artprofiletab-p">
             <span>Name:</span> {data?.ArtistFullName}
           </p>
-          <p className="profile-p">
+          <p className="artprofiletab-p">
             <span>Address:</span>
             {data?.ArtistAddress}
           </p>
-          <p className="profile-p">
+          <p className="artprofiletab-p">
             <span>City:</span> {data?.ArtistCity}
           </p>
-          <p className="profile-p">
+          <p className="artprofiletab-p">
             <span>Mobile No: </span>
             {data?.ArtistMobileNo}
           </p>
-          <p className="profile-p">
+          <p className="artprofiletab-p">
             <span>Email:</span> {data?.ArtistEmail}
           </p>
-          <p className="profile-p">
+          <p className="artprofiletab-p">
             <span>State:</span> {data?.ArtistState}
           </p>
-          <p className="profile-p">
+          <p className="artprofiletab-p">
             <span>Pin Code: </span>
             {data?.ArtistPincode}
           </p>
-          <p className="profile-p">
+          <p className="artprofiletab-p">
             <span>Adhar Card No:</span> {data?.ArtistAdharCardNo}
           </p>
-          <p className="profile-p">
+          <p className="artprofiletab-p">
             <span>IsVerified: </span>
             {data?.IsVerified}
           </p>

@@ -21,24 +21,26 @@ const ArtWorkTab = () => {
 
   return (
     <div>
-      <h4 className="artworktab-h4">ArtWorkTab</h4>
+      {/* <h4 className="artworktab-h4">ArtWorkTab</h4> */}
       <Container>
         <Row>
           {AllArtWorks.map((art) => {
             return (
-              <Col sm={12} md={8} lg={4}>
+              <Col sm={12} md={9} lg={3}>
                 <Card className="artworktab-card">
-                  <Card.Img
-                    className="artworktab-img"
-                    src={`http://localhost:5000${art.ArtWorkImage}`}
-                  />
+                  <div className="artworktab-image">
+                    <Card.Img
+                      className="artworktab-img"
+                      src={`http://localhost:5000${art.ArtWorkImage}`}
+                    />
+                  </div>
                   <Card.Body className="artworktab-body">
                     <Card.Text className="artworktab-text">
                       {art.ArtWorkName}
                     </Card.Text>
                     <div>
                       <Card.Subtitle className="artworktab-text">
-                      &#8377;{art.ArtWorkPrice}
+                        &#8377;{art.ArtWorkPrice}
                       </Card.Subtitle>
                     </div>
                     <Card.Text className="artworktab-text">

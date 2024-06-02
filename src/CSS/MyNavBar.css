@@ -16,6 +16,7 @@
 .nav-brand {
   display: flex;
   flex-direction: row;
+  margin-right: 150px;
   /* margin-top: 50px; */
 }
 /* .artstation {
@@ -90,6 +91,14 @@
 .div-linkss:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+.ms-auto{
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+}
+.nav-icons{
+  margin-top: 20px;
 }
 /* .nav-bar {
   position: fixed;

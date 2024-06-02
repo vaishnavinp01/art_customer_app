@@ -93,11 +93,11 @@ const ArtistNavBar = () => {
                 </RouteLink>
               </Nav.Link>
               {/* <Nav.Link> */}
-              <div className="nav-link">
+              <div className="nav-profile">
                 <CgProfile
-                  className="nav-icon"
+                  className="nav-icons"
                   onClick={() => {
-                    if (UserData.User_Type === "Customer") {
+                    if (UserData.User_Type == "Customer") {
                       navigator("/customers");
                     } else {
                       navigator("/artworks");

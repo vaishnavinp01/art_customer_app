@@ -168,6 +168,7 @@ const AddArtist = () => {
                 onChange={(e) => setCity(e.target.value)}
               >
                 <option className="addartist-option">Yawal</option>
+                <option className="addartist-option">Bhusawal</option>
                 <option className="addartist-option">Jalgaon</option>
                 <option className="addartist-option">Mahasamund</option>
                 <option className="addartist-option">Aurangabad</option>

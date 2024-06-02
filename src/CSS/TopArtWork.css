@@ -40,7 +40,7 @@
   /* text-align: center; */
   /* text-decoration: none; */
   color: #fff;
-  background-color: #c55acb;
+  background-color: #8F8FB6;
   border: 2px solid #000;
   border-radius: 10px;
   box-shadow: 5px 5px 0px #000;
@@ -50,9 +50,9 @@
 
 .topartwork-button:hover {
   background-color: #fff;
-  color: #c55acb;
-  border: 2px solid #c55acb;
-  box-shadow: 5px 5px 0px #c55acb;
+  color: #8F8FB6;
+  border: 2px solid #8F8FB6;
+  box-shadow: 5px 5px 0px #8F8FB6;
 }
 
 .topartwork-button:active {

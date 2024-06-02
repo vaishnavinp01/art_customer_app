@@ -7,7 +7,6 @@ import {
   incrementQuantity,
 } from "../reduxwork/CartSlice";
 import axios from "axios";
-import { BiMinus, BiPlus } from "react-icons/bi";
 import { register } from "../reduxwork/UserSlice";
 
 const Cart = () => {
@@ -69,7 +68,7 @@ const Cart = () => {
                       dispatcher(decrementQuantity({ artid }));
                     }}
                   >
-                    <BiMinus />
+                    -
                   </button>
                   <span className="cart-spans">{art.quantity}</span>
                   <button
@@ -78,7 +77,7 @@ const Cart = () => {
                       dispatcher(incrementQuantity({ artid }));
                     }}
                   >
-                    <BiPlus />
+                    +
                   </button>
                 </div>
                 <span>&#8377;{art.ArtWorkPrice}</span>

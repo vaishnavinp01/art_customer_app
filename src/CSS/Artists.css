@@ -5,11 +5,11 @@
   align-items: center;
 }
 .artists-card {
-  /* width: clamp(428%, 990%, 990%); */
-  width: 100vw;
-  height: 658px;
+  width: clamp(200%, 50%, 500%);
+  /* width: 100vw; */
+  height: 659px;
   /* background-color: #dddddd; */
-  border-radius: 35px;
+  /* border-radius: 35px; */
   /* border: 1px solid #4f46e5; */
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 
@@ -29,7 +29,21 @@
   display: flex;
   align-items: center;
   position: absolute;
-  inset: calc(100% - 75px) 70px auto auto;
+  inset: calc(100% - 75px) 65px auto auto;
+}
+.artists-names {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* color: var(--primary-color); */
+  background-color: aliceblue;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  padding: 5px 25px;
+  border-radius: 50px 0px 50px 0;
+  transform: translateX(-10px);
+}
+.page-titles {
+  color: black;
 }
 .artists-img {
   width: 150px;
