@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Modal, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link as RouteLink, useNavigate } from "react-router-dom";
 import "../CSS/MyNavBar.css";
 import img1 from "../images/Art_visions__1_-removebg-preview.png";
@@ -7,7 +7,6 @@ import { IoHome } from "react-icons/io5";
 import { FcAbout } from "react-icons/fc";
 import { CgProfile, CgShoppingCart } from "react-icons/cg";
 import { BsPersonWorkspace } from "react-icons/bs";
-import { FaArtstation } from "react-icons/fa";
 import { GrArticle } from "react-icons/gr";
 import { BiLogIn } from "react-icons/bi";
 import { Link } from "react-scroll";
@@ -24,9 +23,6 @@ const ArtistNavBar = () => {
     }
   };
   window.addEventListener("scroll", ChangeBackground);
-  // useEffect(() => {
-  //   console.log("user", UserData.data.User_Type);
-  // });
 
   const { UserData } = useSelector((state) => state.user);
   const { CartItems } = useSelector((state) => state.cart);
@@ -43,11 +39,8 @@ const ArtistNavBar = () => {
       >
         <Container className="nav-container">
           <Navbar.Brand className="nav-brand">
-            {/* <div className="nav-div_brand"> */}
-              {/* <FaArtstation className="artstation" /> */}
               <img className="nav-div" src={img1} />
               <span className="nav-div">Art Visions</span>
-            {/* </div> */}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -92,7 +85,6 @@ const ArtistNavBar = () => {
                   <div className="div-links">Login</div>
                 </RouteLink>
               </Nav.Link>
-              {/* <Nav.Link> */}
               <div className="nav-profile">
                 <CgProfile
                   className="nav-icons"
@@ -105,7 +97,6 @@ const ArtistNavBar = () => {
                   }}
                 />
               </div>
-              {/* </Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>

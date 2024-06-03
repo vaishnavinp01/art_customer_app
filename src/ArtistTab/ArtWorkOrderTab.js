@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Modal, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import "../ArtistCSS/ArtWorkOrderTab.css";
 
 const ArtOrderTab = () => {
   // AllOrders

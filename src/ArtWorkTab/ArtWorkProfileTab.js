@@ -1,22 +1,22 @@
 import React from "react";
-import "../CSS/ArtProfileTab.css";
+import "../ArtWorkCSS/ArtWorkProfileTab.css";
 import { Card, Col, Row } from "react-bootstrap";
 
-const ArtProfileTab = ({ data }) => {
+const ArtistProfileTab = ({ data }) => {
   return (
     <div className="">
       {console.log(data)}
 
-      <h4 className="artprofiletab-h4">ArtProfileTab</h4>
-      <div className="artprofiletab-div">
-        <Card className="artprofiletab-card">
-          <Row className="artprofiletab-p">
+      <h4 className="artistprofiletab-h4">ArtProfileTab</h4>
+      <div className="artistprofiletab-div">
+        <Card className="artistprofiletab-card">
+          <Row className="artistprofiletab-p">
             <Col>Adhar Card Image: </Col>
             <Col>
               <img src={`http://localhost:5000${data?.ArtistAdharCardImage}`} />
             </Col>
           </Row>
-          <Row className="artprofiletab-p">
+          <Row className="artistprofiletab-p">
             <Col> Handicap Certificate Image:</Col>
             <Col>
               <img
@@ -25,35 +25,35 @@ const ArtProfileTab = ({ data }) => {
             </Col>
           </Row>
         </Card>
-        <Card className="artprofiletab-cards">
-          <p className="artprofiletab-p">
+        <Card className="artistprofiletab-cards">
+          <p className="artistprofiletab-p">
             <span>Name:</span> {data?.ArtistFullName}
           </p>
-          <p className="artprofiletab-p">
+          <p className="artistprofiletab-p">
             <span>Address:</span>
             {data?.ArtistAddress}
           </p>
-          <p className="artprofiletab-p">
+          <p className="artistprofiletab-p">
             <span>City:</span> {data?.ArtistCity}
           </p>
-          <p className="artprofiletab-p">
+          <p className="artistprofiletab-p">
             <span>Mobile No: </span>
             {data?.ArtistMobileNo}
           </p>
-          <p className="artprofiletab-p">
+          <p className="artistprofiletab-p">
             <span>Email:</span> {data?.ArtistEmail}
           </p>
-          <p className="artprofiletab-p">
+          <p className="artistprofiletab-p">
             <span>State:</span> {data?.ArtistState}
           </p>
-          <p className="artprofiletab-p">
+          <p className="artistprofiletab-p">
             <span>Pin Code: </span>
             {data?.ArtistPincode}
           </p>
-          <p className="artprofiletab-p">
+          <p className="artistprofiletab-p">
             <span>Adhar Card No:</span> {data?.ArtistAdharCardNo}
           </p>
-          <p className="artprofiletab-p">
+          <p className="artistprofiletab-p">
             <span>IsVerified: </span>
             {data?.IsVerified}
           </p>
@@ -63,4 +63,4 @@ const ArtProfileTab = ({ data }) => {
   );
 };
 
-export default ArtProfileTab;
+export default ArtistProfileTab;

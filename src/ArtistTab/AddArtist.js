@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import "../CSS/AddArtist.css";
+import { Col, Container, Form, Row } from "react-bootstrap";
+import "../ArtistCSS/AddArtist.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addArtistProfile, register } from "../reduxwork/UserSlice";
+import { addArtistProfile } from "../reduxwork/UserSlice";
 import { useNavigate } from "react-router-dom";
 
 const AddArtist = () => {
@@ -37,15 +37,12 @@ const AddArtist = () => {
       ArtistAdharCardImage: AdharCardImage,
       ArtistHandicapCertificateImage: HandicapCertificateImage,
       ArtistProfile: Profile,
-      UserId: UserData._id,
+      UserId: UserData?.ArtistProfile?._id,
     };
-    // console.log(addData)
     axios
       .post("http://localhost:5000/artapi/addartist", addData)
       .then((result) => {
-        // console.log("DATA", result.data);
         dispatcher(addArtistProfile(result.data));
-        // alert("Register Successfully");
         navigator("/");
       })
       .catch((err) => {

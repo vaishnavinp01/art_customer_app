@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import "../CSS/AddArtWork.css";
+import "../ArtWorkCSS/AddArtWork.css";
 import { useNavigate } from "react-router-dom";
 
 const AddArtWork = () => {
@@ -29,8 +29,6 @@ const AddArtWork = () => {
     axios
       .post("http://localhost:5000/artapi/addartwork", addData)
       .then((result) => {
-        // console.log("DATA", result.data);
-        alert("Register Successfully");
         navigator("/artworks");
       })
       .catch((err) => {

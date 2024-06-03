@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import "../CSS/CustOrderDetails.css";
+import "../CustomerCSS/CustOrderDetails.css";
 const CustOrderDetails = () => {
   // useLocation
   const orderData = useLocation().state;

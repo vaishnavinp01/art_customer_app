@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addCustomerProfile, register } from "../reduxwork/UserSlice";
-import "../CSS/AddCustomer.css";
+import { addCustomerProfile } from "../reduxwork/UserSlice";
+import "../CustomerCSS/AddCustomer.css";
 import axios from "axios";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +10,7 @@ const AddCustomer = () => {
   const navigator = useNavigate();
   const dispatcher = useDispatch();
   const { UserData } = useSelector((state) => state.user);
-
+  // useState
   const [Name, setName] = useState("");
   const [MobileNo, setMobileNo] = useState(0);
   const [Address, setAddress] = useState("");
@@ -20,7 +20,7 @@ const AddCustomer = () => {
   const [PinCode, setPinCode] = useState(0);
   const [Email, setEmail] = useState("");
   const [Profile, setProfile] = useState("");
-
+  // doCustomer
   const doCustomer = () => {
     const addData = {
       CustomerName: Name,
@@ -32,21 +32,18 @@ const AddCustomer = () => {
       CustomerPinCode: Number(PinCode),
       CustomerEmail: Email,
       CustomerProfile: Profile,
-      UserId: UserData._id,
+      UserId: UserData?.CustomerProfile?._id,
     };
     axios
       .post("http://localhost:5000/artapi/addcustomer", addData)
       .then((result) => {
-        // console.log("DATA", result.data);
         dispatcher(addCustomerProfile(result.data));
-        // alert("Register Successfully");
         navigator("/");
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
   // Upload Image
   async function uploadProfile(e) {
     const imgData = new FormData();

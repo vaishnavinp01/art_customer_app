@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import "../CSS/CustOrderTab.css";
+import "../CustomerCSS/CustOrderTab.css";
 import { useDispatch, useSelector } from "react-redux";
 import register from "../reduxwork/UserSlice";
 
