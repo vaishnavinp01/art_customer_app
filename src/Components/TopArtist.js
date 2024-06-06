@@ -8,10 +8,11 @@ const TopArtist = () => {
   // AllArtists
   const [AllArtists, setAllArtists] = useState([]);
   const navigator = useNavigate();
+
   // AllArtists
   useEffect(() => {
     axios
-      .get("http://localhost:5000/artapi/allartists")
+      .get("http://localhost:5000/artapi/getapprovedartist")
       .then((result) => {
         setAllArtists(result.data);
       })

@@ -1,13 +1,17 @@
 .artists-container {
   height: 100vh;
+  width:  12500px;
+  position: fixed;
+  /* margin-left: 10px; */
+  margin-right: 500px;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
 }
 .artists-card {
-  width: clamp(200%, 50%, 500%);
+  /* width: clamp(200%, 50%, 500%); */
   /* width: 100vw; */
-  height: 659px;
+  height: 670px;
   /* background-color: #dddddd; */
   /* border-radius: 35px; */
   /* border: 1px solid #4f46e5; */
