@@ -18,7 +18,7 @@ const CustOrderTab = () => {
     try {
       const result = axios.post(
         "http://localhost:5000/artapi/ordersbycustid",
-        custOrderId
+        custOrderId 
       );
       console.log("order", result.data);
       setCustOrders(result.data);
