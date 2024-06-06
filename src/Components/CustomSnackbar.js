@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import Snackbar from '@mui/material/Snackbar';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
-import Alert from '@mui/material/Alert';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import React, { useState } from "react";
+import Snackbar from "@mui/material/Snackbar";
+import IconButton from "@mui/material/IconButton";
+import Alert from "@mui/material/Alert";
+import { FaCheckCircle } from "react-icons/fa";
+import { CgClose } from "react-icons/cg";
 
 const CustomSnackbar = () => {
   const [open, setOpen] = useState(false);
@@ -13,7 +13,7 @@ const CustomSnackbar = () => {
   };
 
   const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
+    if (reason === "clickaway") {
       return;
     }
     setOpen(false);
@@ -26,12 +26,12 @@ const CustomSnackbar = () => {
         open={open}
         autoHideDuration={6000}
         onClose={handleClose}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
       >
         <Alert
           onClose={handleClose}
           severity="success"
-          icon={<CheckCircleIcon fontSize="inherit" />}
+          icon={<FaCheckCircle fontSize="inherit" />}
           action={
             <IconButton
               aria-label="close"
@@ -39,7 +39,7 @@ const CustomSnackbar = () => {
               size="small"
               onClick={handleClose}
             >
-              <CloseIcon fontSize="inherit" />
+              <CgClose fontSize="inherit" />
             </IconButton>
           }
         >

@@ -100,7 +100,7 @@ const ArtistNavBar = () => {
                 <CgProfile
                   className="nav-icon nav-links"
                   onClick={() => {
-                    if (UserData.User_Type == "Customer") {
+                    if (UserData.User_Type === "Customer") {
                       navigator("/customers");
                     } else {
                       navigator("/artists");

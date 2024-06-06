@@ -12,6 +12,9 @@ import {
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillLinkedin } from "react-icons/ai";
+import { Alert, IconButton, Snackbar } from "@mui/material";
+import { FaRegCheckCircle } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
 
 const Login = () => {
   const navigator = useNavigate();
@@ -177,7 +180,7 @@ const Login = () => {
                   </label>
                 </div>
               </form>
-              <button className="reg-button" onClick={() => doRegister()}>
+              <button className="reg-button" onClick={doRegister}>
                 Register
               </button>
             </div>
@@ -216,7 +219,7 @@ const Login = () => {
                   Forgot your password?
                 </a>
               </form>
-              <button className="reg-button" onClick={() => doLogin()}>
+              <button className="reg-button" onClick={doLogin}>
                 Login
               </button>
             </div>

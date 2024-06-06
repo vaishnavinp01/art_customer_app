@@ -10,7 +10,6 @@ import Alert from "@mui/material/Alert";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 
-
 const TopArtWork = () => {
   // AllArtWorks
   const [AllArtWorks, setAllArtWorks] = useState([]);
