@@ -1,16 +1,16 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import "../CSS/AddArtist.css";
+import { Col, Container, Form, Row } from "react-bootstrap";
+import "../ArtistCSS/AddArtist.css";
 import { useDispatch, useSelector } from "react-redux";
-import { register } from "../reduxwork/UserSlice";
+import { addArtistProfile } from "../reduxwork/UserSlice";
 import { useNavigate } from "react-router-dom";
 
 const AddArtist = () => {
   const navigator = useNavigate();
-  const dispatcher = useDispatch("");
+  const dispatcher = useDispatch();
   const { UserData } = useSelector((state) => state.user);
-  
+
   // AddArtist
   const [FullName, setFullName] = useState("");
   const [Address, setAddress] = useState("");
@@ -37,15 +37,12 @@ const AddArtist = () => {
       ArtistAdharCardImage: AdharCardImage,
       ArtistHandicapCertificateImage: HandicapCertificateImage,
       ArtistProfile: Profile,
-      UserId: UserData._id,
+      UserId: UserData?.ArtistProfile?._id,
     };
-    // console.log(addData)
     axios
       .post("http://localhost:5000/artapi/addartist", addData)
       .then((result) => {
-        // console.log("DATA", result.data);
-        dispatcher(register(result.data));
-        // alert("Register Successfully");
+        dispatcher(addArtistProfile(result.data));
         navigator("/");
       })
       .catch((err) => {
@@ -101,126 +98,128 @@ const AddArtist = () => {
   return (
     <div className="addartist-main">
       <div className="addartist-container">
-      <h4 className="addartist">AddArtist</h4>
-      <Container>
-        <Form >
-          <Row >
-            <Col >
-              <label className="addartist-label">Full Name</label>
-              <input
-                className="addartist-input"
-                type="text"
-                placeholder="Name"
-                onChange={(e) => setFullName(e.target.value)}
-              />
-            </Col>
-            <Col >
-              <label className="addartist-label">Address</label>
-              <input
-                className="addartist-input"
-                type="text"
-                placeholder="Address"
-                onChange={(e) => setAddress(e.target.value)}
-              />
-            </Col>
-            <Col >
-              <label className="addartist-label">Mobile No</label>
-              <input
-                className="addartist-input"
-                type="number"
-                placeholder="Mobile No"
-                onChange={(e) => setMobileNo(e.target.value)}
-              />
-            </Col>
-            <Col>
-            <label className="addartist-label">Email</label>
-          <input
-            className="addartist-input"
-            type="email"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          </Col>
-           <Col>
-          <label className="addartist-label">Adhar Card No</label>
-          <input
-            className="addartist-input"
-            type="number"
-            placeholder="Adhar Card No"
-            onChange={(e) => setAdharCardNo(e.target.value)}
-          />
-        </Col>
-        <Col>
-        <label className="addartist-label">Pin Code</label>
-          <input
-            className="addartist-input"
-            type="number"
-            placeholder="Pin Code"
-            onChange={(e) => setPinCode(e.target.value)}
-          />
-        </Col>
-        <Col >
-              <label className="addartist-label">City</label>
-              <select
-                className="addartist-input"
-                type="text"
-                placeholder="City"
-                onChange={(e) => setCity(e.target.value)}
-              >
-                <option className="addartist-option">Yawal</option>
-                <option className="addartist-option">Bhusawal</option>
-                <option className="addartist-option">Jalgaon</option>
-                <option className="addartist-option">Mahasamund</option>
-                <option className="addartist-option">Aurangabad</option>
-                <option className="addartist-option">Jaipur</option>
-              </select>
-            </Col>
-            <Col>
-            <label className="addartist-label">State</label>
-          <select
-            className="addartist-input"
-            type="state"
-            placeholder="State"
-            onChange={(e) => setState(e.target.value)}
-          >
-            <option className="addartist-option">Maharashtra</option>
-            <option className="addartist-option">Chhattisgarh</option>
-            <option className="addartist-option">Gujarat</option>
-            <option className="addartist-option">Rajasthan</option>
-          </select>
-            </Col>
-            <Col>
-            <label className="addartist-label">Adhar Card Image</label>
-            <input
-            className="addartist-file"
-            type="file"
-            onChange={uploadAdhar}
-            />
-            </Col>
-           <Col>
-           <label className="addartist-label">Handicap Certificate Image</label>
-          <input
-            className="addartist-file"
-            type="file"
-            onChange={uploadCertificate}
-          />
-         </Col>
-         <Col>
-         <label className="addartist-label">Profile</label>
-          <input
-            className="addartist-file"
-            type="file"
-            onChange={uploadProfile}
-          />
-       </Col>
-        </Row>
-      </Form>
-        <button className="addartist-button" onClick={() => doArtist()}>
-          Submit
-        </button>
-      </Container>
+        <h4 className="addartist">AddArtist</h4>
+        <Container>
+          <Form>
+            <Row>
+              <Col>
+                <label className="addartist-label">Full Name</label>
+                <input
+                  className="addartist-input"
+                  type="text"
+                  placeholder="Name"
+                  onChange={(e) => setFullName(e.target.value)}
+                />
+              </Col>
+              <Col>
+                <label className="addartist-label">Address</label>
+                <input
+                  className="addartist-input"
+                  type="text"
+                  placeholder="Address"
+                  onChange={(e) => setAddress(e.target.value)}
+                />
+              </Col>
+              <Col>
+                <label className="addartist-label">Mobile No</label>
+                <input
+                  className="addartist-input"
+                  type="number"
+                  placeholder="Mobile No"
+                  onChange={(e) => setMobileNo(e.target.value)}
+                />
+              </Col>
+              <Col>
+                <label className="addartist-label">Email</label>
+                <input
+                  className="addartist-input"
+                  type="email"
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </Col>
+              <Col>
+                <label className="addartist-label">Adhar Card No</label>
+                <input
+                  className="addartist-input"
+                  type="number"
+                  placeholder="Adhar Card No"
+                  onChange={(e) => setAdharCardNo(e.target.value)}
+                />
+              </Col>
+              <Col>
+                <label className="addartist-label">Pin Code</label>
+                <input
+                  className="addartist-input"
+                  type="number"
+                  placeholder="Pin Code"
+                  onChange={(e) => setPinCode(e.target.value)}
+                />
+              </Col>
+              <Col>
+                <label className="addartist-label">City</label>
+                <select
+                  className="addartist-input"
+                  type="text"
+                  placeholder="City"
+                  onChange={(e) => setCity(e.target.value)}
+                >
+                  <option className="addartist-option">Yawal</option>
+                  <option className="addartist-option">Bhusawal</option>
+                  <option className="addartist-option">Jalgaon</option>
+                  <option className="addartist-option">Mahasamund</option>
+                  <option className="addartist-option">Aurangabad</option>
+                  <option className="addartist-option">Jaipur</option>
+                </select>
+              </Col>
+              <Col>
+                <label className="addartist-label">State</label>
+                <select
+                  className="addartist-input"
+                  type="state"
+                  placeholder="State"
+                  onChange={(e) => setState(e.target.value)}
+                >
+                  <option className="addartist-option">Maharashtra</option>
+                  <option className="addartist-option">Chhattisgarh</option>
+                  <option className="addartist-option">Gujarat</option>
+                  <option className="addartist-option">Rajasthan</option>
+                </select>
+              </Col>
+              <Col>
+                <label className="addartist-label">Adhar Card Image</label>
+                <input
+                  className="addartist-file"
+                  type="file"
+                  onChange={uploadAdhar}
+                />
+              </Col>
+              <Col>
+                <label className="addartist-label">
+                  Handicap Certificate Image
+                </label>
+                <input
+                  className="addartist-file"
+                  type="file"
+                  onChange={uploadCertificate}
+                />
+              </Col>
+              <Col>
+                <label className="addartist-label">Profile</label>
+                <input
+                  className="addartist-file"
+                  type="file"
+                  onChange={uploadProfile}
+                />
+              </Col>
+            </Row>
+          </Form>
+          <button className="addartist-button" onClick={() => doArtist()}>
+            Submit
+          </button>
+        </Container>
+      </div>
     </div>
-     </div>
   );
 };
 

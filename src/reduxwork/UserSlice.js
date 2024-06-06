@@ -23,8 +23,17 @@ const UserSlice = createSlice({
     logout: (state) => {
       state.isLogin = false;
     },
+
+    addArtistProfile: (state, action) => {
+      state.UserData = { ...state.UserData, ArtistProfile: action.payload };
+    },
+
+    addCustomerProfile: (state, action) => {
+      state.UserData = { ...state.UserData, CustomerProfile: action.payload };
+    },
   },
 });
 
-export const { login, register, logout } = UserSlice.actions;
+export const { login, register, logout, addArtistProfile, addCustomerProfile } =
+  UserSlice.actions;
 export default UserSlice.reducer;

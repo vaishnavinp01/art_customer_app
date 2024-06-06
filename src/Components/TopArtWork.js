@@ -8,7 +8,6 @@ import { useDispatch } from "react-redux";
 const TopArtWork = () => {
   // AllArtWorks
   const [AllArtWorks, setAllArtWorks] = useState([]);
-
   const dispatcher = useDispatch([]);
 
   // AllArtWorks
@@ -32,12 +31,12 @@ const TopArtWork = () => {
             <Col sm={12} md={8} lg={4}>
               <Card className="topartwork-card">
                 <div className="topartwork-image">
-                <Card.Img
-                  className="topartwork-img"
-                  src={`http://localhost:5000${art.ArtWorkImage}`}
-                />
+                  <Card.Img
+                    className="topartwork-img"
+                    src={`http://localhost:5000${art.ArtWorkImage}`}
+                  />
                 </div>
-               
+
                 <Card.Body className="topartwork-body">
                   <Card.Text className="topartwork-text">
                     {art.ArtWorkName}

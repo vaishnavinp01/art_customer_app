@@ -1,5 +1,5 @@
 import React from "react";
-import "../CSS/ArtWorks.css";
+import "../CustomerCSS/Customers.css";
 import { Card, Tab, Tabs } from "react-bootstrap";
 import CustOrderTab from "./CustOrderTab";
 import CustProfileTab from "../CustomerTab/CustOrderTab";

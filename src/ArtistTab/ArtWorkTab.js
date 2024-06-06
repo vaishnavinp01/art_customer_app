@@ -1,17 +1,23 @@
-import React, { useEffect, useState } from "react";
-import "../CSS/ArtistTab.css";
-import { Card, Col, Container, Row } from "react-bootstrap";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Card, Col, Container, Row } from "react-bootstrap";
+import "../ArtistCSS/ArtWorkTab.css";
+import { useSelector } from "react-redux";
 
 const ArtWorkTab = () => {
-  // AllArtists
-  const [AllArtists, setAllArtists] = useState([]);
-  // AllArtists
+  // AllArtWorks
+  const [AllArtWorks, setAllArtWorks] = useState([]);
+  const { UserData } = useSelector((state) => state.user);
+
+  // AllArtWorks
   useEffect(() => {
+    const artIdData = {
+      ArtistId: UserData?.ArtistProfile?._id,
+    };
     axios
-      .get("http://localhost:5000/artapi/allartists")
+      .post("http://localhost:5000/artapi/getartworksbyartistid", artIdData)
       .then((result) => {
-        setAllArtists(result.data);
+        setAllArtWorks(result.data);
       })
       .catch((err) => {
         console.log(err);
@@ -19,29 +25,32 @@ const ArtWorkTab = () => {
   }, []);
 
   return (
-    <div style={{ marginTop: "5px" }}>
-      {/* <h4 className="artisttab-h4">TopArtist</h4> */}
+    <div>
+      <h4 className="artworktab-h4">ArtistId: </h4>
+      <span>{UserData._id}</span>
       <Container>
         <Row>
-          {AllArtists.map((art) => {
+          {AllArtWorks.map((art) => {
             return (
               <Col sm={12} md={9} lg={3}>
-                <Card className="artisttab-card">
-                  <div className="artisttab-image">
+                <Card className="artworktab-card">
+                  <div className="artworktab-image">
                     <Card.Img
-                      className="artisttab-img"
-                      src={`http://localhost:5000${art.ArtistProfile}`}
+                      className="artworktab-img"
+                      src={`http://localhost:5000${art.ArtWorkImage}`}
                     />
                   </div>
-                  <Card.Body className="artisttab-body">
-                    <Card.Text className="artisttab-text">
-                      {art.ArtistFullName}
+                  <Card.Body className="artworktab-body">
+                    <Card.Text className="artworktab-text">
+                      {art.ArtWorkName}
                     </Card.Text>
-                    <Card.Text className="artisttab-text">
-                      {art.ArtistEmail}
-                    </Card.Text>
-                    <Card.Text className="artisttab-text">
-                      {art.ArtistCity}
+                    <div>
+                      <Card.Subtitle className="artworktab-text">
+                        &#8377;{art.ArtWorkPrice}
+                      </Card.Subtitle>
+                    </div>
+                    <Card.Text className="artworktab-text">
+                      {art.ArtWorkFrameSize}
                     </Card.Text>
                   </Card.Body>
                 </Card>

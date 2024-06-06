@@ -1,5 +1,5 @@
 import React from "react";
-import "../CSS/CustProfileTab.css";
+import "../CustomerCSS/CustProfileTab.css";
 import { Card } from "react-bootstrap";
 
 const CustProfileTab = ({ data }) => {

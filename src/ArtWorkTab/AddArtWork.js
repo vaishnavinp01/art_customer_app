@@ -1,14 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Container, Row } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { register } from "../reduxwork/UserSlice";
-import "../CSS/AddArtWork.css";
+import { useSelector } from "react-redux";
+import "../ArtWorkCSS/AddArtWork.css";
 import { useNavigate } from "react-router-dom";
 
 const AddArtWork = () => {
   const { UserData } = useSelector((state) => state.user);
-  const dispatcher = useDispatch([]);
   const navigator = useNavigate();
 
   const [Name, setName] = useState("");
@@ -26,14 +24,11 @@ const AddArtWork = () => {
       ArtWorkPrice: Number(Price),
       ArtWorkFrameSize: FrameSize,
       ArtWorkCanvasType: CanvasType,
-      ArtistId: UserData._id,
+      ArtistId: UserData?.ArtistProfile?._id,
     };
     axios
       .post("http://localhost:5000/artapi/addartwork", addData)
       .then((result) => {
-        // console.log("DATA", result.data);
-        dispatcher(register(result.data));
-        alert("Register Successfully");
         navigator("/artworks");
       })
       .catch((err) => {
