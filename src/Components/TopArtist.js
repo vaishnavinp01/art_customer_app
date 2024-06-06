@@ -8,6 +8,7 @@ const TopArtist = () => {
   // AllArtists
   const [AllArtists, setAllArtists] = useState([]);
   const navigator = useNavigate();
+
   // AllArtists
   useEffect(() => {
     axios
@@ -48,7 +49,7 @@ const TopArtist = () => {
                 <Card.Footer>
                   <button
                     className="topartist-button"
-                    onClick={() => navigator("/artists")}
+                    onClick={() => navigator("/artworks")}
                   >
                     <span className="topartist-span">»</span>
                   </button>

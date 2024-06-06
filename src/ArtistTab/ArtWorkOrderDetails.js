@@ -11,7 +11,7 @@ const ArtOrderDetails = () => {
   // useEffect
   useEffect(() => {
     axios
-      .post("http://localhost:5000/artapi/artorderbyid", {
+      .post("http://localhost:5000/artapi/ordersbyartistid", {
         orderid: orderData._id,
       })
       .then((result) => {

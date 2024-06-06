@@ -71,7 +71,7 @@ const AddCustomer = () => {
                 <input
                   className="addcustomer-input"
                   type="text"
-                  placeholder="Name"
+                  placeholder="Enter Name"
                   onChange={(e) => setName(e.target.value)}
                 />
               </Col>
@@ -80,7 +80,7 @@ const AddCustomer = () => {
                 <input
                   className="addcustomer-input"
                   type="email"
-                  placeholder="Email"
+                  placeholder="Enter Email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </Col>
@@ -89,7 +89,7 @@ const AddCustomer = () => {
                 <input
                   className="addcustomer-input"
                   type="text"
-                  placeholder="Address"
+                  placeholder="Enter Address"
                   onChange={(e) => setAddress(e.target.value)}
                 />
               </Col>
@@ -98,7 +98,7 @@ const AddCustomer = () => {
                 <input
                   className="addcustomer-input"
                   type="number"
-                  placeholder="MobileNo"
+                  placeholder="Enter Mobile No"
                   onChange={(e) => setMobileNo(e.target.value)}
                 />
               </Col>
@@ -107,7 +107,7 @@ const AddCustomer = () => {
                 <input
                   className="addcustomer-input"
                   type="date"
-                  placeholder="DOB"
+                  placeholder="Enter DOB"
                   onChange={(e) => setDOB(e.target.value)}
                 />
               </Col>
@@ -116,7 +116,7 @@ const AddCustomer = () => {
                 <input
                   className="addcustomer-input"
                   type="number"
-                  placeholder="Pin Code"
+                  placeholder="Enter Pin Code"
                   onChange={(e) => setPinCode(e.target.value)}
                 />
               </Col>

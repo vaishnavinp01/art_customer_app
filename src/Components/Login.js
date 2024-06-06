@@ -3,7 +3,12 @@ import "../CSS/Login.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { register, login } from "../reduxwork/UserSlice";
+import {
+  register,
+  login,
+  addCustomerProfile,
+  addArtistProfile,
+} from "../reduxwork/UserSlice";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillLinkedin } from "react-icons/ai";
@@ -61,9 +66,34 @@ const Login = () => {
       .post("http://localhost:5000/artapi/dologin", addDatas)
       .then((result) => {
         console.log("DATA", result.data);
+        // console.log("res",result.data._id)
         dispatcher(login(result.data));
-        navigator("/");
-        //alert("Login Successfully");
+
+        const idData = {
+          UserId: result._id,
+        };
+        console.log("IDDATA", idData);
+        if (result.User_Type === "Customer") {
+          axios
+            .post("http://localhost:5000/artapi/getcustomerprofile", idData)
+            .then((result) => {
+              dispatcher(addCustomerProfile(result.data));
+              navigator("/");
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        } else {
+          axios
+            .post("http://localhost:5000/artapi/getartistprofile", idData)
+            .then((result) => {
+              dispatcher(addArtistProfile(result.data));
+              navigator("/");
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        }
       })
       .catch((err) => {
         console.log(err);
