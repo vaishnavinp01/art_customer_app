@@ -118,7 +118,7 @@ const AddArtist = () => {
         <h4 className="addartist">AddArtist</h4>
         <Container>
           <Form className="addartist-form">
-            <Row>
+            <Row> 
               <Col>
                 <label className="addartist-label">Full Name</label>
                 <input

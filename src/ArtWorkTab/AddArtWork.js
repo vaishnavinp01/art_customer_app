@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import "../ArtWorkCSS/AddArtWork.css";
 import { useNavigate } from "react-router-dom";
@@ -55,18 +55,63 @@ const AddArtWork = () => {
     <div>
       <Container className="addartwork-container">
         <div className="addartwork-div">
-          <form className="addartwork-form">
-            <Row>
-              <h4 className="addartwork-h4">AddArtWork</h4>
-              <label className="addartwork-label">Name</label>
-              <input
-                className="addartwork-input"
-                type="text"
-                placeholder="Enter Name"
-                onChange={(e) => setName(e.target.value)}
-              />
-              <label className="addartwork-label">Type</label>
-              <div>
+          <form>
+            <h3 style={{ textAlign: "center" }}>AddArtWork</h3>
+
+            <Row className="FormCol">
+              <Col>
+                <label className="addartwork-label">Name</label>
+              </Col>
+              <Col>
+                {" "}
+                <input
+                  className="addartwork-input"
+                  type="text"
+                  placeholder="Enter Name"
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </Col>
+            </Row>
+            <Row className="FormCol">
+              <Col>
+                <lable className="addartwork-label">Price</lable>
+              </Col>
+              <Col>
+                <input
+                  className="addartwork-input"
+                  type="number"
+                  placeholder="Enter Price"
+                  onChange={(e) => setPrice(e.target.value)}
+                />
+              </Col>
+            </Row>
+            <Row className="FormCol">
+              <Col>
+                <lable className="addartwork-label">Canvas Type</lable>
+                <select
+                  className="addartwork-select"
+                  onChange={(e) => setCanvasType(e.target.value)}
+                >
+                  <option>Canvas Paper</option>
+                  <option>Polyster Canvas</option>
+                  <option>Syntheric Canvas</option>
+                </select>
+              </Col>
+              <Col>
+                <label className="addartwork-label">Frame Size</label>
+                <select
+                  className="addartwork-select"
+                  onChange={(e) => setFrameSize(e.target.value)}
+                >
+                  <option>5"x7"</option>
+                  <option>8"x10"</option>
+                  <option>11"x14"</option>
+                </select>
+              </Col>
+            </Row>
+            <Row className="FormCol">
+              <Col>
+                <label className="addartwork-label">Type</label>
                 <input
                   type="radio"
                   value="Painting"
@@ -75,12 +120,7 @@ const AddArtWork = () => {
                   inline
                   onChange={(e) => setType(e.target.value)}
                 />
-                <label
-                  className="addartwork-label"
-                  style={{ marginLeft: "5px" }}
-                >
-                  Painting
-                </label>
+                <label className="addartwork-label">Painting</label>
                 <input
                   type="radio"
                   value="Drawing"
@@ -89,44 +129,16 @@ const AddArtWork = () => {
                   inline
                   onChange={(e) => setType(e.target.value)}
                 />
-                <label
-                  className="addartwork-label"
-                  style={{ marginLeft: "5px" }}
-                >
-                  Drawing
-                </label>
-              </div>
-              <label className="addartwork-label">Image</label>
-              <input
-                className="addartwork-file"
-                type="file"
-                onChange={uploadArtWork}
-              />
-              <label className="addartwork-label">Price</label>
-              <input
-                className="addartwork-input"
-                type="number"
-                placeholder="Enter Price"
-                onChange={(e) => setPrice(e.target.value)}
-              />
-              <label className="addartwork-label">Frame Size</label>
-              <select
-                className="addartwork-select"
-                onChange={(e) => setFrameSize(e.target.value)}
-              >
-                <option>5"x7"</option>
-                <option>8"x10"</option>
-                <option>11"x14"</option>
-              </select>
-              <label className="addartwork-label">Canvas Type</label>
-              <select
-                className="addartwork-select"
-                onChange={(e) => setCanvasType(e.target.value)}
-              >
-                <option>Canvas Paper</option>
-                <option>Polyster Canvas</option>
-                <option>Syntheric Canvas</option>
-              </select>
+                <label className="addartwork-label">Drawing</label>
+              </Col>
+              <Col style={{display:"block"}}>
+                <label className="addartwork-label">Image</label>
+                <input
+                  className="addartwork-file"
+                  type="file"
+                  onChange={uploadArtWork}
+                />
+              </Col>
             </Row>
           </form>
           <div className="addartwork-btn-div">

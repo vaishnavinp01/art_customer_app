@@ -1,42 +1,58 @@
-.addartwork-container {
-  background-color: burlywood;
-  width: 600px;
-  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.96);
-}
-.addartwork-div {
-  margin-top: 180px;
-}
-.addartwork-form {
-}
-.addartwork-label {
-  margin-left: 40px;
-}
-.addartwork-input {
-  width: 35vw;
+.addartwork-container{
   display: flex;
-  align-items: center;
+  height: 90vh;
   justify-content: center;
-  margin-left: 50px;
+  align-items: center;
 }
-.addartwork-check {
-  margin-left: 50px;
+.addartwork-div{
+  content: '';
+  max-width: 700px;
+  width: 100%;
+  background: #F4ACB7;
+  box-shadow:rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px ;
+  padding: 45px 50px;
+  border-radius: 5px;
+  height: 400px;
 }
-.addartwork-file {
-  /* width: 40vw; */
+.addartwork-container .addartwork-div{
+  font-size: 21px;
+  font-weight: 400;
+  position: relative;
+}
+.addartwork-container .addartwork-div::before{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background: linear-gradient(135deg , #71b7e6 , #9b59b6);
+}
+.FormCol{
+  margin-bottom: 16px;
+}
+/* .addartwork-container form .addartwork-label{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 40px;
-}
-.addartwork-select {
-  width: 35vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 50px;
-}
-.addartwork-button {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  margin-left: 50px;
-}
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+} */
+/* .addartwork-label .addartwork-input{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+} */
+/* .addartwork-label .addartwork-input input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+} */
+/* .addartwork-label .addartwork-input input:focus,
+.addartwork-label .addartwork-input input:valid{
+  border-radius: #9b59b6;
+} */
