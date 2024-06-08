@@ -1,17 +1,17 @@
-.artprofiletab-h4 {
+.artworkprofiletab-h4 {
   color: #000;
   font-weight: 500;
   margin: 30px 50px;
 }
-.artprofiletab-p {
+.artworkprofiletab-p {
   color: #039ce8;
 }
-.artprofiletab-div {
+.artworkprofiletab-div {
   display: flex;
   flex-direction: row;
   padding: 0 0 50px 200px;
 }
-.artprofiletab-card {
+.artworkprofiletab-card {
   /* margin-left: 20px; */
   /* margin-right: 50px; */
 
@@ -20,14 +20,14 @@
   /* width: 40px; */
   /* padding: 30px; */
 }
-.artprofiletab-cards {
+.artworkprofiletab-cards {
   /* margin-left: 50px; */
   /* margin-right: 20px; */
   /* height: 50%; */
   /* width: 35%; */
   /* padding: 50px; */
 }
-.artprofiletab-p span {
+.artworkprofiletab-p span {
   /* font-weight: 600; */
   color: black !important;
 }

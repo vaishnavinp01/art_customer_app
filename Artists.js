@@ -14,6 +14,12 @@ const Artists = () => {
         <div className="artists-card">
           <div className="artists-header">
             <div className="artists-profile">
+            {/* <button
+                onClick={() => navigator("/addartwork")}
+                className="artworks-button"
+              >
+                AddArtWork
+              </button> */}
               {/* <h5>UserId: </h5>{artistData._id} */}
               <div className="artists-names">
                 <h1 className="artists-username">

@@ -181,12 +181,12 @@ const AddArtist = () => {
                   placeholder="Enter City"
                   onChange={(e) => setCity(e.target.value)}
                 >
-                  <option className="addartist-option">Yawal</option>
-                  <option className="addartist-option">Bhusawal</option>
-                  <option className="addartist-option">Jalgaon</option>
-                  <option className="addartist-option">Mahasamund</option>
-                  <option className="addartist-option">Aurangabad</option>
-                  <option className="addartist-option">Jaipur</option>
+                  <option>Yawal</option>
+                  <option>Bhusawal</option>
+                  <option>Jalgaon</option>
+                  <option>Mahasamund</option>
+                  <option>Aurangabad</option>
+                  <option>Jaipur</option>
                 </select>
               </Col>
               <Col>
@@ -197,10 +197,10 @@ const AddArtist = () => {
                   placeholder="Enter State"
                   onChange={(e) => setState(e.target.value)}
                 >
-                  <option className="addartist-option">Maharashtra</option>
-                  <option className="addartist-option">Chhattisgarh</option>
-                  <option className="addartist-option">Gujarat</option>
-                  <option className="addartist-option">Rajasthan</option>
+                  <option>Maharashtra</option>
+                  <option>Chhattisgarh</option>
+                  <option>Gujarat</option>
+                  <option>Rajasthan</option>
                 </select>
               </Col>
               <Col>

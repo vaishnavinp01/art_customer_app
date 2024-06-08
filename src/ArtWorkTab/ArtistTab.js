@@ -3,7 +3,7 @@ import "../ArtWorkCSS/ArtistTab.css";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import axios from "axios";
 
-const ArtWorkTab = () => {
+const ArtistTab = () => {
   // AllArtists
   const [AllArtists, setAllArtists] = useState([]);
   // AllArtists
@@ -54,4 +54,4 @@ const ArtWorkTab = () => {
   );
 };
 
-export default ArtWorkTab;
+export default ArtistTab;

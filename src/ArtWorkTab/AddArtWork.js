@@ -63,7 +63,6 @@ const AddArtWork = () => {
                 <label className="addartwork-label">Name</label>
               </Col>
               <Col>
-                {" "}
                 <input
                   className="addartwork-input"
                   type="text"

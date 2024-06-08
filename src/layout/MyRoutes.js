@@ -6,11 +6,11 @@ import Cart from "../Components/Cart";
 import Login from "../Components/Login";
 // ArtistTab
 import AddArtist from "../ArtistTab/AddArtist";
-import Artists from "../ArtistTab/Artists";
+import ArtWorks from "../ArtistTab/ArtWorks";
 import ArtWorkOrderDetails from "../ArtistTab/ArtWorkOrderDetails";
 // ArtWorkTab
 import AddArtWork from "../ArtWorkTab/AddArtWork";
-import ArtWorks from "../ArtistTab/Artists";
+import Artists from "../ArtWorkTab/Artists";
 // CustomerTab
 import AddCustomer from "../CustomerTab/AddCustomer";
 import Customers from "../CustomerTab/Customers";

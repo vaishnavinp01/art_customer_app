@@ -32,21 +32,21 @@ const ArtOrderTab = () => {
           {AllOrders.map((order) => {
             return (
               <Col sm={12} md={6} lg={4}>
-                <Card className="artordertab-card">
-                  <Card.Body className="artordertab-body">
-                    <Card.Text className="artordertab-text">
+                <Card className="artworkordertab-card">
+                  <Card.Body className="artworkordertab-body">
+                    <Card.Text className="artworkordertab-text">
                       Date: {order.OrderDate}
                     </Card.Text>
-                    <Card.Text className="artordertab-text">
+                    <Card.Text className="artworkordertab-text">
                       Status: {order.OrderStatus}
                     </Card.Text>
-                    <Card.Text className="artordertab-text">
+                    <Card.Text className="artworkordertab-text">
                       Total: {order.OrderTotalAmount}
                     </Card.Text>
                   </Card.Body>
-                  <div className="artordertab-div">
+                  <div className="artworkordertab-div">
                     <button
-                      className="artordertab-button"
+                      className="artworkordertab-button"
                       onClick={() =>
                         navigator("/artorderdetails", { state: order })
                       }

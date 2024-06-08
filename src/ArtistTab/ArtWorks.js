@@ -1,10 +1,10 @@
 import React from "react";
-import "../ArtWorkTab/ArtWorks.css";
+import "../ArtistCSS/ArtWorks.css";
 import { Card, Tab, Tabs } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import ArtWorkTab from "../ArtWorkTab/ArtWorkTab";
-import ArtOrderTab from "../ArtWorkTab/ArtOrderTab";
-import ArtProfileTab from "../ArtWorkTab/ArtProfileTab";
+import ArtistTab from "../ArtWorkTab/ArtistTab";
+import ArtWorkOrderTab from "./ArtWorkOrderTab";
+import ArtWorkProfileTab from '../ArtWorkTab/ArtWorkProfileTab'
 
 const ArtWorks = () => {
   const navigator = useNavigate();
@@ -27,15 +27,14 @@ const ArtWorks = () => {
           <div className="artworks-info">
             <Tabs id="uncontrolled-tab-example" defaultActiveKey="ArtWork">
               <Tab eventKey="ArtWork" title="ArtWork">
-                <ArtWorkTab />
+                <ArtistTab />
               </Tab>
 
               <Tab eventKey="Order" title="Order">
-                <ArtOrderTab />
+                <ArtWorkOrderTab />
               </Tab>
-
               <Tab eventKey="Profile" title="Profile">
-                <ArtProfileTab />
+                <ArtWorkProfileTab />
               </Tab>
             </Tabs>
           </div>

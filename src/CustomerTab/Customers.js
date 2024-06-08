@@ -2,7 +2,7 @@ import React from "react";
 import "../CustomerCSS/Customers.css";
 import { Card, Tab, Tabs } from "react-bootstrap";
 import CustOrderTab from "./CustOrderTab";
-import CustProfileTab from "../CustomerTab/CustOrderTab";
+import CustProfileTab from "../CustomerTab/CustProfileTab";
 
 const Customers = () => {
   return (

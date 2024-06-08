@@ -44,21 +44,21 @@ const ArtOrderDetails = () => {
         {/* <h6>ArtWork Name:{orderData?.CustId?.CustomerName}</h6> */}
         {/* <h6>ArtWork Type:{orderData?.CustId?.CustomerEmail}</h6> */}
       </div>
-      <div className="artorderdetatils-div">
+      <div className="artworkorderdetatils-div">
         <span>Order</span>
         <span>Quantity</span>
         <span>Price</span>
         <span>OrderStatus</span>
         <span>OrderDate</span>
       </div>
-      <div className="artorderdetails-divv"></div>
+      <div className="artworkorderdetails-divv"></div>
       <div>
         {orderData.OrderItems.map((order) => {
           return (
-            <div className="artorderdetails-card">
+            <div className="artworkorderdetails-card">
               <span>
                 <img
-                  className="artorderdetails-img"
+                  className="artworkorderdetails-img"
                   src={`http://localhost:5000${order.ArtWorkId.ArtWorkImage}`}
                 />
               </span>
@@ -69,7 +69,7 @@ const ArtOrderDetails = () => {
             </div>
           );
         })}
-        <div className="artorderdetails-divs"></div>
+        <div className="artworkorderdetails-divs"></div>
       </div>
     </div>
   );
