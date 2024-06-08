@@ -7,10 +7,10 @@ const CustProfileTab = ({ data }) => {
     <div className="">
       {console.log(data)}
 
-      <h4 className="profile-h4">CustProfileTab</h4>
-      <div className="profile-div">
-        <Card className="profile-cards">
-          <p className="profile-p">
+      <h4 className="custprofile-h4">CustProfileTab</h4>
+      <div className="custprofile-div">
+        <Card className="custprofile-cards">
+          <p className="custprofile-p">
             <span>Name:</span> 
             {/* {data?.UserName} */}
           </p>

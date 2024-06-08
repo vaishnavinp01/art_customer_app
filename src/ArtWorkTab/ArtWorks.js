@@ -1,5 +1,5 @@
 import React from "react";
-import "../ArtWorkCSS/ArtWork.css";
+import "../ArtWorkTab/ArtWorks.css";
 import { Card, Tab, Tabs } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import ArtWorkTab from "../ArtWorkTab/ArtWorkTab";

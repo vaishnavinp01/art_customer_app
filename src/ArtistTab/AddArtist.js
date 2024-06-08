@@ -5,6 +5,9 @@ import "../ArtistCSS/AddArtist.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addArtistProfile } from "../reduxwork/UserSlice";
 import { useNavigate } from "react-router-dom";
+import { Alert, IconButton, Snackbar } from "@mui/material";
+import { FaCheckCircle } from "react-icons/fa";
+import { CgClose } from "react-icons/cg";
 
 const AddArtist = () => {
   const navigator = useNavigate();
@@ -95,12 +98,26 @@ const AddArtist = () => {
       });
   }
 
+  // Snackbar
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
+
   return (
     <div className="addartist-main">
       <div className="addartist-container">
         <h4 className="addartist">AddArtist</h4>
         <Container>
-          <Form>
+          <Form className="addartist-form">
             <Row>
               <Col>
                 <label className="addartist-label">Full Name</label>
@@ -214,9 +231,36 @@ const AddArtist = () => {
               </Col>
             </Row>
           </Form>
-          <button className="addartist-button" onClick={() => doArtist()}>
+          <button className="addartist-button" onClick={() => {
+            doArtist()
+            handleClick()
+          }}>
             Submit
           </button>
+          <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+      >
+        <Alert
+          onClose={handleClose}
+          severity="success"
+          icon={<FaCheckCircle fontSize="inherit" />}
+          action={
+            <IconButton
+              aria-label="close"
+              color="inherit"
+              size="small"
+              onClick={handleClose}
+            >
+              <CgClose fontSize="inherit" />
+            </IconButton>
+          }
+        >
+          This is a success message!
+        </Alert>
+      </Snackbar>
         </Container>
       </div>
     </div>

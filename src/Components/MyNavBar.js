@@ -88,7 +88,7 @@ const ArtistNavBar = () => {
 
             <Nav className="ms-auto right-menu">
               <Nav.Link className="nav-link">
-                <RouteLink className="nav-links login-menu" to="/login">
+                <RouteLink className="nav-links" to="/login">
                   <BiLogIn className="nav-icon" />
                   {/* <div className="div-links"> */}
                     Login
@@ -103,7 +103,7 @@ const ArtistNavBar = () => {
                     if (UserData.User_Type === "Customer") {
                       navigator("/customers");
                     } else {
-                      navigator("/artists");
+                      navigator("/artworks");
                     }
                   }}
                 />

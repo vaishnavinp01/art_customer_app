@@ -1,16 +1,16 @@
 .artists-container {
   height: 100vh;
-  width: 12500px;
+  width:  1300px;
   position: fixed;
   /* margin-left: 10px; */
-  margin-right: 500px;
+  /* margin-right: 450px; */
   display: flex;
   /* justify-content: center; */
   align-items: center;
 }
 .artists-card {
   /* width: clamp(200%, 50%, 500%); */
-  /* width: 100vw; */
+  width: 100vw;
   height: 670px;
   /* background-color: #dddddd; */
   /* border-radius: 35px; */
@@ -46,7 +46,7 @@
   border-radius: 50px 0px 50px 0;
   transform: translateX(-10px);
 }
-.page-titles {
+.artists-titles {
   color: black;
 }
 .artists-img {

@@ -16,19 +16,19 @@ const Artists = () => {
             <div className="artists-profile">
               {/* <h5>UserId: </h5>{artistData._id} */}
               <div className="artists-names">
-                <h1 className="username">
+                <h1 className="artists-username">
                   <h4 style={{ marginLeft: "10px" }}>
                     {artistData?.ArtistFullName}
                   </h4>
                 </h1>
-                <small className="page-titles"></small>
+                <small className="artists-titles"></small>
               </div>
               <img className="artists-img" />
             </div>
           </div>
           <div className="artists-info">
-            <div className="artist-div">
-              <h5 className="artist-h5">UserId: </h5>
+            <div className="artists-div">
+              <h5 className="artists-h5">UserId: </h5>
               {/* <span className="artist-span">{artistData._id}</span> */}
             </div>
             <Tabs id="uncontrolled-tab-example" defaultActiveKey="ArtWork">

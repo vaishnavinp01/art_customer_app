@@ -1,48 +1,48 @@
-.addartist-main{
+.addartist-main {
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
 }
-
-.addartist-container{
-  content: '';
+.addartist-container {
+  content: "";
   max-width: 700px;
   width: 100%;
-  background:  #CDB4DB;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  background: #cdb4db;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
   padding: 25px 30px;
-  border-radius: 5px;  
+  border-radius: 5px;
 }
-.addartist-container .addartist-main{
+.addartist-container .addartist-main {
   font-size: 25px;
   font-weight: 500;
   position: relative;
 }
-.addartist-container .addartist-main::before{
+.addartist-container .addartist-main::before {
   position: absolute;
   left: 0;
   bottom: 0;
   height: 3px;
   width: 30px;
-  background: linear-gradient(135deg , #71b7e6 , #9b59b6);
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
-.addartist-container form .addartist-label{
+.addartist-container .addartist-form .addartist-label {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }
-form .addartist-label .addartist-input{
-   margin-bottom: 15px;
-  width: calc(100% /2 - 20px);
+.addartist-form .addartist-label .addartist-input {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
 }
-.addartist-label .addartist-input{
+.addartist-label .addartist-input {
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
 }
-.addartist-label .addartist-input input{
+.addartist-label .addartist-input {
   height: 45px;
   width: 100%;
   outline: none;
@@ -53,52 +53,53 @@ form .addartist-label .addartist-input{
   border-bottom-width: 2px;
   transition: all 0.3s ease;
 }
-.addartist-label .addartist-input input:focus,
-.addartist-label .addartist-input input:valid{
+.addartist-label .addartist-input:focus,
+.addartist-label .addartist-input:valid {
   border-color: #9b59b6;
 }
-.addartist-button{
+.addartist-button {
   margin-top: 5px;
 }
 
-.addartist-container{
-  content: '';
+.addartist-container {
+  content: "";
   max-width: 700px;
   width: 100%;
-  background:  #CDB4DB;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  background: #cdb4db;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
   padding: 25px 30px;
-  border-radius: 5px;  
+  border-radius: 5px;
 }
-.addartist-container .addartist-main{
+.addartist-container .addartist-main {
   font-size: 25px;
   font-weight: 500;
   position: relative;
 }
-.addartist-container .addartist-main::before{
+.addartist-container .addartist-main::before {
   position: absolute;
   left: 0;
   bottom: 0;
   height: 3px;
   width: 30px;
-  background: linear-gradient(135deg , #71b7e6 , #9b59b6);
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
-.addartist-container form .addartist-label{
+.addartist-container form .addartist-label {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }
-form .addartist-label .addartist-input{
+form .addartist-label .addartist-input {
   margin-bottom: 15px;
-  width: calc(100% /2 - 20px);
+  width: calc(100% / 2 - 20px);
 }
-.addartist-label .addartist-input{
+.addartist-label .addartist-input {
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
 }
-.addartist-label .addartist-input input{
+.addartist-label .addartist-input {
   height: 45px;
   width: 100%;
   outline: none;
@@ -109,10 +110,10 @@ form .addartist-label .addartist-input{
   border-bottom-width: 2px;
   transition: all 0.3s ease;
 }
-.addartist-label .addartist-input input:focus,
-.addartist-label .addartist-input input:valid{
+.addartist-label .addartist-input:focus,
+.addartist-label .addartist-input:valid {
   border-color: #9b59b6;
 }
-.addartist-button{
+.addartist-button {
   margin-top: 5px;
 }

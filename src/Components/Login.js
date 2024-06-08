@@ -12,14 +12,10 @@ import {
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillLinkedin } from "react-icons/ai";
-import { Alert, IconButton, Snackbar } from "@mui/material";
-import { FaRegCheckCircle } from "react-icons/fa";
-import { IoMdClose } from "react-icons/io";
 
 const Login = () => {
   const navigator = useNavigate();
   const dispatcher = useDispatch([]);
-
   // Register
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
@@ -40,7 +36,8 @@ const Login = () => {
       .then((result) => {
         console.log("DATA", result.data);
         dispatcher(register(result.data));
-        if (Type == "Artist") {
+        // alert("Registered Successfully");
+        if (Type === "Artist") {
           navigator("/addartist");
         } else {
           navigator("/addcustomer");
@@ -69,12 +66,10 @@ const Login = () => {
       .post("http://localhost:5000/artapi/dologin", addDatas)
       .then((result) => {
         console.log("DATA", result.data);
-        // console.log("res",result.data._id)
         dispatcher(login(result.data));
+        alert("Logined Successfully");
 
-        const idData = {
-          UserId: result._id,
-        };
+        const idData = { UserId: result._id };
         console.log("IDDATA", idData);
         if (result.User_Type === "Customer") {
           axios
