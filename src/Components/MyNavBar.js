@@ -34,69 +34,81 @@ const ArtistNavBar = () => {
         className="nav-bar"
         expand="lg"
         style={{
-          backgroundColor: scrollChangeColor ? "#9C89B8" : "",
+          backgroundColor: scrollChangeColor ? "#9c89b8" : "",
         }}
       >
-        <Container className="nav-container">
+        <Container fluid className="nav-container">
           <Navbar.Brand className="nav-brand">
-              <img className="nav-div" src={img1} />
-              <span className="nav-div">Art Visions</span>
+            <img className="logo" src={img1} />
+            Art Vision
+            
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link>
-                <Link className="nav-link" to="home">
+            <Nav className="me-auto nav-menu">
+              <Nav.Link className="nav-link">
+                <Link className="nav-links" to="home">
                   <IoHome className="nav-icon" />
-                  <div className="div-links">Home</div>
+                  {/* <div className="div-links"> */}
+                  Home
+                  {/* </div> */}
                 </Link>
               </Nav.Link>
-              <Nav.Link>
-                <Link className="nav-link" to="about">
+              <Nav.Link className="nav-link">
+                <Link className="nav-links" to="about">
                   <FcAbout className="nav-icon" />
-                  <div className="div-links">About</div>
+                  {/* <div className="div-links"> */}
+                  About
+                  {/* </div> */}
                 </Link>
               </Nav.Link>
-              <Nav.Link>
-                <Link className="nav-link" to="topartist">
+              <Nav.Link className="nav-link">
+                <Link className="nav-links" to="topartist">
                   <GrArticle className="nav-icon" />
-                  <div className="div-links">Top Artist</div>
+                  {/* <div className="div-links"> */}
+                  Top Artist
+                  {/* </div> */}
                 </Link>
               </Nav.Link>
-              <Nav.Link>
-                <Link className="nav-link" to="topartwork">
+              <Nav.Link className="nav-link">
+                <Link className="nav-links" to="topartwork">
                   <BsPersonWorkspace className="nav-icon" />
-                  <div className="div-links">Top ArtWork</div>
+                  {/* <div className="div-links"> */}
+                  Top ArtWork
+                  {/* </div> */}
                 </Link>
               </Nav.Link>
-              <Nav.Link>
-                <RouteLink className="nav-link" to="/cart">
+              <Nav.Link className="nav-link">
+                <RouteLink className="nav-links" to="/cart">
                   <CgShoppingCart className="nav-icon" />
-                  <div className="div-linkss">Cart</div>
                   <span className="nav-noOfCart"> {CartItems.length}</span>
                 </RouteLink>
               </Nav.Link>
             </Nav>
 
-            <Nav className="ms-auto">
-              <Nav.Link>
-                <RouteLink className="nav-link" to="/login">
+            <Nav className="ms-auto right-menu">
+              <Nav.Link className="nav-link">
+                <RouteLink className="nav-links login-menu" to="/login">
                   <BiLogIn className="nav-icon" />
-                  <div className="div-links">Login</div>
+                  {/* <div className="div-links"> */}
+                    Login
+                    {/* </div> */}
                 </RouteLink>
               </Nav.Link>
-              <div className="nav-profile">
+              {/* <div className="nav-profile"> */}
+              <Nav.Link className="nav-link">
                 <CgProfile
-                  className="nav-icons"
+                  className="nav-icon nav-links"
                   onClick={() => {
-                    if (UserData.User_Type == "Customer") {
+                    if (UserData.User_Type === "Customer") {
                       navigator("/customers");
                     } else {
-                      navigator("/artworks");
+                      navigator("/artists");
                     }
                   }}
                 />
-              </div>
+              </Nav.Link>
+              {/* </div> */}
             </Nav>
           </Navbar.Collapse>
         </Container>

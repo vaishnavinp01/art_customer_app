@@ -4,8 +4,11 @@ import { BrowserRouter } from "react-router-dom";
 import MyRoutes from "./layout/MyRoutes";
 import { useEffect, useState } from "react";
 import Loading from "./Components/Loading";
+// import CustomSnackbar from "./Components/CustomSnackbar";
 
 function App() {
+
+  // Loading
   const [loading, setloading] = useState(true);
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -23,6 +26,7 @@ function App() {
           <MyRoutes />
         </BrowserRouter>
       )}
+      {/* <CustomSnackbar/> */}
     </div>
   );
 }

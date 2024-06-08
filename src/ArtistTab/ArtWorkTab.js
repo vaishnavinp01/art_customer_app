@@ -18,6 +18,7 @@ const ArtWorkTab = () => {
       .post("http://localhost:5000/artapi/getartworksbyartistid", artIdData)
       .then((result) => {
         setAllArtWorks(result.data);
+        console.log("DATA", result.data);
       })
       .catch((err) => {
         console.log(err);
@@ -27,7 +28,7 @@ const ArtWorkTab = () => {
   return (
     <div>
       <h4 className="artworktab-h4">ArtistId: </h4>
-      <span>{UserData._id}</span>
+      <span>{UserData?.ArtistProfile?._id}</span>
       <Container>
         <Row>
           {AllArtWorks.map((art) => {

@@ -4,11 +4,30 @@ import axios from "axios";
 import { Card, Col, Row } from "react-bootstrap";
 import { addItem } from "../reduxwork/CartSlice";
 import { useDispatch } from "react-redux";
+import Snackbar from "@mui/material/Snackbar";
+import IconButton from "@mui/material/IconButton";
+import Alert from "@mui/material/Alert";
+import { FaRegCheckCircle } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
 
 const TopArtWork = () => {
   // AllArtWorks
   const [AllArtWorks, setAllArtWorks] = useState([]);
   const dispatcher = useDispatch([]);
+
+  // Snackbar
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
 
   // AllArtWorks
   useEffect(() => {
@@ -56,11 +75,36 @@ const TopArtWork = () => {
                       className="topartwork-button"
                       onClick={() => {
                         dispatcher(addItem(art));
-                        alert("Added to Cart");
+                        // alert("Added to Cart");
+                        handleClick();
                       }}
                     >
                       Add to Cart
                     </button>
+                    <Snackbar
+                      open={open}
+                      autoHideDuration={6000}
+                      onClose={handleClose}
+                      anchorOrigin={{ vertical: "top", horizontal: "top" }}
+                    >
+                      <Alert
+                        onClose={handleClose}
+                        severity="success"
+                        icon={<FaRegCheckCircle fontSize="inherit" />}
+                        action={
+                          <IconButton
+                            aria-label="close"
+                            color="inherit"
+                            size="small"
+                            onClick={handleClose}
+                          >
+                            <IoMdClose fontSize="inherit" />
+                          </IconButton>
+                        }
+                      >
+                        Added to Cart
+                      </Alert>
+                    </Snackbar>
                   </Card.Text>
                 </Card.Footer>
               </Card>

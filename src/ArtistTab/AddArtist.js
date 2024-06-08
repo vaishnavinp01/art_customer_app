@@ -107,7 +107,7 @@ const AddArtist = () => {
                 <input
                   className="addartist-input"
                   type="text"
-                  placeholder="Name"
+                  placeholder="Enter Name"
                   onChange={(e) => setFullName(e.target.value)}
                 />
               </Col>
@@ -116,7 +116,7 @@ const AddArtist = () => {
                 <input
                   className="addartist-input"
                   type="text"
-                  placeholder="Address"
+                  placeholder="Enter Address"
                   onChange={(e) => setAddress(e.target.value)}
                 />
               </Col>
@@ -125,7 +125,7 @@ const AddArtist = () => {
                 <input
                   className="addartist-input"
                   type="number"
-                  placeholder="Mobile No"
+                  placeholder="Enter Mobile No"
                   onChange={(e) => setMobileNo(e.target.value)}
                 />
               </Col>
@@ -134,7 +134,7 @@ const AddArtist = () => {
                 <input
                   className="addartist-input"
                   type="email"
-                  placeholder="Email"
+                  placeholder="Enter Email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </Col>
@@ -143,7 +143,7 @@ const AddArtist = () => {
                 <input
                   className="addartist-input"
                   type="number"
-                  placeholder="Adhar Card No"
+                  placeholder="Enter Adhar Card No"
                   onChange={(e) => setAdharCardNo(e.target.value)}
                 />
               </Col>
@@ -152,7 +152,7 @@ const AddArtist = () => {
                 <input
                   className="addartist-input"
                   type="number"
-                  placeholder="Pin Code"
+                  placeholder="Enter Pin Code"
                   onChange={(e) => setPinCode(e.target.value)}
                 />
               </Col>
@@ -161,7 +161,7 @@ const AddArtist = () => {
                 <select
                   className="addartist-input"
                   type="text"
-                  placeholder="City"
+                  placeholder="Enter City"
                   onChange={(e) => setCity(e.target.value)}
                 >
                   <option className="addartist-option">Yawal</option>
@@ -177,7 +177,7 @@ const AddArtist = () => {
                 <select
                   className="addartist-input"
                   type="state"
-                  placeholder="State"
+                  placeholder="Enter State"
                   onChange={(e) => setState(e.target.value)}
                 >
                   <option className="addartist-option">Maharashtra</option>
