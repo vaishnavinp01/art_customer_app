@@ -26,14 +26,14 @@ const ArtWorks = () => {
           </div>
           <div className="artworks-info">
             <Tabs id="uncontrolled-tab-example" defaultActiveKey="ArtWork">
-              <Tab eventKey="ArtWork" title="ArtWork">
+              <Tab eventKey="ArtWork" title={<span className="tabname">ArtWork</span>}>
                 <ArtistTab />
               </Tab>
 
-              <Tab eventKey="Order" title="Order">
+              <Tab eventKey="Order"  title={<span className="tabname">Order</span>}>
                 <ArtWorkOrderTab />
               </Tab>
-              <Tab eventKey="Profile" title="Profile">
+              <Tab eventKey="Profile"  title={<span className="tabname">Profile</span>}>
                 <ArtWorkProfileTab />
               </Tab>
             </Tabs>

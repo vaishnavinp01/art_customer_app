@@ -33,11 +33,11 @@ const Artists = () => {
               {/* <span className="artist-span">{artistData._id}</span> */}
             </div>
             <Tabs id="uncontrolled-tab-example" defaultActiveKey="ArtWork">
-              <Tab eventKey="ArtWork" title="ArtWork">
+              <Tab eventKey="ArtWork" title={<span className="tabname">ArtWork</span>}>
                 <ArtistTab />
               </Tab>
 
-              <Tab eventKey="Profile" title="Profile">
+              <Tab eventKey="Profile" title={<span className="tabname">Profile</span>}>
                 <ArtistProfileTab />
               </Tab>
             </Tabs>
