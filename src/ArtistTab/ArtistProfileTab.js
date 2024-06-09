@@ -13,7 +13,7 @@ const ArtProfileTab = ({data}) => {
           <Row className="artistprofiletab-p">
             <Col>Adhar Card Image: </Col>
             <Col>
-              {/* <img src={`http://localhost:5000${artistData?.ArtistAdharCardImage}`} /> */}
+              <img src={`http://localhost:5000${artistData?.ArtistAdharCardImage}`} />
             </Col>
           </Row>
           <Row className="artistprofiletab-p">
