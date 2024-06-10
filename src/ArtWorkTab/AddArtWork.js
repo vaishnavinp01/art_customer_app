@@ -93,7 +93,7 @@ const AddArtWork = () => {
                 >
                   <option>Canvas Paper</option>
                   <option>Polyster Canvas</option>
-                  <option>Syntheric Canvas</option>
+                  <option>Synthetic Canvas</option>
                 </select>
               </Col>
               <Col>

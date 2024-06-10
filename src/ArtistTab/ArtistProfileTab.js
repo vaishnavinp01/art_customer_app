@@ -3,7 +3,7 @@ import "../ArtistCSS/ArtistProfileTab.css";
 import { Card, Col, Row } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 
-const ArtProfileTab = ({data}) => {
+const ArtProfileTab = () => {
   const artistData = useLocation().state;
   return (
     <div className="">
