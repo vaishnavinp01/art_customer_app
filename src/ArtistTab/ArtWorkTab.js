@@ -17,8 +17,8 @@ const ArtWorkTab = () => {
     axios
       .post("http://localhost:5000/artapi/getartworksbyartistid", artIdData)
       .then((result) => {
-        setAllArtWorks(result.data);
-        console.log("DATA", result.data);
+        setAllArtWorks(result.data.data);
+        console.log("DATA", result.data.data);
       })
       .catch((err) => {
         console.log(err);
@@ -28,10 +28,10 @@ const ArtWorkTab = () => {
   return (
     <div>
       <h4 className="artworktab-h4">ArtistId: </h4>
-      <span>{UserData?.ArtistProfile?._id}</span>
+      {/* <span>{UserData?.ArtistProfile?.data?._id}</span> */}
       <Container>
         <Row>
-          {AllArtWorks.map((art) => {
+          {/* {AllArtWorks.map((art) => {
             return (
               <Col sm={12} md={9} lg={3}>
                 <Card className="artworktab-card">
@@ -57,7 +57,7 @@ const ArtWorkTab = () => {
                 </Card>
               </Col>
             );
-          })}
+          })} */}
         </Row>
       </Container>
     </div>

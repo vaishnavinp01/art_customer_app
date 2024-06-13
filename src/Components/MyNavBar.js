@@ -35,7 +35,7 @@ const ArtistNavBar = () => {
         className="nav-bar"
         expand="lg"
         style={{
-          backgroundColor: scrollChangeColor ? "#9c89b8" : "",
+          backgroundColor: scrollChangeColor ? "#BB8FCE" : "",
         }}
       >
         <Container fluid className="nav-container">
@@ -90,13 +90,10 @@ const ArtistNavBar = () => {
               <Nav.Link className="nav-link">
                 <RouteLink className="nav-links" to="/login">
                   <BiLogIn className="nav-icon" />
-                  {/* <div className="div-links"> */}
                   Login
-                  {/* </div> */}
                 </RouteLink>
               </Nav.Link>
-              {/* <div className="nav-profile"> */}
-              {/* <span style={{marginTop:'4px', backgroundColor:'skyblue',borderRadius:'200%',padding:'6px',border:'2px solid darkblue'}}>{UserData.data.UserName.slice(0,1)}</span> */}
+
               <div className="nav-div">
                 <div className="dropdown">
                   <button className="nav-button">
@@ -126,7 +123,6 @@ const ArtistNavBar = () => {
                   }}
                 />
               </Nav.Link>
-              {/* </div> */}
             </Nav>
           </Navbar.Collapse>
         </Container>

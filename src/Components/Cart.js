@@ -22,7 +22,6 @@ const Cart = () => {
     CartItems.map((art) => {
       finalArtItems.push({ Qty: art.quantity, ArtWorkId: art._id });
     });
-
     const orderData = {
       CustId: UserData._id,
       OrderTotalAmount: CartTotalAmount,

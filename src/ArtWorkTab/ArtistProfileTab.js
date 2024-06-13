@@ -8,7 +8,7 @@ const ArtistProfileTab = ({ data }) => {
       {console.log(data)}
 
       <h4 className="artistprofiletab-h4">ArtProfileTab</h4>
-      <div className="artistprofiletab-div">
+      {/* <div className="artistprofiletab-div">
         <Card className="artistprofiletab-card">
           <Row className="artistprofiletab-p">
             <Col>Adhar Card Image: </Col>
@@ -58,7 +58,7 @@ const ArtistProfileTab = ({ data }) => {
             {data?.IsVerified}
           </p>
         </Card>
-      </div>
+      </div> */}
     </div>
   );
 };

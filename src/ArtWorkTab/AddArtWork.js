@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import "../ArtWorkCSS/AddArtWork.css";
 import { useNavigate } from "react-router-dom";
@@ -52,17 +52,14 @@ const AddArtWork = () => {
   }
 
   return (
-    <div>
-      <Container className="addartwork-container">
-        <div className="addartwork-div">
-          <form>
-            <h3 style={{ textAlign: "center" }}>AddArtWork</h3>
-
-            <Row className="FormCol">
+    <div className="addartwork-main">
+      <div className="addartwork-container">
+        <h4 style={{ textAlign: "center" }}>AddArtWork</h4>
+        <Container>
+          <Form className="addartwork-form">
+            <Row>
               <Col>
                 <label className="addartwork-label">Name</label>
-              </Col>
-              <Col>
                 <input
                   className="addartwork-input"
                   type="text"
@@ -70,12 +67,8 @@ const AddArtWork = () => {
                   onChange={(e) => setName(e.target.value)}
                 />
               </Col>
-            </Row>
-            <Row className="FormCol">
               <Col>
                 <lable className="addartwork-label">Price</lable>
-              </Col>
-              <Col>
                 <input
                   className="addartwork-input"
                   type="number"
@@ -88,7 +81,7 @@ const AddArtWork = () => {
               <Col>
                 <lable className="addartwork-label">Canvas Type</lable>
                 <select
-                  className="addartwork-select"
+                  className="addartwork-input"
                   onChange={(e) => setCanvasType(e.target.value)}
                 >
                   <option>Canvas Paper</option>
@@ -99,7 +92,7 @@ const AddArtWork = () => {
               <Col>
                 <label className="addartwork-label">Frame Size</label>
                 <select
-                  className="addartwork-select"
+                  className="addartwork-input"
                   onChange={(e) => setFrameSize(e.target.value)}
                 >
                   <option>5"x7"</option>
@@ -108,9 +101,9 @@ const AddArtWork = () => {
                 </select>
               </Col>
             </Row>
-            <Row className="FormCol">
-              <Col>
-                <label className="addartwork-label">Type</label>
+            <div className="addartwork-div">
+              <label className="addartwork-label">Type</label>
+              {/* <div> */}
                 <input
                   type="radio"
                   value="Painting"
@@ -119,7 +112,9 @@ const AddArtWork = () => {
                   inline
                   onChange={(e) => setType(e.target.value)}
                 />
-                <label className="addartwork-label">Painting</label>
+                <label style={{marginLeft:'5px'}} className="addartwork-label">Painting</label>
+              {/* </div> */}
+              {/* <div> */}
                 <input
                   type="radio"
                   value="Drawing"
@@ -128,25 +123,23 @@ const AddArtWork = () => {
                   inline
                   onChange={(e) => setType(e.target.value)}
                 />
-                <label className="addartwork-label">Drawing</label>
-              </Col>
-              <Col style={{display:"block"}}>
-                <label className="addartwork-label">Image</label>
-                <input
-                  className="addartwork-file"
-                  type="file"
-                  onChange={uploadArtWork}
-                />
-              </Col>
-            </Row>
-          </form>
-          <div className="addartwork-btn-div">
-            <button className="addartwork-button" onClick={() => doArtWork()}>
-              Submit
-            </button>
-          </div>
-        </div>
-      </Container>
+                <label style={{marginLeft:'5px'}} className="addartwork-label">Drawing</label>
+              {/* </div> */}
+            </div>
+            <Col>
+              <label className="addartwork-label">Image</label>
+              <input
+                className="addartwork-input"
+                type="file"
+                onChange={uploadArtWork}
+              />
+            </Col>
+          </Form>
+          <button className="addartwork-button" onClick={() => doArtWork()}>
+            Submit
+          </button>
+        </Container>
+      </div>
     </div>
   );
 };

@@ -8,8 +8,8 @@
   content: "";
   max-width: 700px;
   width: 100%;
-  height: 80%;
-  background: #998FC7;
+  /* height: 80%; */
+  background: #cdb4db;
   /* background-image: url('../images/color3.jpg'); */
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -39,10 +39,10 @@
   padding: 10px;
   border-radius: 10px;
   border: none;
-  border: 1px solid #9b59b6;
+  border: 1px solid #cdb4db;
 }
 .addcustomer-button {
   margin-top: 20px;
   /* color: #9b59b6; */
-  background-color: #998FC7;
+  background-color: #cdb4db;
 }

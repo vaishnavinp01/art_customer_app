@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import MainLayout from "./MainLayout";
 import Cart from "../Components/Cart";
 import Login from "../Components/Login";
@@ -17,6 +17,7 @@ import Customers from "../CustomerTab/Customers";
 import CustOrderDetails from "../CustomerTab/CustOrderDetails";
 
 const MyRoutes = () => {
+  const artistData = useLocation().state;
   return (
     <div>
       <Container>
@@ -26,10 +27,13 @@ const MyRoutes = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/addartist" element={<AddArtist />} />
           <Route path="/artists" element={<Artists />} />
-          <Route path="/artworkorderdetails" element={<ArtWorkOrderDetails />} />
+          <Route
+            path="/artworkorderdetails"
+            element={<ArtWorkOrderDetails />}
+          />
           <Route path="/addartwork" element={<AddArtWork />} />
-          <Route path="/artworks" element={<ArtWorks />} />
-          <Route path="/addcustomer" element={<AddCustomer/>} />
+          <Route path="/artworks" element={<ArtWorks data={artistData} />} />
+          <Route path="/addcustomer" element={<AddCustomer />} />
           <Route path="/customers" element={<Customers />} />
           <Route path="/custorderdetails" element={<CustOrderDetails />} />
         </Routes>

@@ -64,7 +64,7 @@ const AddCustomer = () => {
       <div className="addcustomer-container">
         <h4 className="addcustomer">AddCustomer</h4>
         <Container>
-          <Form>
+          <Form className="addcustomer-form">
             <Row>
               <Col>
                 <label className="addcustomer-label">Name</label>
@@ -152,6 +152,7 @@ const AddCustomer = () => {
                   className="addcustomer-input"
                   type="file"
                   onChange={uploadProfile}
+                  style={{border:'2px solid blueviolet'}}
                 />
               </Col>
             </Row>
