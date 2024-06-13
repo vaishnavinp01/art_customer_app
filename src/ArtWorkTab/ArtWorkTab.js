@@ -72,7 +72,7 @@ const ArtWorkTab = () => {
                       className="artisttab-delete"
                       onClick={() => {
                         setshowDelete(true);
-                        setselectedArtWorks(a)
+                        setselectedArtWorks(art)
                       }}
                     >
                       Delete
