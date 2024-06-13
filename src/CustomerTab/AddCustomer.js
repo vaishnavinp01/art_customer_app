@@ -60,10 +60,10 @@ const AddCustomer = () => {
   }
 
   return (
-    <div className="addcustomer-main">
-      <div className="addcustomer-container">
-        <h4 className="addcustomer">AddCustomer</h4>
-        <Container>
+    <div className="addcustomer-container">
+      <div className="addcustomer-title">
+        <h4>AddCustomer</h4>
+        <Container className="addcustomer-details">
           <Form>
             <Row>
               <Col>
@@ -91,7 +91,7 @@ const AddCustomer = () => {
                   type="text"
                   placeholder="Enter Address"
                   onChange={(e) => setAddress(e.target.value)}
-                />
+                /> 
               </Col>
               <Col>
                 <label className="addcustomer-label">Mobile No</label>
