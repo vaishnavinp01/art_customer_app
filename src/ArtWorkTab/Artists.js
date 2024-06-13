@@ -2,12 +2,13 @@ import React from "react";
 import { Tab, Tabs } from "react-bootstrap";
 import "../ArtWorkCSS/Artists.css";
 import { useLocation } from "react-router-dom";
-// import ArtWorkTab from '../ArtWorkTab/ArtWorkTab'
-import ArtistProfileTab from "./ArtWorkProfileTab";
-import ArtistTab from "./ArtistTab";
+import ArtistProfileTab from "../ArtWorkTab/ArtistProfileTab";
+import ArtWorkTab from "../ArtWorkTab/ArtWorkTab";
+import { useSelector } from "react-redux";
 
 const Artists = () => {
-  const artistData = useLocation().state;
+  // const artistData = useLocation().state;
+  const { UserData } = useSelector((state) => state.user);
 
   return (
     <div>
@@ -19,7 +20,7 @@ const Artists = () => {
               <div className="artists-names">
                 <h1 className="username">
                   <h4 style={{ marginLeft: "10px" }}>
-                    {artistData?.ArtistFullName}
+                    {UserData?.ArtistFullName}
                   </h4>
                 </h1>
                 <small className="page-titles"></small>
@@ -33,11 +34,17 @@ const Artists = () => {
               {/* <span className="artist-span">{artistData._id}</span> */}
             </div>
             <Tabs id="uncontrolled-tab-example" defaultActiveKey="ArtWork">
-              <Tab eventKey="ArtWork" title={<span className="tabname">ArtWork</span>}>
-                <ArtistTab />
+              <Tab
+                eventKey="ArtWork"
+                title={<span className="tabname">ArtWork</span>}
+              >
+                <ArtWorkTab />
               </Tab>
 
-              <Tab eventKey="Profile" title={<span className="tabname">Profile</span>}>
+              <Tab
+                eventKey="Profile"
+                title={<span className="tabname">Profile</span>}
+              >
                 <ArtistProfileTab />
               </Tab>
             </Tabs>

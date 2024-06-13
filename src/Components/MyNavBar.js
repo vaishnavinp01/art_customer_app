@@ -8,10 +8,10 @@ import { FcAbout } from "react-icons/fc";
 import { CgProfile, CgShoppingCart } from "react-icons/cg";
 import { BsPersonWorkspace } from "react-icons/bs";
 import { GrArticle } from "react-icons/gr";
-import { BiLogIn } from "react-icons/bi";
+import { BiLogIn, BiLogOut } from "react-icons/bi";
 import { Link } from "react-scroll";
-import { useSelector } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../reduxwork/UserSlice";
 const ArtistNavBar = () => {
   // Scrolling Navbar
   const [scrollChangeColor, setscrollChangeColor] = useState(false);
@@ -27,6 +27,7 @@ const ArtistNavBar = () => {
   const { UserData } = useSelector((state) => state.user);
   const { CartItems } = useSelector((state) => state.cart);
   const navigator = useNavigate();
+  const dispatcher = useDispatch();
 
   return (
     <div>
@@ -34,14 +35,13 @@ const ArtistNavBar = () => {
         className="nav-bar"
         expand="lg"
         style={{
-          backgroundColor: scrollChangeColor ? "#9c89b8" : "",
+          backgroundColor: scrollChangeColor ? "#BB8FCE" : "",
         }}
       >
         <Container fluid className="nav-container">
           <Navbar.Brand className="nav-brand">
             <img className="logo" src={img1} />
             Art Vision
-            
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -90,12 +90,27 @@ const ArtistNavBar = () => {
               <Nav.Link className="nav-link">
                 <RouteLink className="nav-links" to="/login">
                   <BiLogIn className="nav-icon" />
-                  {/* <div className="div-links"> */}
-                    Login
-                    {/* </div> */}
+                  Login
                 </RouteLink>
               </Nav.Link>
-              {/* <div className="nav-profile"> */}
+
+              <div className="nav-div">
+                <div className="dropdown">
+                  <button className="nav-button">
+                    {UserData?.data?.UserName.slice(0, 1)}
+                  </button>
+                  <div className="dropdown-options">
+                    <button className="nav-buttons">
+                      <BiLogOut
+                        style={{ marginBottom: "25px" }}
+                        onClick={() => dispatcher(logout())}
+                      />
+                      <span style={{ marginLeft: "4px" }}>Logout</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
               <Nav.Link className="nav-link">
                 <CgProfile
                   className="nav-icon nav-links"
@@ -108,7 +123,6 @@ const ArtistNavBar = () => {
                   }}
                 />
               </Nav.Link>
-              {/* </div> */}
             </Nav>
           </Navbar.Collapse>
         </Container>

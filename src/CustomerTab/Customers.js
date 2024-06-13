@@ -2,7 +2,7 @@ import React from "react";
 import "../CustomerCSS/Customers.css";
 import { Card, Tab, Tabs } from "react-bootstrap";
 import CustOrderTab from "./CustOrderTab";
-import CustProfileTab from "../CustomerTab/CustProfileTab";
+import CustProfileTab from "./CustProfileTab";
 
 const Customers = () => {
   return (
@@ -16,12 +16,17 @@ const Customers = () => {
             </div>
           </div>
           <div className="customers-info">
-            <Tabs id="uncontrolled-tab-example" defaultActiveKey="ArtWork">
-              <Tab eventKey="Order" title="Order">
+            <Tabs id="uncontrolled-tab-example" defaultActiveKey="Order">
+              <Tab
+                eventKey="Order"
+                title={<span className="tabname">Order</span>}
+              >
                 <CustOrderTab />
               </Tab>
-
-              <Tab eventKey="Profile" title="Profile">
+              <Tab
+                eventKey="Profile"
+                title={<span className="tabname">Profile</span>}
+              >
                 <CustProfileTab />
               </Tab>
             </Tabs>

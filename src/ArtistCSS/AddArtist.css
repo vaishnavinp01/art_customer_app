@@ -84,20 +84,15 @@
   width: 30px;
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
-.addartist-container form .addartist-label {
+.addartist-container .addartist-form .addartist-label {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }
-form .addartist-label .addartist-input {
+.addartist-form .addartist-label .addartist-input {
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
-}
-.addartist-label .addartist-input {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 5px;
 }
 .addartist-label .addartist-input {
   height: 45px;

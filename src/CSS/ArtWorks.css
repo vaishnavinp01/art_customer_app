@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
 }
 .artworks-card {
   /* width: clamp(200%, 50%, 500%); */
@@ -34,7 +35,7 @@
 .artworks-img {
   width: 150px;
   height: 150px;
-  background: url(../images/art.png) center;
+  /* background: url(../images/art.png) center; */
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.2);
   background-size: cover;
   border-radius: 50%;

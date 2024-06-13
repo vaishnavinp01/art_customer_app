@@ -233,34 +233,9 @@ const AddArtist = () => {
           </Form>
           <button className="addartist-button" onClick={() => {
             doArtist()
-            handleClick()
           }}>
             Submit
           </button>
-          <Snackbar
-        open={open}
-        autoHideDuration={6000}
-        onClose={handleClose}
-        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-      >
-        <Alert
-          onClose={handleClose}
-          severity="success"
-          icon={<FaCheckCircle fontSize="inherit" />}
-          action={
-            <IconButton
-              aria-label="close"
-              color="inherit"
-              size="small"
-              onClick={handleClose}
-            >
-              <CgClose fontSize="inherit" />
-            </IconButton>
-          }
-        >
-          This is a success message!
-        </Alert>
-      </Snackbar>
         </Container>
       </div>
     </div>

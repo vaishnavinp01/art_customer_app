@@ -40,7 +40,7 @@
   /* text-align: center; */
   /* text-decoration: none; */
   color: #fff;
-  background-color: #8F8FB6;
+  background-color: #AF7AC5;
   border: 2px solid #000;
   border-radius: 10px;
   box-shadow: 5px 5px 0px #000;
@@ -50,13 +50,13 @@
 
 .topartwork-button:hover {
   background-color: #fff;
-  color: #8F8FB6;
-  border: 2px solid #8F8FB6;
-  box-shadow: 5px 5px 0px #8F8FB6;
+  color: #AF7AC5;
+  border: 2px solid #AF7AC5;
+  box-shadow: 5px 5px 0px #AF7AC5;
 }
 
 .topartwork-button:active {
-  background-color: #fcf414;
+  background-color: #EBDEF0;
   box-shadow: none;
   transform: translateY(4px);
 }

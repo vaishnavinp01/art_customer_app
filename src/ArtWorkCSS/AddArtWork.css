@@ -1,58 +1,58 @@
-.addartwork-container{
+.addartwork-main {
   display: flex;
-  height: 90vh;
+  height: 100vh;
   justify-content: center;
   align-items: center;
 }
-.addartwork-div{
-  content: '';
+.addartwork-container {
+  content: "";
   max-width: 700px;
   width: 100%;
-  background: #F4ACB7;
-  box-shadow:rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px ;
-  padding: 45px 50px;
+  /* height: 80%; */
+  background: #cdb4db;
+  /* background-image: url('../images/color3.jpg'); */
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  padding: 25px 30px;
   border-radius: 5px;
-  height: 400px;
 }
-.addartwork-container .addartwork-div{
-  font-size: 21px;
-  font-weight: 400;
+.addartwork-container .addartwork-main {
+  font-size: 25px;
+  font-weight: 500;
   position: relative;
 }
-.addartwork-container .addartwork-div::before{
+.addartwork-container .addartwork-main::before {
   position: absolute;
   left: 0;
   bottom: 0;
   height: 3px;
   width: 30px;
-  background: linear-gradient(135deg , #71b7e6 , #9b59b6);
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
-.FormCol{
-  margin-bottom: 16px;
-}
-/* .addartwork-container form .addartwork-label{
+.addartwork-container .addartwork-form .addartwork-label {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
-} */
-/* .addartwork-label .addartwork-input{
-  display: block;
-  font-weight: 500;
-  margin-bottom: 5px;
-} */
-/* .addartwork-label .addartwork-input input{
-  height: 45px;
-  width: 100%;
-  outline: none;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding-left: 15px;
-  font-size: 16px;
-  border-bottom-width: 2px;
-  transition: all 0.3s ease;
-} */
-/* .addartwork-label .addartwork-input input:focus,
-.addartwork-label .addartwork-input input:valid{
-  border-radius: #9b59b6;
-} */
+}
+.addartwork-input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  border: 2px solid #9b59b6;
+}
+.addartwork-div {
+  display: flex;
+  flex-direction: row;
+}
+.addartwork-check{
+  margin-bottom: 70px;
+  margin-left: 25px;
+}
+.addartwork-check:checked{
+  accent-color: #9b59b6;
+}
+.addartwork-button {
+  margin-top: 20px;
+  background-color: #cdb4db;
+}

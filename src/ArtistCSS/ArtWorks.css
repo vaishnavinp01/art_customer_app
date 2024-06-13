@@ -34,11 +34,25 @@
   .artworks-img {
     width: 150px;
     height: 150px;
-    background: url(../images/download1.jpeg) center;
+    /* background: url(../images/download1.jpeg) center; */
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.2);
     background-size: cover;
     border-radius: 50%;
     border: 2px solid #dddddd;
+  }
+  .artworks-names {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* color: var(--primary-color); */
+    background-color: #dddddd;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 5px 25px;
+    border-radius: 50px 0px 50px 0;
+    transform: translateX(-10px);
+  }
+  .artworks-title {
+    color: rgba(255, 255, 255, 70%);
   }
   .artworks-info {
     margin-top: 37px;

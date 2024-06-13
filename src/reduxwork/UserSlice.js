@@ -22,6 +22,7 @@ const UserSlice = createSlice({
 
     logout: (state) => {
       state.isLogin = false;
+      state.UserData = {};
     },
 
     addArtistProfile: (state, action) => {

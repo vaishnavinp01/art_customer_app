@@ -1,9 +1,6 @@
 /* cardsetup */
 .artisttab-card {
-  /* display: flex; */
   margin-top: 10px;
-  /* position: relative; */
-  /* overflow: hidden; */
   height: 330px;
   width: 250px;
 }
@@ -30,4 +27,40 @@
   display: flex;
   left: 10px;
   right: 10px;
+}
+.artisttab-footer {
+  color: inherit;
+  line-height: 1;
+}
+.artisttab-update {
+  background: linear-gradient(0deg, rgb(75, 69, 117), rgb(128, 115, 210))
+    no-repeat right bottom / 0 20px;
+  transition: background-size 350ms;
+  --bg-h: 100%;
+
+  margin-right: 5px;
+  margin-bottom: 2px;
+  border: 2px solid black;
+  padding: 5px;
+  font-size: 28px;
+}
+.artisttab-update:where(:hover, :focus-visible) {
+  background-size: 100% 25px;
+  background-position-x: left;
+}
+.artisttab-delete {
+  background: linear-gradient(0deg, rgb(198, 79, 79), rgb(246, 84, 84))
+    no-repeat left bottom / 0 20px;
+  transition: background-size 350ms;
+  --bg-h: 100%;
+
+  /* margin-right: 5px; */
+  margin-bottom: 2px;
+  border: 2px solid black;
+  padding: 5px;
+  font-size: 28px;
+}
+.artisttab-delete:where(:hover, :focus-visible) {
+  background-size: 100% 25px;
+  background-position-x: right;
 }
