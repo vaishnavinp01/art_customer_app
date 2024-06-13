@@ -91,7 +91,7 @@ const AddCustomer = () => {
                   type="text"
                   placeholder="Enter Address"
                   onChange={(e) => setAddress(e.target.value)}
-                />
+                /> 
               </Col>
               <Col>
                 <label className="addcustomer-label">Mobile No</label>
