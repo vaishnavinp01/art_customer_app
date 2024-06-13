@@ -1,19 +1,19 @@
 /* cardsetup */
-.artworktab-card {
+.arttab-card {
   /* display: flex; */
   /* margin-top: 5px; */
   margin-top: 10px;
   height: 330px;
   width: 250px;
 }
-.artworktab-image {
+.arttab-image {
   transition: transform 0.3s;
   overflow: hidden;
   height: 250px;
   width: 100%;
   position: relative;
 }
-.artworktab-img {
+.arttab-img {
   width: 280px;
   height: 250px;
   object-fit: cover;
@@ -22,10 +22,10 @@
   justify-content: center;
   transition: transform 0.3s;
 }
-.artworktab-img:hover {
+.arttab-img:hover {
   transform: scale(1.1);
 }
-.artworktab-text {
+.arttab-text {
   display: flex;
   left: 10px;
   right: 10px;

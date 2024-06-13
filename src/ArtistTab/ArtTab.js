@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import "../ArtistCSS/ArtWorkTab.css";
+import "../ArtistCSS/ArtTab.css";
 import { useSelector } from "react-redux";
 
-const ArtWorkTab = () => {
+const ArtTab = () => {
   // AllArtWorks
   const [AllArtWorks, setAllArtWorks] = useState([]);
   const { UserData } = useSelector((state) => state.user);
@@ -27,30 +27,30 @@ const ArtWorkTab = () => {
 
   return (
     <div>
-      <h4 className="artworktab-h4">ArtistId: </h4>
+      <h4 className="arttab-h4">ArtistId: </h4>
       {/* <span>{UserData?.ArtistProfile?.data?._id}</span> */}
       <Container>
         <Row>
           {/* {AllArtWorks.map((art) => {
             return (
               <Col sm={12} md={9} lg={3}>
-                <Card className="artworktab-card">
-                  <div className="artworktab-image">
+                <Card className="arttab-card">
+                  <div className="arttab-image">
                     <Card.Img
-                      className="artworktab-img"
+                      className="arttab-img"
                       src={`http://localhost:5000${art.ArtWorkImage}`}
                     />
                   </div>
-                  <Card.Body className="artworktab-body">
-                    <Card.Text className="artworktab-text">
+                  <Card.Body className="arttab-body">
+                    <Card.Text className="arttab-text">
                       {art.ArtWorkName}
                     </Card.Text>
                     <div>
-                      <Card.Subtitle className="artworktab-text">
+                      <Card.Subtitle className="arttab-text">
                         &#8377;{art.ArtWorkPrice}
                       </Card.Subtitle>
                     </div>
-                    <Card.Text className="artworktab-text">
+                    <Card.Text className="arttab-text">
                       {art.ArtWorkFrameSize}
                     </Card.Text>
                   </Card.Body>
@@ -64,4 +64,4 @@ const ArtWorkTab = () => {
   );
 };
 
-export default ArtWorkTab;
+export default ArtTab;

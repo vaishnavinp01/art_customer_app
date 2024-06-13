@@ -2,9 +2,9 @@ import React from "react";
 import "../ArtistCSS/ArtistProfile.css";
 import { Card, Tab, Tabs } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
-import ArtWorkTab from "../ArtistTab/ArtWorkTab";
-import ArtWorkOrderTab from "../ArtistTab/ArtWorkOrderTab";
-import ArtistProfileTab from "../ArtistTab/ArtistProfileTab";
+import ArtTab from "../ArtistTab/ArtTab";
+import ArtOrderTab from "../ArtistTab/ArtOrderTab";
+import ArtProfileTab from "../ArtistTab/ArtProfileTab";
 import { useSelector } from "react-redux";
 
 const ArtistProfile = () => {
@@ -13,13 +13,12 @@ const ArtistProfile = () => {
   const navigator = useNavigate();
   return (
     <div>
-      {/* <h4>ArtWorks</h4> */}
       <div className="artistprofile-container">
         <Card className="artistprofile-card">
           <div className="artistprofile-header">
             <div className="artistprofile-profile">
               <div className="artistprofile-names">
-                <h1 className="username">
+                <h1 className="artist-profile-username">
                   <h4 style={{ marginLeft: "10px" }}>
                     {/* {data?.ArtistFullName} */}
                   </h4>
@@ -41,20 +40,20 @@ const ArtistProfile = () => {
                 eventKey="ArtWork"
                 title={<span className="tabname">ArtWork</span>}
               >
-                <ArtWorkTab />
+                <ArtTab />
               </Tab>
 
               <Tab
                 eventKey="Order"
                 title={<span className="tabname">Order</span>}
               >
-                <ArtWorkOrderTab />
+                <ArtOrderTab />
               </Tab>
               <Tab
                 eventKey="Profile"
                 title={<span className="tabname">Profile</span>}
               >
-                <ArtistProfileTab />
+                <ArtProfileTab />
               </Tab>
             </Tabs>
           </div>

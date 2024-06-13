@@ -7,6 +7,8 @@
 }
 .tabname {
   color: rgb(0, 17, 255);
+  font-style: italic;
+  text-transform: uppercase;
 }
 .artistdetails-card {
   /* width: clamp(200%, 50%, 500%); */

@@ -2,15 +2,15 @@ import React from "react";
 import "../CustomerCSS/CustProfileTab.css";
 import { Card } from "react-bootstrap";
 
-const ProfileTab = ({ data }) => {
+const CustProfileTab = ({ data }) => {
   return (
     <div className="">
       {console.log(data)}
 
-      <h4 className="custprofile-h4">CustProfileTab</h4>
-      <div className="custprofile-div">
-        <Card className="custprofile-cards">
-          <p className="custprofile-p">
+      <h4 className="custprofiletab-h4">CustProfileTab</h4>
+      <div className="custprofiletab-div">
+        <Card className="custprofiletab-cards">
+          <p className="custprofiletab-p">
             <span>Name:</span> 
             {/* {data?.UserName} */}
           </p>
@@ -20,4 +20,4 @@ const ProfileTab = ({ data }) => {
   );
 };
 
-export default ProfileTab;
+export default CustProfileTab;

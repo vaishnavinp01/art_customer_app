@@ -1,5 +1,5 @@
 import React from "react";
-import "../CustomerCSS/Customers.css";
+import "../CustomerCSS/CustomerProfile.css";
 import { Card, Tab, Tabs } from "react-bootstrap";
 import CustOrderTab from "./CustOrderTab";
 import CustProfileTab from "./CustProfileTab";
@@ -8,26 +8,26 @@ const CustomerProfile = () => {
   return (
     <div>
       {/* <h4>Arts</h4> */}
-      <div className="customers-container">
-        <Card className="customers-card">
-          <div className="customers-header">
-            <div className="customers-profile">
-              <img className="customers-img" />
+      <div className="customerprofile-container">
+        <Card className="customerprofile-card">
+          <div className="customerprofile-header">
+            <div className="customerprofile-profile">
+              <img className="customerprofile-img" />
             </div>
           </div>
-          <div className="customers-info">
+          <div className="customerprofile-info">
             <Tabs id="uncontrolled-tab-example" defaultActiveKey="Order">
               <Tab
                 eventKey="Order"
                 title={<span className="tabname">Order</span>}
               >
-                <OrderTab />
+                <CustOrderTab />
               </Tab>
               <Tab
                 eventKey="Profile"
                 title={<span className="tabname">Profile</span>}
               >
-                <ProfileTab />
+                <CustProfileTab />
               </Tab>
             </Tabs>
           </div>

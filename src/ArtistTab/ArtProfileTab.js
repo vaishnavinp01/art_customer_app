@@ -1,24 +1,24 @@
 import React from "react";
-import "../ArtistCSS/ArtistProfileTab.css";
+import "../ArtistCSS/ArtProfileTab.css";
 import { Card, Col, Row } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const ProfileTab = () => {
+const ArtProfileTab = () => {
   // const { UserData } = useSelector((state) => state.user);
   // const artistData = useLocation().state;
   return (
     <div className="">
-      <h4 className="artistprofiletab-h4">ArtProfileTab</h4>
-      <div className="artistprofiletab-div">
-        <Card className="artistprofiletab-card">
-          <Row className="artistprofiletab-p">
+      <h4 className="artprofiletab-h4">ArtProfileTab</h4>
+      <div className="artprofiletab-div">
+        <Card className="artprofiletab-card">
+          <Row className="artprofiletab-p">
             <Col>Adhar Card Image: </Col>
             <Col>
               {/* <img src={`http://localhost:5000${data?.ArtistAdharCardImage}`} /> */}
             </Col>
           </Row>
-          <Row className="artistprofiletab-p">
+          <Row className="artprofiletab-p">
             <Col> Handicap Certificate Image:</Col>
             <Col>
               <img
@@ -27,35 +27,35 @@ const ProfileTab = () => {
             </Col>
           </Row>
         </Card>
-        <Card className="artistprofiletab-cards">
+        <Card className="artprofiletab-cards">
           <p className="artprofiletab-p">
             {/* <span>Name:</span> {artistData?.ArtistFullName} */}
           </p>
-          <p className="artistprofiletab-p">
+          <p className="artprofiletab-p">
             <span>Address:</span>
             {/* {artistData.ArtistAddress} */}
           </p>
-          <p className="artistprofiletab-p">
+          <p className="artprofiletab-p">
             {/* <span>City:</span> {artistData.ArtistCity} */}
           </p>
-          <p className="artistprofiletab-p">
+          <p className="artprofiletab-p">
             <span>Mobile No: </span>
             {/* {artistData?.ArtistMobileNo} */}
           </p>
-          <p className="artistprofiletab-p">
+          <p className="artprofiletab-p">
             {/* <span>Email:</span> {artistData.ArtistEmail} */}
           </p>
-          <p className="artistprofiletab-p">
+          <p className="artprofiletab-p">
             {/* <span>State:</span> {artistData.ArtistState} */}
           </p>
-          <p className="artistprofiletab-p">
+          <p className="artprofiletab-p">
             <span>Pin Code: </span>
             {/* {artistData.ArtistPincode} */}
           </p>
-          <p className="artistprofiletab-p">
+          <p className="artprofiletab-p">
             {/* <span>Adhar Card No:</span> {artistData.ArtistAdharCardNo} */}
           </p>
-          <p className="artistprofiletab-p">
+          <p className="artprofiletab-p">
             <span>IsVerified: </span>
             {/* {artistData.IsVerified} */}
           </p>
@@ -65,4 +65,4 @@ const ProfileTab = () => {
   );
 };
 
-export default ProfileTab;
+export default ArtProfileTab;

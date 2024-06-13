@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../ArtWorkCSS/ArtistTab.css";
+import "../ArtWorkCSS/ArtWorkTab.css";
 import { Card, Col, Container, Modal, Row } from "react-bootstrap";
 import axios from "axios";
 import { GrUpdate } from "react-icons/gr";

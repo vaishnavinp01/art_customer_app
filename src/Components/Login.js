@@ -70,7 +70,7 @@ const Login = () => {
         alert("Logined Successfully");
         // navigator('/')
 
-        const idData = { UserId: result._id };
+        const idData = { UserId: result?.data?._id };
         console.log("IDDATA", idData);
         if (result.data?.User_Type === "Customer") {
           axios

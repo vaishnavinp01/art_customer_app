@@ -2,7 +2,7 @@ import React from "react";
 import { Tab, Tabs } from "react-bootstrap";
 import "../ArtWorkCSS/ArtistDetails.css";
 import { useLocation } from "react-router-dom";
-import ProfileTab from "../ArtWorkTab/ProfileTab";
+import ArtistProfileTab from "../ArtWorkTab/ArtistProfileTab";
 import ArtWorkTab from "../ArtWorkTab/ArtWorkTab";
 import { useSelector } from "react-redux";
 
@@ -19,11 +19,11 @@ const ArtistDetails = () => {
               {/* <h5>UserId: </h5>{artistData._id} */}
               <div className="artistdetails-names">
                 <h1 className="username">
-                  <h4 style={{ marginLeft: "10px" }}>{artistData?.ArtistFullName}</h4>
+                  {/* <h4 style={{ marginLeft: "10px" }}>{artistData?.ArtistFullName}</h4> */}
                 </h1>
                 <small className="page-titles"></small>
               </div>
-              <img className="artistdetails-img" src={`http://localhost:5000${artistData?.ArtistProfile}`}/>
+              {/* <img className="artistdetails-img" src={`http://localhost:5000${artistData?.ArtistProfile}`}/> */}
             </div>
           </div>
           <div className="artistdetails-info">
@@ -43,7 +43,7 @@ const ArtistDetails = () => {
                 eventKey="Profile"
                 title={<span className="tabname">Profile</span>}
               >
-                <ProfileTab data={artistData} />
+                <ArtistProfileTab data={artistData} />
               </Tab>
             </Tabs>
           </div>

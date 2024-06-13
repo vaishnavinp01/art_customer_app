@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Modal, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import "../ArtistCSS/ArtWorkOrderTab.css";
+import "../ArtistCSS/ArtOrderTab.css";
 
 const ArtOrderTab = () => {
   // AllOrders
@@ -32,21 +32,21 @@ const ArtOrderTab = () => {
           {AllOrders.map((order) => {
             return (
               <Col sm={12} md={6} lg={4}>
-                <Card className="artworkordertab-card">
-                  <Card.Body className="artworkordertab-body">
-                    <Card.Text className="artworkordertab-text">
+                <Card className="artordertab-card">
+                  <Card.Body className="artordertab-body">
+                    <Card.Text className="artordertab-text">
                       Date: {order.OrderDate}
                     </Card.Text>
-                    <Card.Text className="artworkordertab-text">
+                    <Card.Text className="artordertab-text">
                       Status: {order.OrderStatus}
                     </Card.Text>
-                    <Card.Text className="artworkordertab-text">
+                    <Card.Text className="artordertab-text">
                       Total: {order.OrderTotalAmount}
                     </Card.Text>
                   </Card.Body>
-                  <div className="artworkordertab-div">
+                  <div className="artordertab-div">
                     <button
-                      className="artworkordertab-button"
+                      className="artordertab-button"
                       onClick={() =>
                         navigator("/artorderdetails", { state: order })
                       }
