@@ -4,7 +4,7 @@ import { Card, Tab, Tabs } from "react-bootstrap";
 import CustOrderTab from "./CustOrderTab";
 import CustProfileTab from "./CustProfileTab";
 
-const Customers = () => {
+const CustomerProfile = () => {
   return (
     <div>
       {/* <h4>Arts</h4> */}
@@ -21,13 +21,13 @@ const Customers = () => {
                 eventKey="Order"
                 title={<span className="tabname">Order</span>}
               >
-                <CustOrderTab />
+                <OrderTab />
               </Tab>
               <Tab
                 eventKey="Profile"
                 title={<span className="tabname">Profile</span>}
               >
-                <CustProfileTab />
+                <ProfileTab />
               </Tab>
             </Tabs>
           </div>
@@ -37,4 +37,4 @@ const Customers = () => {
   );
 };
 
-export default Customers;
+export default CustomerProfile;

@@ -1,5 +1,5 @@
 import React from "react";
-import "../ArtistCSS/ArtWorks.css";
+import "../ArtistCSS/ArtistProfile.css";
 import { Card, Tab, Tabs } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
 import ArtWorkTab from "../ArtistTab/ArtWorkTab";
@@ -7,35 +7,35 @@ import ArtWorkOrderTab from "../ArtistTab/ArtWorkOrderTab";
 import ArtistProfileTab from "../ArtistTab/ArtistProfileTab";
 import { useSelector } from "react-redux";
 
-const ArtWorks = () => {
-  const { UserData } = useSelector((state) => state.user);
+const ArtistProfile = () => {
+  // const { UserData } = useSelector((state) => state.user);
   // const { artistData } = useLocation().state;
   const navigator = useNavigate();
   return (
     <div>
       {/* <h4>ArtWorks</h4> */}
-      <div className="artworks-container">
-        <Card className="artworks-card">
-          <div className="artworks-header">
-            <div className="artworks-profile">
-              <div className="artworks-names">
+      <div className="artistprofile-container">
+        <Card className="artistprofile-card">
+          <div className="artistprofile-header">
+            <div className="artistprofile-profile">
+              <div className="artistprofile-names">
                 <h1 className="username">
                   <h4 style={{ marginLeft: "10px" }}>
-                    {UserData?.data?.ArtistFullName}
+                    {/* {data?.ArtistFullName} */}
                   </h4>
                 </h1>
-                <small className="artworks-titles"></small>
+                <small className="artistprofile-titles"></small>
               </div>
-              <img className="artworks-img" />
+              <img className="artistprofile-img" />
               <button
                 onClick={() => navigator("/addartwork")}
-                className="artworks-button"
+                className="artistprofile-button"
               >
                 AddArtWork
               </button>
             </div>
           </div>
-          <div className="artworks-info">
+          <div className="artistprofile-info">
             <Tabs id="uncontrolled-tab-example" defaultActiveKey="ArtWork">
               <Tab
                 eventKey="ArtWork"
@@ -64,4 +64,4 @@ const ArtWorks = () => {
   );
 };
 
-export default ArtWorks;
+export default ArtistProfile;

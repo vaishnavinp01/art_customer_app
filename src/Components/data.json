@@ -1,0 +1,7 @@
+import reducers from '../../reducers';
+
+test('reducers', () => {
+  let state;
+  state = reducers({user:{UserData:{UserName:'Snehal',UserEmail:'snehal@gmail.com',UserPassword:'snehal',UserMobileNo:7189012364,User_Type:'Customer',_id:'666abf348138b065e1105b29',__v:0},isRegister:true,isLogin:true},cart:{CartItems:[],ItemCount:0,CartTotalAmount:0}}, {type:'user/addCustomerProfile',payload:{CustomerName:'Siddhesh',CustomerMobileNo:7910403156,CustomerAddress:'Khote Nagar',CustomerDOB:'2024-06-13T09:45:13.000Z',CustomerCity:'Mahasamund',CustomerState:'Chhattisgarh',CustomerPinCode:429345,CustomerEmail:'siddhesh@gmail.com',CustomerProfile:'/images/image_1718271911352.jpeg',_id:'666abfa98138b065e1105b2b',__v:0}});
+  expect(state).toEqual({user:{UserData:{UserName:'Snehal',UserEmail:'snehal@gmail.com',UserPassword:'snehal',UserMobileNo:7189012364,User_Type:'Customer',_id:'666abf348138b065e1105b29',__v:0,CustomerProfile:{CustomerName:'Siddhesh',CustomerMobileNo:7910403156,CustomerAddress:'Khote Nagar',CustomerDOB:'2024-06-13T09:45:13.000Z',CustomerCity:'Mahasamund',CustomerState:'Chhattisgarh',CustomerPinCode:429345,CustomerEmail:'siddhesh@gmail.com',CustomerProfile:'/images/image_1718271911352.jpeg',_id:'666abfa98138b065e1105b2b',__v:0}},isRegister:true,isLogin:true},cart:{CartItems:[],ItemCount:0,CartTotalAmount:0}});
+});

@@ -49,7 +49,7 @@ const TopArtist = () => {
                 <Card.Footer>
                   <button
                     className="topartist-button"
-                    onClick={() => navigator("/artists")}
+                    onClick={() => navigator("/artistdetails", { state: art })}
                   >
                     <span className="topartist-span">»</span>
                   </button>

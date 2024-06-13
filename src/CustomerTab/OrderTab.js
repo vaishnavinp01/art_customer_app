@@ -52,6 +52,11 @@ const CustOrderTab = () => {
                     <Card.Text>Status: {order.OrderStatus}</Card.Text>
                     <Card.Text>Total: {order.OrderTotalAmount}</Card.Text>
                   </Card.Body>
+                  {/* <Card.Footer>
+                    <button onClick={navigator("/custorderdetails")}>
+                      Order Details
+                    </button>
+                  </Card.Footer> */}
                 </Card>
               </Col>
             );

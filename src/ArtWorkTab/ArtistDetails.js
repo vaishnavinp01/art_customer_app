@@ -1,37 +1,35 @@
 import React from "react";
 import { Tab, Tabs } from "react-bootstrap";
-import "../ArtWorkCSS/Artists.css";
+import "../ArtWorkCSS/ArtistDetails.css";
 import { useLocation } from "react-router-dom";
-import ArtistProfileTab from "../ArtWorkTab/ArtistProfileTab";
+import ProfileTab from "../ArtWorkTab/ProfileTab";
 import ArtWorkTab from "../ArtWorkTab/ArtWorkTab";
 import { useSelector } from "react-redux";
 
-const Artists = () => {
-  // const artistData = useLocation().state;
-  const { UserData } = useSelector((state) => state.user);
+const ArtistDetails = () => {
+  const artistData = useLocation().state;
+  // const { UserData } = useSelector((state) => state.user);
 
   return (
     <div>
-      <div className="artists-container">
-        <div className="artists-card">
-          <div className="artists-header">
-            <div className="artists-profile">
+      <div className="artistdetails-container">
+        <div className="artistdetails-card">
+          <div className="artistdetails-header">
+            <div className="artistdetails-profile">
               {/* <h5>UserId: </h5>{artistData._id} */}
-              <div className="artists-names">
+              <div className="artistdetails-names">
                 <h1 className="username">
-                  <h4 style={{ marginLeft: "10px" }}>
-                    {UserData?.ArtistFullName}
-                  </h4>
+                  <h4 style={{ marginLeft: "10px" }}>{artistData?.ArtistFullName}</h4>
                 </h1>
                 <small className="page-titles"></small>
               </div>
-              <img className="artists-img" />
+              <img className="artistdetails-img" src={`http://localhost:5000${artistData?.ArtistProfile}`}/>
             </div>
           </div>
-          <div className="artists-info">
-            <div className="artist-div">
-              <h5 className="artist-h5">UserId: </h5>
-              {/* <span className="artist-span">{artistData._id}</span> */}
+          <div className="artistdetails-info">
+            <div className="artistdetails-div">
+              <h5 className="artistdetails-h5">UserId: </h5>
+              {/* <span className="artistdetails-span">{artistData._id}</span> */}
             </div>
             <Tabs id="uncontrolled-tab-example" defaultActiveKey="ArtWork">
               <Tab
@@ -45,7 +43,7 @@ const Artists = () => {
                 eventKey="Profile"
                 title={<span className="tabname">Profile</span>}
               >
-                <ArtistProfileTab />
+                <ProfileTab data={artistData} />
               </Tab>
             </Tabs>
           </div>
@@ -55,4 +53,4 @@ const Artists = () => {
   );
 };
 
-export default Artists;
+export default ArtistDetails;

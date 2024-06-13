@@ -1,0 +1,45 @@
+.artistprofiletab-h4 {
+  color: #000;
+  font-weight: 500;
+  /* margin: 30px 50px; */
+}
+.artistprofiletab-p {
+  color: #039ce8;
+}
+.artistprofiletab-div {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.artistprofiletab-card {
+  margin-left: 170px;
+
+  /* margin-right: 50px; */
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  height: 78vh;
+  width: 40vw;
+  padding: 30px;
+  z-index: 1;
+}
+.artistprofiletab-cards {
+  /* margin-left: 50px; */
+  margin-left: 480px;
+  /* margin-bottom: 80px; */
+  height: 85vh;
+  width: 45vw;
+  padding: 50px;
+  position: absolute;
+}
+.artistprofiletab-span {
+  font-weight: 600;
+  color: black !important;
+  margin-right: 5px;
+}
+.artistprofiletab-pp {
+  /* text-align: end; */
+  margin-left: 330px;
+  display: flex;
+}

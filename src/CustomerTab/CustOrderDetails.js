@@ -8,19 +8,19 @@ const CustOrderDetails = () => {
   const [orderDetails, setorderDetails] = useState([]);
 
   // useEffect
-  useEffect(() => {
-    axios
-      .post("http://localhost:5000/artapi/artorderbyid", {
-        orderid: orderData._id,
-      })
-      .then((result) => {
-        setorderDetails(result.data.data);
-        console.log("order", result.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .post("http://localhost:5000/artapi/ordersbycustid", {
+  //       orderid: orderData._id,
+  //     })
+  //     .then((result) => {
+  //       setorderDetails(result.data.data);
+  //       console.log("order", result.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
   return (
     <div>
@@ -30,15 +30,15 @@ const CustOrderDetails = () => {
           style={{ fontWeight: "bold", fontStyle: "italic", fontSize: "20px" }}
         >
           OrderId:
-        </span>{" "}
-        {orderData._id}
+        </span>
+        {/* {orderData._id} */}
       </p>
       <div>
         <div>
-          <h6>User Name: {orderData?.CustId?.UserName}</h6>
+          {/* <h6>User Name: {orderData?.CustId?.UserName}</h6>
           <h6>User Email: {orderData?.CustId?.UserEmail}</h6>
           <h6>User Mobile No: {orderData?.CustId?.UserMobileNo}</h6>
-          <h6>User Type: {orderData?.CustId?.User_Type}</h6>
+          <h6>User Type: {orderData?.CustId?.User_Type}</h6> */}
           {/* <h6>ArtWork Name:{orderData?.CustId?.CustomerName}</h6> */}
           {/* <h6>ArtWork Type:{orderData?.CustId?.CustomerEmail}</h6> */}
         </div>
@@ -51,7 +51,7 @@ const CustOrderDetails = () => {
         </div>
         <div className="custorderdetails-divv"></div>
         {/* <div className="orderdetails-divs"> */}
-        {orderData.OrderItems.map((order) => {
+        {/* {orderData.OrderItems.map((order) => {
           return (
             <div className="custorderdetails-card">
               <span>
@@ -66,7 +66,7 @@ const CustOrderDetails = () => {
               <span>{orderData?.OrderDate}</span>
             </div>
           );
-        })}
+        })} */}
         <div className="custorderdetails-divs"></div>
       </div>
     </div>

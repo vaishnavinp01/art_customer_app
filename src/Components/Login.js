@@ -68,10 +68,11 @@ const Login = () => {
         console.log("DATA", result.data);
         dispatcher(login(result.data));
         alert("Logined Successfully");
+        // navigator('/')
 
         const idData = { UserId: result._id };
         console.log("IDDATA", idData);
-        if (result.User_Type === "Customer") {
+        if (result.data?.User_Type === "Customer") {
           axios
             .post("http://localhost:5000/artapi/getcustomerprofile", idData)
             .then((result) => {

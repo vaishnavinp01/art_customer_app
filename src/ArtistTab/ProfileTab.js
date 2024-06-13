@@ -2,9 +2,11 @@ import React from "react";
 import "../ArtistCSS/ArtistProfileTab.css";
 import { Card, Col, Row } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-const ArtProfileTab = () => {
-  const artistData = useLocation().state;
+const ProfileTab = () => {
+  // const { UserData } = useSelector((state) => state.user);
+  // const artistData = useLocation().state;
   return (
     <div className="">
       <h4 className="artistprofiletab-h4">ArtProfileTab</h4>
@@ -13,14 +15,14 @@ const ArtProfileTab = () => {
           <Row className="artistprofiletab-p">
             <Col>Adhar Card Image: </Col>
             <Col>
-              <img src={`http://localhost:5000${artistData?.ArtistAdharCardImage}`} />
+              {/* <img src={`http://localhost:5000${data?.ArtistAdharCardImage}`} /> */}
             </Col>
           </Row>
           <Row className="artistprofiletab-p">
             <Col> Handicap Certificate Image:</Col>
             <Col>
               <img
-                // src={`http://localhost:5000${artistData?.ArtistHandicapCertificateImage}`}
+              // src={`http://localhost:5000${data?.ArtistHandicapCertificateImage}`}
               />
             </Col>
           </Row>
@@ -63,4 +65,4 @@ const ArtProfileTab = () => {
   );
 };
 
-export default ArtProfileTab;
+export default ProfileTab;

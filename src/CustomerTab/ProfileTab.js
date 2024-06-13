@@ -2,7 +2,7 @@ import React from "react";
 import "../CustomerCSS/CustProfileTab.css";
 import { Card } from "react-bootstrap";
 
-const CustProfileTab = ({ data }) => {
+const ProfileTab = ({ data }) => {
   return (
     <div className="">
       {console.log(data)}
@@ -20,4 +20,4 @@ const CustProfileTab = ({ data }) => {
   );
 };
 
-export default CustProfileTab;
+export default ProfileTab;

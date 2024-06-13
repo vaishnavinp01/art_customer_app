@@ -49,33 +49,25 @@ const ArtistNavBar = () => {
               <Nav.Link className="nav-link">
                 <Link className="nav-links" to="home">
                   <IoHome className="nav-icon" />
-                  {/* <div className="div-links"> */}
                   Home
-                  {/* </div> */}
                 </Link>
               </Nav.Link>
               <Nav.Link className="nav-link">
                 <Link className="nav-links" to="about">
                   <FcAbout className="nav-icon" />
-                  {/* <div className="div-links"> */}
                   About
-                  {/* </div> */}
                 </Link>
               </Nav.Link>
               <Nav.Link className="nav-link">
                 <Link className="nav-links" to="topartist">
                   <GrArticle className="nav-icon" />
-                  {/* <div className="div-links"> */}
                   Top Artist
-                  {/* </div> */}
                 </Link>
               </Nav.Link>
               <Nav.Link className="nav-link">
                 <Link className="nav-links" to="topartwork">
                   <BsPersonWorkspace className="nav-icon" />
-                  {/* <div className="div-links"> */}
                   Top ArtWork
-                  {/* </div> */}
                 </Link>
               </Nav.Link>
               <Nav.Link className="nav-link">
@@ -115,10 +107,10 @@ const ArtistNavBar = () => {
                 <CgProfile
                   className="nav-icon nav-links"
                   onClick={() => {
-                    if (UserData.User_Type === "Customer") {
-                      navigator("/customers");
+                    if (UserData?.data?.User_Type === "Customer") {
+                      navigator("/customerprofile");
                     } else {
-                      navigator("/artworks");
+                      navigator("/artistprofile");
                     }
                   }}
                 />
