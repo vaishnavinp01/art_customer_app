@@ -85,14 +85,14 @@ const ArtWorkTab = () => {
         </Row>
       </Container>
 
-      <Modal show={showDelete} onHide={() => setshowDelete(false)}>
+      <Modal show={showDelete} onHide={setshowDelete(false)}>
         <Modal.Header closeButton>Delete ArtWorks</Modal.Header>
         <Modal.Body>
           <h4>Are you sure you want to delete this artworks?</h4>
         </Modal.Body>
         <Modal.Footer>
-          <button onClick={() => doDelete()}>Yes</button>
-          <button onClick={() => setshowDelete(false)}>No</button>
+          <button onClick={doDelete()}>Yes</button>
+          <button onClick={setshowDelete(false)}>No</button>
         </Modal.Footer>
       </Modal>
     </div>
