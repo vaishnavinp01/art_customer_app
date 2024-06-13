@@ -62,7 +62,9 @@ const AddCustomer = () => {
   return (
     <div className="addcustomer-main">
       <div className="addcustomer-container">
-        <h4 className="addcustomer">AddCustomer</h4>
+        <h4 style={{ textAlign: "center" }} className="addcustomer">
+          AddCustomer
+        </h4>
         <Container>
           <Form className="addcustomer-form">
             <Row>
@@ -84,6 +86,8 @@ const AddCustomer = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </Col>
+            </Row>
+            <Row>
               <Col>
                 <label className="addcustomer-label">Address</label>
                 <input
@@ -91,7 +95,7 @@ const AddCustomer = () => {
                   type="text"
                   placeholder="Enter Address"
                   onChange={(e) => setAddress(e.target.value)}
-                /> 
+                />
               </Col>
               <Col>
                 <label className="addcustomer-label">Mobile No</label>
@@ -102,6 +106,8 @@ const AddCustomer = () => {
                   onChange={(e) => setMobileNo(e.target.value)}
                 />
               </Col>
+            </Row>
+            <Row>
               <Col>
                 <label className="addcustomer-label">DOB</label>
                 <input
@@ -133,7 +139,8 @@ const AddCustomer = () => {
                   <option>Jaipur</option>
                 </select>
               </Col>
-
+            </Row>
+            <Row>
               <Col>
                 <label className="addcustomer-label">State</label>
                 <select
@@ -152,7 +159,7 @@ const AddCustomer = () => {
                   className="addcustomer-input"
                   type="file"
                   onChange={uploadProfile}
-                  style={{border:'2px solid blueviolet'}}
+                  style={{ border: "2px solid blueviolet" }}
                 />
               </Col>
             </Row>
