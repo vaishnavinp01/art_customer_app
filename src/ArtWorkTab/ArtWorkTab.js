@@ -25,7 +25,7 @@ const ArtWorkTab = () => {
   // Delete
   const doDelete = () => {
     let artworkIdDelete = {
-      artworkid: AllArtWorks._id,
+      artworkid: selectedArtWorks._id,
     };
     axios
       .delete("http://localhost:5000/api/deleteartwork", {
