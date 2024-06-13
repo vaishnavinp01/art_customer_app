@@ -28,7 +28,7 @@ const ArtWorkTab = () => {
       artworkid: selectedArtWorks._id,
     };
     axios
-      .delete("http://localhost:5000/api/deleteartwork", {
+      .delete("http://localhost:5000/artapi/deleteartwork", {
         data: artworkIdDelete,
       })
       .then((result) => {
