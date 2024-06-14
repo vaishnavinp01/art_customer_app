@@ -1,0 +1,21 @@
+.footer-main {
+  width: 91vw;
+  height: 46vh;
+  background-color: #000;
+  position: absolute;
+  bottom: 0;
+}
+.footer-container {
+}
+.footer-col1 {
+  /* display: flex; */
+}
+.footer-img {
+  height: 110px;
+  width: 110px;
+  margin-top: 70px;
+}
+.footer-h3 {
+  color: #fff;
+  margin-top: 100px;
+}

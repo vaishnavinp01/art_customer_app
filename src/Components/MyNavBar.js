@@ -40,7 +40,7 @@ const ArtistNavBar = () => {
       >
         <Container fluid className="nav-container">
           <Navbar.Brand className="nav-brand">
-            <img className="logo" src={img1} />
+            <img className="nav-logo" src={img1} />
             Art Vision
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

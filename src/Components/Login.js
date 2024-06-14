@@ -113,13 +113,13 @@ const Login = () => {
               <form action="#" className="Login_Form">
                 <h1 className="reg-h1">Register</h1>
                 <div className="social-container">
-                  <a href="https://www.facebook.com/" className="social">
+                  <a href="https://www.facebook.com/" className="social-reg">
                     <FaFacebook fontSize="25px" />
                   </a>
-                  <a href="https://www.google.com/" className="social">
+                  <a href="https://www.google.com/" className="social-reg">
                     <FcGoogle fontSize="25px" />
                   </a>
-                  <a href="https://www.linkedin.com/" className="social">
+                  <a href="https://www.linkedin.com/" className="social-reg">
                     <AiFillLinkedin fontSize="25px" />
                   </a>
                 </div>
@@ -187,13 +187,13 @@ const Login = () => {
               <form className="Login_Form" onSubmit={(e) => e.preventDefault()}>
                 <h1 className="reg-h1">Login</h1>
                 <div className="social-container">
-                  <a href="https://www.facebook.com/" className="social">
+                  <a href="https://www.facebook.com/" className="social-reg">
                     <FaFacebook fontSize="25px" />
                   </a>
-                  <a href="https://www.google.com/" className="social">
+                  <a href="https://www.google.com/" className="social-reg">
                     <FcGoogle fontSize="25px" />
                   </a>
-                  <a href="https://www.linkedin.com/" className="social">
+                  <a href="https://www.linkedin.com/" className="social-reg">
                     <AiFillLinkedin fontSize="25px" />
                   </a>
                 </div>

@@ -4,6 +4,7 @@ import Home from "../Components/Home";
 import About from "../Components/About";
 import TopArtist from "../Components/TopArtist";
 import TopArtWork from "../Components/TopArtWork";
+import Footer from "../Components/Footer";
 
 const MainLayout = () => {
   return (
@@ -20,6 +21,9 @@ const MainLayout = () => {
       </section>
       <section id="topartwork">
         <TopArtWork />
+      </section>
+      <section id="footer">
+        <Footer />
       </section>
     </div>
   );

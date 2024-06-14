@@ -21,9 +21,11 @@ const ArtistDetails = () => {
                 <h1 className="username">
                   {/* <h4 style={{ marginLeft: "10px" }}>{artistData?.ArtistFullName}</h4> */}
                 </h1>
-                <small className="page-titles"></small>
+                <small className="artistdetails-titles"></small>
               </div>
-              {/* <img className="artistdetails-img" src={`http://localhost:5000${artistData?.ArtistProfile}`}/> */}
+              <img className="artistdetails-img" 
+              // src={`http://localhost:5000${artistData?.ArtistProfile}`}
+              />
             </div>
           </div>
           <div className="artistdetails-info">
