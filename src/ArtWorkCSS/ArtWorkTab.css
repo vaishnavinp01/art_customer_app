@@ -64,3 +64,33 @@
   background-size: 100% 25px;
   background-position-x: right;
 }
+.artworktab-check {
+  accent-color: #9b59b6;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.artworktab-header {
+  background-color: #cdb4db;
+}
+.artworktab-bodys {
+  background-color: #cdb4db;
+}
+.artworktab-container {
+  border: 2px solid #9b59b6;
+  margin: 30px;
+  padding: 20px;
+  width: 380px;
+}
+.artworktab-div {
+  display: flex;
+  margin-bottom: 10px;
+}
+.artworktab-h5 {
+  margin-right: 10px;
+}
+.artworktab-footers {
+  background-color: #cdb4db;
+}
+.artworktab-label {
+  margin-right: 10px;
+}

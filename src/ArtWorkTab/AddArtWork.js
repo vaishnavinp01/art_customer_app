@@ -24,12 +24,13 @@ const AddArtWork = () => {
       ArtWorkPrice: Number(Price),
       ArtWorkFrameSize: FrameSize,
       ArtWorkCanvasType: CanvasType,
-      ArtistId: UserData?.ArtistProfile?._id,
+      ArtistId: UserData?.data?._id,
     };
     axios
       .post("http://localhost:5000/artapi/addartwork", addData)
       .then((result) => {
-        navigator("/artworks");
+        navigator("/artistprofile");
+        console.log(result.data);
       })
       .catch((err) => {
         console.log(err);
@@ -104,26 +105,30 @@ const AddArtWork = () => {
             <div className="addartwork-div">
               <label className="addartwork-label">Type</label>
               {/* <div> */}
-                <input
-                  type="radio"
-                  value="Painting"
-                  name="status, color"
-                  className="addartwork-check"
-                  inline
-                  onChange={(e) => setType(e.target.value)}
-                />
-                <label style={{marginLeft:'5px'}} className="addartwork-label">Painting</label>
+              <input
+                type="radio"
+                value="Painting"
+                name="status, color"
+                className="addartwork-check"
+                inline
+                onChange={(e) => setType(e.target.value)}
+              />
+              <label style={{ marginLeft: "5px" }} className="addartwork-label">
+                Painting
+              </label>
               {/* </div> */}
               {/* <div> */}
-                <input
-                  type="radio"
-                  value="Drawing"
-                  name="status, color"
-                  className="addartwork-check"
-                  inline
-                  onChange={(e) => setType(e.target.value)}
-                />
-                <label style={{marginLeft:'5px'}} className="addartwork-label">Drawing</label>
+              <input
+                type="radio"
+                value="Drawing"
+                name="status, color"
+                className="addartwork-check"
+                inline
+                onChange={(e) => setType(e.target.value)}
+              />
+              <label style={{ marginLeft: "5px" }} className="addartwork-label">
+                Drawing
+              </label>
               {/* </div> */}
             </div>
             <Col>

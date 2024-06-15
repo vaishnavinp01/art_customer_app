@@ -32,7 +32,7 @@ const AddCustomer = () => {
       CustomerPinCode: Number(PinCode),
       CustomerEmail: Email,
       CustomerProfile: Profile,
-      UserId: UserData?.CustomerProfile?._id,
+      UserId: UserData?._id,
     };
     axios
       .post("http://localhost:5000/artapi/addcustomer", addData)

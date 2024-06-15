@@ -22,9 +22,9 @@ const MainLayout = () => {
       <section id="topartwork">
         <TopArtWork />
       </section>
-      <section id="footer">
+      {/* <section id="footer">
         <Footer />
-      </section>
+      </section> */}
     </div>
   );
 };

@@ -3,8 +3,11 @@ import "../CustomerCSS/CustomerProfile.css";
 import { Card, Tab, Tabs } from "react-bootstrap";
 import CustOrderTab from "./CustOrderTab";
 import CustProfileTab from "./CustProfileTab";
+import { useSelector } from "react-redux";
 
 const CustomerProfile = () => {
+  const { UserData } = useSelector((state) => state.user);
+  console.log("data", UserData?.data?._id);
   return (
     <div>
       {/* <h4>Arts</h4> */}
@@ -12,6 +15,14 @@ const CustomerProfile = () => {
         <Card className="customerprofile-card">
           <div className="customerprofile-header">
             <div className="customerprofile-profile">
+              <div className="customerprofile-names">
+                <h1 className="customerprofile-username">
+                  <h4 style={{ marginLeft: "10px" }}>
+                    {/* {UserData?.CustomerProfile?.} */}
+                  </h4>
+                </h1>
+                <small className="customerprofile-titles"></small>
+              </div>
               <img className="customerprofile-img" />
             </div>
           </div>

@@ -46,7 +46,8 @@
   flex-direction: row;
 }
 .addartwork-check{
-  margin-bottom: 70px;
+  /* margin-bottom: 70px; */
+  margin-top: 10px;
   margin-left: 25px;
 }
 .addartwork-check:checked{

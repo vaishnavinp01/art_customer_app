@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 const ArtistProfile = () => {
   // const { UserData } = useSelector((state) => state.user);
   // const { artistData } = useLocation().state;
+  // console.log(UserData?.ArtistId?.data?.ArtistFullName);
   const navigator = useNavigate();
   return (
     <div>
@@ -18,14 +19,17 @@ const ArtistProfile = () => {
           <div className="artistprofile-header">
             <div className="artistprofile-profile">
               <div className="artistprofile-names">
-                <h1 className="artist-profile-username">
+                <h1 className="artistprofile-username">
                   <h4 style={{ marginLeft: "10px" }}>
-                    {/* {data?.ArtistFullName} */}
+                    {/* {UserData?.data.ArtistFullName} */}
                   </h4>
                 </h1>
                 <small className="artistprofile-titles"></small>
               </div>
-              <img className="artistprofile-img" />
+              <img
+                className="artistprofile-img"
+                // src={`http://localhost:5000${UserData?.data?.ArtistProfile}`}
+              />
               <button
                 onClick={() => navigator("/addartwork")}
                 className="artistprofile-button"

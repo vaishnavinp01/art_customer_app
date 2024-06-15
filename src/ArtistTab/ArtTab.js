@@ -12,13 +12,13 @@ const ArtTab = () => {
   // AllArtWorks
   useEffect(() => {
     const artIdData = {
-      ArtistId: UserData?.ArtistProfile?._id,
+      ArtistId: UserData?.data?._id,
     };
     axios
       .post("http://localhost:5000/artapi/getartworksbyartistid", artIdData)
       .then((result) => {
-        setAllArtWorks(result.data.data);
-        console.log("DATA", result.data.data);
+        setAllArtWorks(result.data);
+        console.log("DATA", result.data);
       })
       .catch((err) => {
         console.log(err);
@@ -27,37 +27,27 @@ const ArtTab = () => {
 
   return (
     <div>
-      <h4 className="arttab-h4">ArtistId: </h4>
-      {/* <span>{UserData?.ArtistProfile?.data?._id}</span> */}
+      <div style={{display:'flex'}}>
+        <h4 className="arttab-h4">ArtistId: </h4>
+        <span style={{marginBottom:'10px'}}>{UserData?.data?._id}</span>
+      </div>
       <Container>
         <Row>
-          {/* {AllArtWorks.map((art) => {
+          {AllArtWorks.map((art) => {
             return (
               <Col sm={12} md={9} lg={3}>
-                <Card className="arttab-card">
-                  <div className="arttab-image">
-                    <Card.Img
-                      className="arttab-img"
-                      src={`http://localhost:5000${art.ArtWorkImage}`}
-                    />
-                  </div>
-                  <Card.Body className="arttab-body">
-                    <Card.Text className="arttab-text">
-                      {art.ArtWorkName}
-                    </Card.Text>
-                    <div>
-                      <Card.Subtitle className="arttab-text">
-                        &#8377;{art.ArtWorkPrice}
-                      </Card.Subtitle>
-                    </div>
-                    <Card.Text className="arttab-text">
-                      {art.ArtWorkFrameSize}
-                    </Card.Text>
+                <Card.Img
+                  src={`http://localhost:5000${art.ArtWorkImage}`}
+                ></Card.Img>
+                <Card>
+                  <Card.Body>
+                    <Card.Text>{art.ArtWorkName}</Card.Text>
+                    <Card.Text>&#8377;{art.ArtWorkPrice}</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
             );
-          })} */}
+          })}
         </Row>
       </Container>
     </div>

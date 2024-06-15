@@ -7,7 +7,6 @@ import {
   incrementQuantity,
 } from "../reduxwork/CartSlice";
 import axios from "axios";
-import { register } from "../reduxwork/UserSlice";
 
 const Cart = () => {
   const { CartItems, CartTotalAmount } = useSelector((state) => state.cart);
@@ -15,7 +14,6 @@ const Cart = () => {
 
   const dispatcher = useDispatch();
   dispatcher(calculateTotal());
-
   //create place order function
   const placeOrder = async () => {
     let finalArtItems = [];
@@ -23,7 +21,7 @@ const Cart = () => {
       finalArtItems.push({ Qty: art.quantity, ArtWorkId: art._id });
     });
     const orderData = {
-      CustId: UserData._id,
+      CustId: UserData?.data?._id,
       OrderTotalAmount: CartTotalAmount,
       OrderItems: finalArtItems,
     };
@@ -33,7 +31,6 @@ const Cart = () => {
         orderData
       );
       console.log(result.data);
-      dispatcher(register(result.data));
       alert("Order Added");
     } catch (error) {}
   };
@@ -45,7 +42,6 @@ const Cart = () => {
           <span className="cart-span">ArtWork Name</span>
           <span className="cart-span">Quantity</span>
           <span className="cart-span">Price</span>
-          <span className="cart-span">Total Price</span>
         </div>
         <div className="cart-divv"></div>
         {CartItems.map((art) => {
@@ -80,13 +76,14 @@ const Cart = () => {
                   </button>
                 </div>
                 <span>&#8377;{art.ArtWorkPrice}</span>
-                <span>&#8377;{CartTotalAmount}</span>
               </div>
               <div className="cart-divs"></div>
             </div>
           );
         })}
         {/* <div className="cart-divs"></div> */}
+        <span className="cart-spanss" style={{fontWeight:'bold'}}>Total Price</span>
+        <span className="cart-spanss">&#8377;{CartTotalAmount}</span>
         <button
           style={{ marginTop: "20px" }}
           className="cart-btnss"

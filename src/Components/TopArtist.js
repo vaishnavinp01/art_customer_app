@@ -27,7 +27,7 @@ const TopArtist = () => {
       <Row>
         {AllArtists.map((art) => {
           return (
-            <Col sm={12} md={8} lg={4}>
+            <Col sm={12} md={9} lg={3}>
               <Card className="topartist-card">
                 <div className="topartist-image">
                   <Card.Img

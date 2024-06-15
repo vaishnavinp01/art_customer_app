@@ -16,29 +16,31 @@ const ArtistDetails = () => {
         <div className="artistdetails-card">
           <div className="artistdetails-header">
             <div className="artistdetails-profile">
-              {/* <h5>UserId: </h5>{artistData._id} */}
               <div className="artistdetails-names">
-                <h1 className="username">
-                  {/* <h4 style={{ marginLeft: "10px" }}>{artistData?.ArtistFullName}</h4> */}
+                <h1 className="artistdetails-username">
+                  <h4 style={{ marginLeft: "10px" }}>
+                    {artistData?.ArtistFullName}
+                  </h4>
                 </h1>
                 <small className="artistdetails-titles"></small>
               </div>
-              <img className="artistdetails-img" 
-              // src={`http://localhost:5000${artistData?.ArtistProfile}`}
+              <img
+                className="artistdetails-img"
+                src={`http://localhost:5000${artistData?.ArtistProfile}`}
               />
             </div>
           </div>
           <div className="artistdetails-info">
             <div className="artistdetails-div">
               <h5 className="artistdetails-h5">UserId: </h5>
-              {/* <span className="artistdetails-span">{artistData._id}</span> */}
+              <span className="artistdetails-span">{artistData?._id}</span>
             </div>
             <Tabs id="uncontrolled-tab-example" defaultActiveKey="ArtWork">
               <Tab
                 eventKey="ArtWork"
                 title={<span className="tabname">ArtWork</span>}
               >
-                <ArtWorkTab />
+                <ArtWorkTab data={artistData} />
               </Tab>
 
               <Tab

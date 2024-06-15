@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../ArtWorkCSS/ArtWorkTab.css";
-import { Card, Col, Container, Modal, Row } from "react-bootstrap";
+import { Card, Col, Container, Form, Modal, Row } from "react-bootstrap";
 import axios from "axios";
 import { GrUpdate } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
 
 const ArtWorkTab = () => {
-  // AllArtists
+  // AllArtWorks
   const [AllArtWorks, setAllArtWorks] = useState([]);
-  const [selectedArtWorks, setselectedArtWorks] = useState([]);
-  const [showDelete, setshowDelete] = useState(false);
-  // AllArtists
   useEffect(() => {
     axios
       .get("http://localhost:5000/artapi/allartworks")
@@ -21,8 +18,28 @@ const ArtWorkTab = () => {
         console.log(err);
       });
   }, []);
-
+  // Update
+  const [showUpdate, setshowUpdate] = useState(false);
+  const [selectedType, setselectedType] = useState("");
+  const [selectedImage, setselectedImage] = useState("");
+  const doUpdate = () => {
+    let artworkIdUpdate = {
+      artworkid: selectedArtWorks._id,
+      ArtWorkType: selectedType,
+      ArtWorkImage: selectedImage,
+    };
+    axios
+      .put("http://localhost:5000/artapi/updateartwork", artworkIdUpdate)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   // Delete
+  const [showDelete, setshowDelete] = useState(false);
+  const [selectedArtWorks, setselectedArtWorks] = useState([]);
   const doDelete = () => {
     let artworkIdDelete = {
       artworkid: selectedArtWorks._id,
@@ -42,37 +59,45 @@ const ArtWorkTab = () => {
 
   return (
     <div style={{ marginTop: "5px" }}>
-      {/* <h4 className="artisttab-h4">TopArtist</h4> */}
+      {/* <h4 className="artworktab-h4">TopArtist</h4> */}
       <Container>
         <Row>
           {AllArtWorks.map((art) => {
             return (
               <Col sm={12} md={9} lg={3}>
-                <Card className="artisttab-card">
-                  <div className="artisttab-image">
+                <Card className="artworktab-card">
+                  <div className="artworktab-image">
                     <Card.Img
-                      className="artisttab-img"
+                      className="artworktab-img"
                       src={`http://localhost:5000${art.ArtWorkImage}`}
                     />
                   </div>
-                  <Card.Body className="artisttab-body">
-                    <Card.Text className="artisttab-text">
+                  <Card.Body className="artworktab-body">
+                    <Card.Text className="artworktab-text">
                       Name: {art.ArtWorkName}
                     </Card.Text>
-                    <Card.Text className="artisttab-text">
+                    <Card.Text className="artworktab-text">
                       Type: {art.ArtWorkType}
                     </Card.Text>
-                    <Card.Text className="artisttab-text">
+                    <Card.Text className="artworktab-text">
                       Price: {art.ArtWorkPrice}
                     </Card.Text>
                   </Card.Body>
-                  <Card.Footer className="artisttab-footer">
-                    <GrUpdate className="artisttab-update">Update</GrUpdate>
+                  <Card.Footer className="artworktab-footer">
+                    <GrUpdate
+                      className="artworktab-update"
+                      onClick={() => {
+                        setshowUpdate(true);
+                        setselectedArtWorks(art);
+                      }}
+                    >
+                      Update
+                    </GrUpdate>
                     <MdDelete
-                      className="artisttab-delete"
+                      className="artworktab-delete"
                       onClick={() => {
                         setshowDelete(true);
-                        setselectedArtWorks(art)
+                        setselectedArtWorks(art);
                       }}
                     >
                       Delete
@@ -84,7 +109,49 @@ const ArtWorkTab = () => {
           })}
         </Row>
       </Container>
-
+      {/* Update */}
+      <Modal show={showUpdate} onHide={() => setshowUpdate(false)}>
+        <Modal.Header className="artworktab-header" closeButton>
+          Update ArtWorks
+        </Modal.Header>
+        <Modal.Body className="artworktab-bodys">
+          <Container className="artworktab-container">
+            <div className="artworktab-div">
+              <h5 className="artworktab-h5">ArtWork Type:</h5>
+              <input
+                type="radio"
+                value="Painting"
+                name="status, color"
+                className="artworktab-check"
+                inline
+                onClick={(e) => setselectedType(e.target.value)}
+              />
+              <label className="artworktab-label">Painting</label>
+              <input
+                type="radio"
+                value="Drawing"
+                name="status, color"
+                className="artworktab-check"
+                inline
+                onClick={(e) => setselectedType(e.target.value)}
+              />
+              <label className="artworktab-label">Drawing</label>
+            </div>
+            <div className="artworktab-div">
+              <h5 className="artworktab-h5">ArtWorkImage:</h5>
+              <input
+                type="file"
+                onClick={(e) => setselectedImage(e.target.value)}
+              />
+            </div>
+          </Container>
+        </Modal.Body>
+        <Modal.Footer className="artworktab-footers">
+          <button onClick={() => doUpdate()}>Yes</button>
+          <button onClick={() => setshowUpdate(false)}>No</button>
+        </Modal.Footer>
+      </Modal>
+      {/* Delete */}
       <Modal show={showDelete} onHide={() => setshowDelete(false)}>
         <Modal.Header closeButton>Delete ArtWorks</Modal.Header>
         <Modal.Body>

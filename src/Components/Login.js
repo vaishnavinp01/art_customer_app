@@ -67,16 +67,17 @@ const Login = () => {
       .then((result) => {
         console.log("DATA", result.data);
         dispatcher(login(result.data));
-        alert("Logined Successfully");
+        // alert("Logined Successfully");
         // navigator('/')
 
-        const idData = { UserId: result?.data?._id };
+        const idData = { UserId: result.data?.data._id };
         console.log("IDDATA", idData);
-        if (result.data?.User_Type === "Customer") {
+        console.log("UT",result.data?.data.User_Type)
+        if (result.data?.data.User_Type === "Customer") {
           axios
             .post("http://localhost:5000/artapi/getcustomerprofile", idData)
             .then((result) => {
-              dispatcher(addCustomerProfile(result.data));
+              dispatcher(addCustomerProfile(result.data?.data));
               navigator("/");
             })
             .catch((err) => {
@@ -86,7 +87,7 @@ const Login = () => {
           axios
             .post("http://localhost:5000/artapi/getartistprofile", idData)
             .then((result) => {
-              dispatcher(addArtistProfile(result.data));
+              dispatcher(addArtistProfile(result.data?.data));
               navigator("/");
             })
             .catch((err) => {

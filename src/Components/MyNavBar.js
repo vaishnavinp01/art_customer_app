@@ -5,13 +5,14 @@ import "../CSS/MyNavBar.css";
 import img1 from "../images/Art_visions__1_-removebg-preview.png";
 import { IoHome } from "react-icons/io5";
 import { FcAbout } from "react-icons/fc";
-import { CgProfile, CgShoppingCart } from "react-icons/cg";
+import { CgProfile } from "react-icons/cg";
 import { BsPersonWorkspace } from "react-icons/bs";
 import { GrArticle } from "react-icons/gr";
 import { BiLogIn, BiLogOut } from "react-icons/bi";
 import { Link } from "react-scroll";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../reduxwork/UserSlice";
+import { FaShoppingCart } from "react-icons/fa";
 const ArtistNavBar = () => {
   // Scrolling Navbar
   const [scrollChangeColor, setscrollChangeColor] = useState(false);
@@ -72,7 +73,10 @@ const ArtistNavBar = () => {
               </Nav.Link>
               <Nav.Link className="nav-link">
                 <RouteLink className="nav-links" to="/cart">
-                  <CgShoppingCart className="nav-icon" />
+                  <FaShoppingCart
+                    className="nav-icon"
+                    style={{ fontSize: "20px" }}
+                  />
                   <span className="nav-noOfCart"> {CartItems.length}</span>
                 </RouteLink>
               </Nav.Link>
@@ -107,7 +111,7 @@ const ArtistNavBar = () => {
                 <CgProfile
                   className="nav-icon nav-links"
                   onClick={() => {
-                    if (UserData?.data?.User_Type === "Customer") {
+                    if (UserData?.data.User_Type === "Customer") {
                       navigator("/customerprofile");
                     } else {
                       navigator("/artistprofile");
