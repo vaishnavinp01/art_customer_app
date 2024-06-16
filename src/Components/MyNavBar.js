@@ -112,7 +112,7 @@ const ArtistNavBar = () => {
                   className="nav-icon nav-links"
                   onClick={() => {
                     if (UserData?.data.User_Type === "Customer") {
-                      navigator("/customerprofile");
+                      navigator("/customerprofile", { state: UserData });
                     } else {
                       navigator("/artistprofile");
                     }

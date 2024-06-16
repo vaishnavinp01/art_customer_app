@@ -23,7 +23,7 @@ const TopArtist = () => {
 
   return (
     <div>
-      <h4 className="topartist-h4">TopArtist</h4>
+      <h4 className="topartist-h4">Top Artist</h4>
       <Row>
         {AllArtists.map((art) => {
           return (

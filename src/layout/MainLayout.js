@@ -4,7 +4,7 @@ import Home from "../Components/Home";
 import About from "../Components/About";
 import TopArtist from "../Components/TopArtist";
 import TopArtWork from "../Components/TopArtWork";
-import Footer from "../Components/Footer";
+// import Footer from "../Components/Footer";
 
 const MainLayout = () => {
   return (

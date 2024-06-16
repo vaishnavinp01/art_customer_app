@@ -75,12 +75,6 @@
 .artworktab-bodys {
   background-color: #cdb4db;
 }
-.artworktab-container {
-  border: 2px solid #9b59b6;
-  margin: 30px;
-  padding: 20px;
-  width: 380px;
-}
 .artworktab-div {
   display: flex;
   margin-bottom: 10px;
@@ -93,4 +87,9 @@
 }
 .artworktab-label {
   margin-right: 10px;
+}
+.artworktab-input{
+  border-radius: 20px;
+  padding-left: 10px;
+  border: 2px solid #9b59b6;
 }

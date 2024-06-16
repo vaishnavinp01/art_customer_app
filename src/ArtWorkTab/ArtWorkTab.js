@@ -20,13 +20,11 @@ const ArtWorkTab = () => {
   }, []);
   // Update
   const [showUpdate, setshowUpdate] = useState(false);
-  const [selectedType, setselectedType] = useState("");
-  const [selectedImage, setselectedImage] = useState("");
+  const [Price, setPrice] = useState("");
   const doUpdate = () => {
     let artworkIdUpdate = {
       artworkid: selectedArtWorks._id,
-      ArtWorkType: selectedType,
-      ArtWorkImage: selectedImage,
+      ArtWorkPrice: Number(Price),
     };
     axios
       .put("http://localhost:5000/artapi/updateartwork", artworkIdUpdate)
@@ -117,31 +115,12 @@ const ArtWorkTab = () => {
         <Modal.Body className="artworktab-bodys">
           <Container className="artworktab-container">
             <div className="artworktab-div">
-              <h5 className="artworktab-h5">ArtWork Type:</h5>
+              <h5 className="artworktab-h5">ArtWork Price:</h5>
               <input
-                type="radio"
-                value="Painting"
-                name="status, color"
-                className="artworktab-check"
+                type="number"
+                className="artworktab-input"
                 inline
-                onClick={(e) => setselectedType(e.target.value)}
-              />
-              <label className="artworktab-label">Painting</label>
-              <input
-                type="radio"
-                value="Drawing"
-                name="status, color"
-                className="artworktab-check"
-                inline
-                onClick={(e) => setselectedType(e.target.value)}
-              />
-              <label className="artworktab-label">Drawing</label>
-            </div>
-            <div className="artworktab-div">
-              <h5 className="artworktab-h5">ArtWorkImage:</h5>
-              <input
-                type="file"
-                onClick={(e) => setselectedImage(e.target.value)}
+                onClick={(e) => setPrice(e.target.value)}
               />
             </div>
           </Container>
