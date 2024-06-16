@@ -24,7 +24,7 @@ const AddArtWork = () => {
       ArtWorkPrice: Number(Price),
       ArtWorkFrameSize: FrameSize,
       ArtWorkCanvasType: CanvasType,
-      ArtistId: UserData?.data?._id,
+      ArtistId: UserData?.ArtistProfile?._id,
     };
     axios
       .post("http://localhost:5000/artapi/addartwork", addData)

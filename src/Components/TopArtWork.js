@@ -9,6 +9,7 @@ import IconButton from "@mui/material/IconButton";
 import Alert from "@mui/material/Alert";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
+import { CgShoppingCart } from "react-icons/cg";
 
 const TopArtWork = () => {
   // AllArtWorks
@@ -47,7 +48,7 @@ const TopArtWork = () => {
       <Row>
         {AllArtWorks.map((art) => {
           return (
-            <Col sm={12} md={8} lg={4}>
+            <Col sm={12} md={9} lg={3}>
               <Card className="topartwork-card">
                 <div className="topartwork-image">
                   <Card.Img
@@ -55,7 +56,6 @@ const TopArtWork = () => {
                     src={`http://localhost:5000${art.ArtWorkImage}`}
                   />
                 </div>
-
                 <Card.Body className="topartwork-body">
                   <Card.Text className="topartwork-text">
                     {art.ArtWorkName}
@@ -75,10 +75,10 @@ const TopArtWork = () => {
                       className="topartwork-button"
                       onClick={() => {
                         dispatcher(addItem(art));
-                        // alert("Added to Cart");
                         handleClick();
                       }}
                     >
+                      <CgShoppingCart />
                       Add to Cart
                     </button>
                     <Snackbar

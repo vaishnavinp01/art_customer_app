@@ -12,7 +12,7 @@ const ArtTab = () => {
   // AllArtWorks
   useEffect(() => {
     const artIdData = {
-      ArtistId: UserData?.data?._id,
+      ArtistId: UserData?.ArtistProfile?._id,
     };
     axios
       .post("http://localhost:5000/artapi/getartworksbyartistid", artIdData)
@@ -29,7 +29,7 @@ const ArtTab = () => {
     <div>
       <div style={{display:'flex'}}>
         <h4 className="arttab-h4">ArtistId: </h4>
-        <span style={{marginBottom:'10px'}}>{UserData?.data?._id}</span>
+        <span style={{marginBottom:'10px'}}>{UserData?.ArtistProfile?._id}</span>
       </div>
       <Container>
         <Row>

@@ -77,7 +77,7 @@ const Login = () => {
           axios
             .post("http://localhost:5000/artapi/getcustomerprofile", idData)
             .then((result) => {
-              dispatcher(addCustomerProfile(result.data?.data));
+              dispatcher(addCustomerProfile(result.data));
               navigator("/");
             })
             .catch((err) => {
@@ -87,7 +87,7 @@ const Login = () => {
           axios
             .post("http://localhost:5000/artapi/getartistprofile", idData)
             .then((result) => {
-              dispatcher(addArtistProfile(result.data?.data));
+              dispatcher(addArtistProfile(result.data));
               navigator("/");
             })
             .catch((err) => {

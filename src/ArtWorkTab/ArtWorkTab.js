@@ -3,16 +3,23 @@ import "../ArtWorkCSS/ArtWorkTab.css";
 import { Card, Col, Container, Form, Modal, Row } from "react-bootstrap";
 import axios from "axios";
 import { GrUpdate } from "react-icons/gr";
-import { MdDelete } from "react-icons/md";
+import { MdCancel, MdDelete } from "react-icons/md";
+import { BiCheck } from "react-icons/bi";
+import { useSelector } from "react-redux";
 
 const ArtWorkTab = () => {
   // AllArtWorks
   const [AllArtWorks, setAllArtWorks] = useState([]);
+  const { UserData } = useSelector((state) => state.user);
   useEffect(() => {
+    const artIdData = {
+      ArtistId: UserData?.data?._id,
+    };
     axios
-      .get("http://localhost:5000/artapi/allartworks")
+      .post("http://localhost:5000/artapi/getartworksbyartistid", artIdData)
       .then((result) => {
         setAllArtWorks(result.data);
+        console.log("Data", result.data);
       })
       .catch((err) => {
         console.log(err);
@@ -20,7 +27,7 @@ const ArtWorkTab = () => {
   }, []);
   // Update
   const [showUpdate, setshowUpdate] = useState(false);
-  const [Price, setPrice] = useState("");
+  const [Price, setPrice] = useState(0);
   const doUpdate = () => {
     let artworkIdUpdate = {
       artworkid: selectedArtWorks._id,
@@ -29,7 +36,7 @@ const ArtWorkTab = () => {
     axios
       .put("http://localhost:5000/artapi/updateartwork", artworkIdUpdate)
       .then((result) => {
-        console.log(result);
+        console.log(result.data);
       })
       .catch((err) => {
         console.log(err);
@@ -47,7 +54,7 @@ const ArtWorkTab = () => {
         data: artworkIdDelete,
       })
       .then((result) => {
-        console.log(result);
+        console.log(result.data);
         setshowDelete(false);
       })
       .catch((err) => {
@@ -57,7 +64,7 @@ const ArtWorkTab = () => {
 
   return (
     <div style={{ marginTop: "5px" }}>
-      {/* <h4 className="artworktab-h4">TopArtist</h4> */}
+      <h4 className="artworktab-h4">ArtWork Tab</h4>
       <Container>
         <Row>
           {AllArtWorks.map((art) => {
@@ -126,19 +133,59 @@ const ArtWorkTab = () => {
           </Container>
         </Modal.Body>
         <Modal.Footer className="artworktab-footers">
-          <button onClick={() => doUpdate()}>Yes</button>
-          <button onClick={() => setshowUpdate(false)}>No</button>
+          <BiCheck
+            style={{
+              border: "2px solid green",
+              color: "white",
+              background: "green",
+              borderRadius: "50%",
+              marginRight: "10px",
+            }}
+            onClick={() => doUpdate()}
+          />
+          <MdCancel
+            style={{
+              border: "1px solid red",
+              color: "white",
+              background: "red",
+              borderRadius: "50%",
+            }}
+            onClick={() => setshowUpdate(false)}
+          />
         </Modal.Footer>
       </Modal>
       {/* Delete */}
       <Modal show={showDelete} onHide={() => setshowDelete(false)}>
-        <Modal.Header closeButton>Delete ArtWorks</Modal.Header>
-        <Modal.Body>
+        <Modal.Header style={{ backgroundColor: "#cdb4db" }} closeButton>
+          Delete ArtWorks
+        </Modal.Header>
+        <Modal.Body style={{ backgroundColor: "#cdb4db" }}>
           <h4>Are you sure you want to delete this artworks?</h4>
         </Modal.Body>
-        <Modal.Footer>
-          <button onClick={() => doDelete()}>Yes</button>
-          <button onClick={() => setshowDelete(false)}>No</button>
+        <Modal.Footer style={{ backgroundColor: "#cdb4db" }}>
+          <BiCheck
+            style={{
+              border: "2px solid green",
+              color: "white",
+              background: "green",
+              borderRadius: "50%",
+              marginRight: "10px",
+            }}
+            onClick={() => doDelete()}
+          >
+            Yes
+          </BiCheck>
+          <MdCancel
+            style={{
+              border: "1px solid red",
+              color: "white",
+              background: "red",
+              borderRadius: "50%",
+            }}
+            onClick={() => setshowDelete(false)}
+          >
+            No
+          </MdCancel>
         </Modal.Footer>
       </Modal>
     </div>
