@@ -1,8 +1,9 @@
+
 import React, { useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link as RouteLink, useNavigate } from "react-router-dom";
 import "../CSS/MyNavBar.css";
-import img1 from "../images/Art_visions__1_-removebg-preview.png";
+import img1 from "../images/nav-removebg-preview.png";
 import { IoHome } from "react-icons/io5";
 import { FcAbout } from "react-icons/fc";
 import { CgProfile, CgShoppingCart } from "react-icons/cg";
@@ -40,7 +41,7 @@ const ArtistNavBar = () => {
       >
         <Container fluid className="nav-container">
           <Navbar.Brand className="nav-brand">
-            <img className="logo" src={img1} />
+            <img className="nav-logo" src={img1} />
             Art Vision
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -108,7 +109,7 @@ const ArtistNavBar = () => {
                       <span style={{ marginLeft: "4px" }}>Logout</span>
                     </button>
                   </div>
-                </div>
+                </div> 
               </div>
 
               <Nav.Link className="nav-link">

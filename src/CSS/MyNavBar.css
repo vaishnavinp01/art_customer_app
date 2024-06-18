@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NL:wght@100..400&display=swap');
+
 * {
   font-family: "Times New Roman", Times, serif;
   /* font-family: 'Lucida Handwriting'; */
@@ -16,6 +18,8 @@
 }
 .nav-brand {
   flex: 3;
+  font-family: "Playwrite NL", cursive;
+
 }
 .nav-links {
   display: flex;
@@ -28,9 +32,9 @@
   align-items: center;
   font-weight: 600;
 }
-.logo {
-  height: 110px;
-  width: 110px;
+.nav-logo {
+  height: 55px;
+  width: 55px;
   margin-left: 20px;
   /* color: #000; */
   /* font-weight: bold; */

@@ -19,8 +19,8 @@ import CustOrderDetails from "../CustomerTab/CustOrderDetails";
 const MyRoutes = () => {
   const artistData = useLocation().state;
   return (
-    <div>
-      <Container>
+    <div style={{width:"95vw"}}>
+     
         <Routes>
           <Route path="/" element={<MainLayout />} />
           <Route path="/cart" element={<Cart />} />
@@ -37,8 +37,8 @@ const MyRoutes = () => {
           <Route path="/customers" element={<Customers />} />
           <Route path="/custorderdetails" element={<CustOrderDetails />} />
         </Routes>
-      </Container>
-    </div>
+      </div>
+   
   );
 };
 
