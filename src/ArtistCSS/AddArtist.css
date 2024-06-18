@@ -57,10 +57,6 @@
 .addartist-label .addartist-input:valid {
   border-color: #9b59b6;
 }
-.addartist-button {
-  margin-top: 5px;
-}
-
 .addartist-container {
   content: "";
   max-width: 700px;
@@ -90,6 +86,12 @@
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }
+.addartist-input{
+  font-weight: 610;
+}
+.addartist-label{
+  font-weight: 610;
+}
 .addartist-form .addartist-label .addartist-input {
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
@@ -110,5 +112,6 @@
   border-color: #9b59b6;
 }
 .addartist-button {
-  margin-top: 5px;
+  margin-top: 10px;
+  background-color: #cdb4db;
 }

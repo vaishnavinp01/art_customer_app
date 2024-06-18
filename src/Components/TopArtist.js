@@ -23,11 +23,11 @@ const TopArtist = () => {
 
   return (
     <div>
-      <h4 className="topartist-h4">TopArtist</h4>
+      <h4 className="topartist-h4">Top Artist</h4>
       <Row>
         {AllArtists.map((art) => {
           return (
-            <Col sm={12} md={8} lg={4}>
+            <Col sm={12} md={9} lg={3}>
               <Card className="topartist-card">
                 <div className="topartist-image">
                   <Card.Img
@@ -49,7 +49,7 @@ const TopArtist = () => {
                 <Card.Footer>
                   <button
                     className="topartist-button"
-                    onClick={() => navigator("/artists")}
+                    onClick={() => navigator("/artistdetails", { state: art })}
                   >
                     <span className="topartist-span">»</span>
                   </button>

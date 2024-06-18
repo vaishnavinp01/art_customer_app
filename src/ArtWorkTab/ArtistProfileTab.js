@@ -1,14 +1,15 @@
 import React from "react";
-import "../ArtWorkCSS/ArtWorkProfileTab.css";
+import "../ArtWorkCSS/ArtistProfileTab.css";
 import { Card, Col, Row } from "react-bootstrap";
 
 const ArtistProfileTab = ({ data }) => {
+
   return (
-    <div className="">
+    <div>
       {console.log(data)}
 
-      <h4 className="artistprofiletab-h4">ArtProfileTab</h4>
-      {/* <div className="artistprofiletab-div">
+      <h4 className="artistprofiletab-h4">ArtistProfileTab</h4>
+      <div className="artistprofiletab-div">
         <Card className="artistprofiletab-card">
           <Row className="artistprofiletab-p">
             <Col>Adhar Card Image: </Col>
@@ -26,39 +27,44 @@ const ArtistProfileTab = ({ data }) => {
           </Row>
         </Card>
         <Card className="artistprofiletab-cards">
-          <p className="artistprofiletab-p">
-            <span>Name:</span> {data?.ArtistFullName}
+          <p className="artistprofiletab-pp">
+            <span className="artistprofiletab-span">Name: </span>
+            {data?.ArtistFullName}
           </p>
-          <p className="artistprofiletab-p">
-            <span>Address:</span>
+          <p className="artistprofiletab-pp">
+            <span className="artistprofiletab-span">Address: </span>
             {data?.ArtistAddress}
           </p>
-          <p className="artistprofiletab-p">
-            <span>City:</span> {data?.ArtistCity}
+          <p className="artistprofiletab-pp">
+            <span className="artistprofiletab-span">City: </span>
+            {data?.ArtistCity}
           </p>
-          <p className="artistprofiletab-p">
-            <span>Mobile No: </span>
+          <p className="artistprofiletab-pp">
+            <span className="artistprofiletab-span">Mobile No: </span>
             {data?.ArtistMobileNo}
           </p>
-          <p className="artistprofiletab-p">
-            <span>Email:</span> {data?.ArtistEmail}
+          <p className="artistprofiletab-pp">
+            <span className="artistprofiletab-span">Email: </span>
+            {data?.ArtistEmail}
           </p>
-          <p className="artistprofiletab-p">
-            <span>State:</span> {data?.ArtistState}
+          <p className="artistprofiletab-pp">
+            <span className="artistprofiletab-span">State: </span>
+            {data?.ArtistState}
           </p>
-          <p className="artistprofiletab-p">
-            <span>Pin Code: </span>
+          <p className="artistprofiletab-pp">
+            <span className="artistprofiletab-span">Pin Code: </span>
             {data?.ArtistPincode}
           </p>
-          <p className="artistprofiletab-p">
-            <span>Adhar Card No:</span> {data?.ArtistAdharCardNo}
+          <p className="artistprofiletab-pp">
+            <span className="artistprofiletab-span">Adhar Card No:</span>
+            {data?.ArtistAdharCardNo}
           </p>
-          <p className="artistprofiletab-p">
-            <span>IsVerified: </span>
+          <p className="artistprofiletab-pp">
+            <span className="artistprofiletab-span">IsVerified: </span>
             {data?.IsVerified}
           </p>
         </Card>
-      </div> */}
+      </div>
     </div>
   );
 };

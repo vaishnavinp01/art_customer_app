@@ -1,0 +1,95 @@
+/* cardsetup */
+.artworktab-card {
+  margin-top: 10px;
+  height: 330px;
+  width: 250px;
+}
+.artworktab-image {
+  transition: transform 0.3s;
+  overflow: hidden;
+  height: 250px;
+  width: 100%;
+  position: relative;
+}
+.artworktab-img {
+  height: 200px;
+  width: 250px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+.artworktab-img:hover {
+  transform: scale(1.1);
+}
+.artworktab-text {
+  display: flex;
+  left: 10px;
+  right: 10px;
+}
+.artworktab-footer {
+  color: inherit;
+  line-height: 1;
+}
+.artworktab-update {
+  background: linear-gradient(0deg, rgb(75, 69, 117), rgb(128, 115, 210))
+    no-repeat right bottom / 0 20px;
+  transition: background-size 350ms;
+  --bg-h: 100%;
+
+  margin-right: 5px;
+  margin-bottom: 2px;
+  border: 2px solid black;
+  padding: 5px;
+  font-size: 28px;
+}
+.artworktab-update:where(:hover, :focus-visible) {
+  background-size: 100% 25px;
+  background-position-x: left;
+}
+.artworktab-delete {
+  background: linear-gradient(0deg, rgb(198, 79, 79), rgb(246, 84, 84))
+    no-repeat left bottom / 0 20px;
+  transition: background-size 350ms;
+  --bg-h: 100%;
+
+  /* margin-right: 5px; */
+  margin-bottom: 2px;
+  border: 2px solid black;
+  padding: 5px;
+  font-size: 28px;
+}
+.artworktab-delete:where(:hover, :focus-visible) {
+  background-size: 100% 25px;
+  background-position-x: right;
+}
+.artworktab-check {
+  accent-color: #9b59b6;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.artworktab-header {
+  background-color: #cdb4db;
+}
+.artworktab-bodys {
+  background-color: #cdb4db;
+}
+.artworktab-div {
+  display: flex;
+  margin-bottom: 10px;
+}
+.artworktab-h5 {
+  margin-right: 10px;
+}
+.artworktab-footers {
+  background-color: #cdb4db;
+}
+.artworktab-label {
+  margin-right: 10px;
+}
+.artworktab-input{
+  border-radius: 20px;
+  padding-left: 10px;
+  border: 2px solid #9b59b6;
+}

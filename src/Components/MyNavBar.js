@@ -6,13 +6,14 @@ import "../CSS/MyNavBar.css";
 import img1 from "../images/nav-removebg-preview.png";
 import { IoHome } from "react-icons/io5";
 import { FcAbout } from "react-icons/fc";
-import { CgProfile, CgShoppingCart } from "react-icons/cg";
+import { CgProfile } from "react-icons/cg";
 import { BsPersonWorkspace } from "react-icons/bs";
 import { GrArticle } from "react-icons/gr";
 import { BiLogIn, BiLogOut } from "react-icons/bi";
 import { Link } from "react-scroll";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../reduxwork/UserSlice";
+import { FaShoppingCart } from "react-icons/fa";
+
 const ArtistNavBar = () => {
   // Scrolling Navbar
   const [scrollChangeColor, setscrollChangeColor] = useState(false);
@@ -27,8 +28,11 @@ const ArtistNavBar = () => {
 
   const { UserData } = useSelector((state) => state.user);
   const { CartItems } = useSelector((state) => state.cart);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const handleDropdownToggle = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
   const navigator = useNavigate();
-  const dispatcher = useDispatch();
 
   return (
     <div>
@@ -50,38 +54,33 @@ const ArtistNavBar = () => {
               <Nav.Link className="nav-link">
                 <Link className="nav-links" to="home">
                   <IoHome className="nav-icon" />
-                  {/* <div className="div-links"> */}
                   Home
-                  {/* </div> */}
                 </Link>
               </Nav.Link>
               <Nav.Link className="nav-link">
                 <Link className="nav-links" to="about">
                   <FcAbout className="nav-icon" />
-                  {/* <div className="div-links"> */}
                   About
-                  {/* </div> */}
                 </Link>
               </Nav.Link>
               <Nav.Link className="nav-link">
                 <Link className="nav-links" to="topartist">
                   <GrArticle className="nav-icon" />
-                  {/* <div className="div-links"> */}
                   Top Artist
-                  {/* </div> */}
                 </Link>
               </Nav.Link>
               <Nav.Link className="nav-link">
                 <Link className="nav-links" to="topartwork">
                   <BsPersonWorkspace className="nav-icon" />
-                  {/* <div className="div-links"> */}
                   Top ArtWork
-                  {/* </div> */}
                 </Link>
               </Nav.Link>
               <Nav.Link className="nav-link">
                 <RouteLink className="nav-links" to="/cart">
-                  <CgShoppingCart className="nav-icon" />
+                  <FaShoppingCart
+                    className="nav-icon"
+                    style={{ fontSize: "20px" }}
+                  />
                   <span className="nav-noOfCart"> {CartItems.length}</span>
                 </RouteLink>
               </Nav.Link>
@@ -94,32 +93,28 @@ const ArtistNavBar = () => {
                   Login
                 </RouteLink>
               </Nav.Link>
-
-              <div className="nav-div">
-                <div className="dropdown">
-                  <button className="nav-button">
-                    {UserData?.data?.UserName.slice(0, 1)}
-                  </button>
-                  <div className="dropdown-options">
-                    <button className="nav-buttons">
-                      <BiLogOut
-                        style={{ marginBottom: "25px" }}
-                        onClick={() => dispatcher(logout())}
-                      />
-                      <span style={{ marginLeft: "4px" }}>Logout</span>
-                    </button>
-                  </div>
-                </div> 
+              <div className="nav-dropdown">
+                <button className="nav-dropbtn" onClick={handleDropdownToggle}>
+                  {UserData?.data?.UserName.slice(0, 1)}
+                </button>
               </div>
+              {dropdownOpen && (
+                <div className="nav-dropdown-content">
+                  <a href="#" className="nav-a">
+                    <BiLogOut />
+                    Logout
+                  </a>
+                </div> 
+              )}
 
               <Nav.Link className="nav-link">
                 <CgProfile
                   className="nav-icon nav-links"
                   onClick={() => {
-                    if (UserData.User_Type === "Customer") {
-                      navigator("/customers");
+                    if (UserData?.data.User_Type === "Customer") {
+                      navigator("/customerprofile", { state: UserData });
                     } else {
-                      navigator("/artworks");
+                      navigator("/artistprofile");
                     }
                   }}
                 />

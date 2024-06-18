@@ -5,15 +5,11 @@ import "../ArtistCSS/AddArtist.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addArtistProfile } from "../reduxwork/UserSlice";
 import { useNavigate } from "react-router-dom";
-import { Alert, IconButton, Snackbar } from "@mui/material";
-import { FaCheckCircle } from "react-icons/fa";
-import { CgClose } from "react-icons/cg";
 
 const AddArtist = () => {
   const navigator = useNavigate();
   const dispatcher = useDispatch();
   const { UserData } = useSelector((state) => state.user);
-
   // AddArtist
   const [FullName, setFullName] = useState("");
   const [Address, setAddress] = useState("");
@@ -26,7 +22,6 @@ const AddArtist = () => {
   const [AdharCardImage, setAdharCardImage] = useState("");
   const [HandicapCertificateImage, setHandicapCertificateImage] = useState("");
   const [Profile, setProfile] = useState("");
-
   const doArtist = () => {
     const addData = {
       ArtistFullName: FullName,
@@ -40,19 +35,19 @@ const AddArtist = () => {
       ArtistAdharCardImage: AdharCardImage,
       ArtistHandicapCertificateImage: HandicapCertificateImage,
       ArtistProfile: Profile,
-      UserId: UserData?.ArtistProfile?._id,
+      UserId: UserData?._id,
     };
     axios
       .post("http://localhost:5000/artapi/addartist", addData)
       .then((result) => {
         dispatcher(addArtistProfile(result.data));
+        console.log(result.data)
         navigator("/");
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
   // Upload Image
   async function uploadAdhar(e) {
     const imgData = new FormData();
@@ -67,7 +62,6 @@ const AddArtist = () => {
         console.log("Error:", err);
       });
   }
-
   // Upload Image
   async function uploadCertificate(e) {
     const imgData1 = new FormData();
@@ -82,7 +76,6 @@ const AddArtist = () => {
         console.log("Error:", err);
       });
   }
-
   // Upload Image
   async function uploadProfile(e) {
     const imgData2 = new FormData();
@@ -97,28 +90,13 @@ const AddArtist = () => {
         console.log("Error:", err);
       });
   }
-
-  // Snackbar
-  const [open, setOpen] = useState(false);
-
-  const handleClick = () => {
-    setOpen(true);
-  };
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setOpen(false);
-  };
-
   return (
     <div className="addartist-main">
       <div className="addartist-container">
         <h4 className="addartist">AddArtist</h4>
         <Container>
           <Form className="addartist-form">
-            <Row> 
+            <Row>
               <Col>
                 <label className="addartist-label">Full Name</label>
                 <input
@@ -211,29 +189,34 @@ const AddArtist = () => {
                   onChange={uploadAdhar}
                 />
               </Col>
-              <Col>
-                <label className="addartist-label">
-                  Handicap Certificate Image
-                </label>
-                <input
-                  className="addartist-file"
-                  type="file"
-                  onChange={uploadCertificate}
-                />
-              </Col>
-              <Col>
-                <label className="addartist-label">Profile</label>
-                <input
-                  className="addartist-file"
-                  type="file"
-                  onChange={uploadProfile}
-                />
-              </Col>
+              <div style={{display:'flex',flexDirection:'row'}}>
+                <Col>
+                  <label className="addartist-label">
+                    Handicap Certificate Image
+                  </label>
+                  <input
+                    className="addartist-file"
+                    type="file"
+                    onChange={uploadCertificate}
+                  />
+                </Col>
+                <Col>
+                  <label className="addartist-label">Profile</label>
+                  <input
+                    className="addartist-file"
+                    type="file"
+                    onChange={uploadProfile}
+                  />
+                </Col>
+              </div>
             </Row>
           </Form>
-          <button className="addartist-button" onClick={() => {
-            doArtist()
-          }}>
+          <button
+            className="addartist-button"
+            onClick={() => {
+              doArtist();
+            }}
+          >
             Submit
           </button>
         </Container>

@@ -67,15 +67,18 @@ const Login = () => {
       .then((result) => {
         console.log("DATA", result.data);
         dispatcher(login(result.data));
-        alert("Logined Successfully");
+        // alert("Logined Successfully");
+        // navigator('/')
 
-        const idData = { UserId: result._id };
+        const idData = { UserId: result.data?.data._id };
         console.log("IDDATA", idData);
-        if (result.User_Type === "Customer") {
+        console.log("UT",result.data?.data.User_Type)
+        if (result.data?.data.User_Type === "Customer") {
           axios
             .post("http://localhost:5000/artapi/getcustomerprofile", idData)
             .then((result) => {
-              dispatcher(addCustomerProfile(result.data));
+              dispatcher(addCustomerProfile(result.data?.data));
+              // console.log(result.data?.data)
               navigator("/");
             })
             .catch((err) => {
@@ -85,7 +88,8 @@ const Login = () => {
           axios
             .post("http://localhost:5000/artapi/getartistprofile", idData)
             .then((result) => {
-              dispatcher(addArtistProfile(result.data));
+              dispatcher(addArtistProfile(result.data?.data));
+              // console.log(result.data)
               navigator("/");
             })
             .catch((err) => {
@@ -112,13 +116,13 @@ const Login = () => {
               <form action="#" className="Login_Form">
                 <h1 className="reg-h1">Register</h1>
                 <div className="social-container">
-                  <a href="https://www.facebook.com/" className="social">
+                  <a href="https://www.facebook.com/" className="social-reg">
                     <FaFacebook fontSize="25px" />
                   </a>
-                  <a href="https://www.google.com/" className="social">
+                  <a href="https://www.google.com/" className="social-reg">
                     <FcGoogle fontSize="25px" />
                   </a>
-                  <a href="https://www.linkedin.com/" className="social">
+                  <a href="https://www.linkedin.com/" className="social-reg">
                     <AiFillLinkedin fontSize="25px" />
                   </a>
                 </div>
@@ -186,13 +190,13 @@ const Login = () => {
               <form className="Login_Form" onSubmit={(e) => e.preventDefault()}>
                 <h1 className="reg-h1">Login</h1>
                 <div className="social-container">
-                  <a href="https://www.facebook.com/" className="social">
+                  <a href="https://www.facebook.com/" className="social-reg">
                     <FaFacebook fontSize="25px" />
                   </a>
-                  <a href="https://www.google.com/" className="social">
+                  <a href="https://www.google.com/" className="social-reg">
                     <FcGoogle fontSize="25px" />
                   </a>
-                  <a href="https://www.linkedin.com/" className="social">
+                  <a href="https://www.linkedin.com/" className="social-reg">
                     <AiFillLinkedin fontSize="25px" />
                   </a>
                 </div>

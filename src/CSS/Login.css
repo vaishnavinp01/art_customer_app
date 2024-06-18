@@ -3,7 +3,8 @@
   box-sizing: border-box;
 }
 .reg-h1 {
-  font-weight: bold;
+  /* font-weight: bold; */
+  text-transform: uppercase;
   margin: 0;
 }
 .reg-p {
@@ -61,7 +62,7 @@
 .social-container {
   margin: 20px 0;
 }
-.social {
+.social-reg {
   border: 1px solid #dddddd;
   border-radius: 50%;
   display: inline-flex;
@@ -89,6 +90,7 @@
   padding: 12px 15px;
   margin: 8px 0;
   width: 100%;
+  font-weight: 610;
 
   outline: none;
   /* padding: 20px 45px 20px 20px; */

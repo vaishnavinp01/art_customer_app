@@ -4,10 +4,10 @@ import { BrowserRouter } from "react-router-dom";
 import MyRoutes from "./layout/MyRoutes";
 import { useEffect, useState } from "react";
 import Loading from "./Components/Loading";
+import Slider from "./ArtistTab/Slider";
 // import CustomSnackbar from "./Components/CustomSnackbar";
 
 function App() {
-
   // Loading
   const [loading, setloading] = useState(true);
   useEffect(() => {
@@ -22,9 +22,10 @@ function App() {
       {loading ? (
         <Loading />
       ) : (
-        <BrowserRouter>
-          <MyRoutes />
-        </BrowserRouter>
+        // <BrowserRouter>
+        //   <MyRoutes />
+        // </BrowserRouter>
+        <Slider/>
       )}
       {/* <CustomSnackbar/> */}
     </div>
