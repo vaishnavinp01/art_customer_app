@@ -4,11 +4,9 @@ import '../ArtistCSS/Slider.css';
 
 const Slider = () => {
   const [index, setIndex] = useState(0);
-
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
-
   const testimonials = [
     {
       text: "I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!",
