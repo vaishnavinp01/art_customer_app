@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+NL:wght@100..400&display=swap');
-
 .home-hero {
   width: 102%;
   min-height: 100vh;
@@ -31,7 +30,6 @@
   height: 200px;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  /* border-radius: 50%; */
   object-fit: cover;
   cursor: pointer;
 }
@@ -55,7 +53,6 @@
   width: 20vw;
   margin-bottom: 2%;
 }
-
 .home-ul li:nth-child(1),
 .home-ul li:nth-child(5) {
   padding-left: 300px;
@@ -64,7 +61,3 @@
 .home-ul li:nth-child(4) {
   padding-left: 150px;
 }
-
-
-
-

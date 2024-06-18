@@ -11,7 +11,7 @@ const ArtistDetails = () => {
   // const { UserData } = useSelector((state) => state.user);
 
   return (
-    <div>
+    <div style={{marginLeft:'110px'}}>
       <div className="artistdetails-container">
         <div className="artistdetails-card">
           <div className="artistdetails-header">

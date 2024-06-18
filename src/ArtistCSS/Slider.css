@@ -1,41 +1,41 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
-* {
+/* @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"); */
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-body {
+} */
+.slider-div {
   font-size: 16px;
   font-weight: 300;
   line-height: 23px;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
 }
-ul {
+.slider-ol {
   list-style-type: none;
 }
-a,
+/* a,
 a:hover {
   text-decoration: none;
+} */
+.slider-div {
+  /* font-family: "Montserrat", sans-serif; */
 }
-body {
-  font-family: "Montserrat", sans-serif;
-}
-body .testimonial {
+.slider-div .testimonial {
   padding: 100px 0;
 }
-body .testimonial .row .tabs {
+.slider-div .testimonial .row .tabs {
   all: unset;
   margin-right: 50px;
   display: flex;
   flex-direction: column;
 }
-body .testimonial .row .tabs li {
+.slider-div .testimonial .row .tabs li {
   all: unset;
   display: block;
   position: relative;
   cursor: pointer;
 }
-body .testimonial .row .tabs li.active::before {
+.slider-div .testimonial .row .tabs li.active::before {
   position: absolute;
   content: "";
   width: 50px;
@@ -43,7 +43,7 @@ body .testimonial .row .tabs li.active::before {
   background-color: #71b85f;
   border-radius: 50%;
 }
-body .testimonial .row .tabs li.active::after {
+.slider-div .testimonial .row .tabs li.active::after {
   position: absolute;
   content: "";
   width: 30px;
@@ -51,64 +51,64 @@ body .testimonial .row .tabs li.active::after {
   background-color: #71b85f;
   border-radius: 50%;
 }
-body .testimonial .row .tabs li:nth-child(1) {
+.slider-div .testimonial .row .tabs li:nth-child(1) {
   align-self: flex-end;
 }
-body .testimonial .row .tabs li:nth-child(1)::before {
+.slider-div .testimonial .row .tabs li:nth-child(1)::before {
   left: 64%;
   bottom: -50px;
 }
-body .testimonial .row .tabs li:nth-child(1)::after {
+.slider-div .testimonial .row .tabs li:nth-child(1)::after {
   left: 97%;
   bottom: -81px;
 }
-body .testimonial .row .tabs li:nth-child(1) figure img {
+.slider-div .testimonial .row .tabs li:nth-child(1) figure img {
   margin-left: auto;
 }
-body .testimonial .row .tabs li:nth-child(2) {
+.slider-div .testimonial .row .tabs li:nth-child(2) {
   align-self: flex-start;
 }
-body .testimonial .row .tabs li:nth-child(2)::before {
+.slider-div .testimonial .row .tabs li:nth-child(2)::before {
   right: -65px;
   top: 50%;
 }
-body .testimonial .row .tabs li:nth-child(2)::after {
+.slider-div .testimonial .row .tabs li:nth-child(2)::after {
   bottom: 101px;
   border-radius: 50%;
   right: -120px;
 }
-body .testimonial .row .tabs li:nth-child(2) figure img {
+.slider-div .testimonial .row .tabs li:nth-child(2) figure img {
   margin-right: auto;
   max-width: 300px;
   width: 100%;
   margin-top: -50px;
 }
-body .testimonial .row .tabs li:nth-child(3) {
+.slider-div .testimonial .row .tabs li:nth-child(3) {
   align-self: flex-end;
 }
-body .testimonial .row .tabs li:nth-child(3)::before {
+.slider-div .testimonial .row .tabs li:nth-child(3)::before {
   right: -10px;
   top: -66%;
 }
-body .testimonial .row .tabs li:nth-child(3)::after {
+.slider-div .testimonial .row .tabs li:nth-child(3)::after {
   top: -130px;
   border-radius: 50%;
   right: -46px;
 }
-body .testimonial .row .tabs li:nth-child(3) figure img {
+.slider-div .testimonial .row .tabs li:nth-child(3) figure img {
   margin-left: auto;
   margin-top: -50px;
 }
-body .testimonial .row .tabs li:nth-child(3):focus {
+.slider-div .testimonial .row .tabs li:nth-child(3):focus {
   border: 10px solid red;
 }
-body .testimonial .row .tabs li figure {
+.slider-div .testimonial .row .tabs li figure {
   position: relative;
 }
-body .testimonial .row .tabs li figure img {
+.slider-div .testimonial .row .tabs li figure img {
   display: block;
 }
-body .testimonial .row .tabs li figure::after {
+.slider-div .testimonial .row .tabs li figure::after {
   content: "";
   position: absolute;
   top: 0;
@@ -124,45 +124,45 @@ body .testimonial .row .tabs li figure::after {
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-body .testimonial .row .tabs li figure:hover::after {
+.slider-div .testimonial .row .tabs li figure:hover::after {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
-body .testimonial .row .tabs.carousel-indicators li.active figure::after {
+.slider-div .testimonial .row .tabs.carousel-indicators li.active figure::after {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
-body .testimonial .row .carousel > h3 {
+.slider-div .testimonial .row .carousel > h3 {
   font-size: 20px;
   line-height: 1.45;
   color: rgba(0, 0, 0, 0.5);
   font-weight: 600;
   margin-bottom: 0;
 }
-body .testimonial .row .carousel h1 {
+.slider-div .testimonial .row .carousel h1 {
   font-size: 40px;
   line-height: 1.225;
   margin-top: 23px;
   font-weight: 700;
   margin-bottom: 0;
 }
-body .testimonial .row .carousel .carousel-indicators {
+.slider-div .testimonial .row .carousel .carousel-indicators {
   all: unset;
   padding-top: 43px;
   display: flex;
   list-style: none;
 }
-body .testimonial .row .carousel .carousel-indicators li {
+.slider-div .testimonial .row .carousel .carousel-indicators li {
   background: #000;
   background-clip: padding-box;
   height: 2px;
 }
-body .testimonial .row .carousel .carousel-inner .carousel-item .quote-wrapper {
+.slider-div .testimonial .row .carousel .carousel-inner .carousel-item .quote-wrapper {
   margin-top: 42px;
 }
-body
+.slider-div
   .testimonial
   .row
   .carousel
@@ -175,7 +175,7 @@ body
   font-weight: 500;
   color: rgba(0, 0, 0, 0.7);
 }
-body
+.slider-div
   .testimonial
   .row
   .carousel
@@ -191,7 +191,7 @@ body
   text-transform: uppercase;
 }
 @media only screen and (max-width: 1200px) {
-  body .testimonial .row .tabs {
+  .slider-div .testimonial .row .tabs {
     margin-right: 25px;
   }
 }

@@ -35,7 +35,7 @@ const Cart = () => {
     } catch (error) {}
   };
   return (
-    <div className="cart-main-div">
+    <div className="cart-main-div" style={{ marginLeft: "10px" }}>
       <div style={{ marginTop: "40px" }}>
         <div className="cart-div">
           <span className="cart-span">Order</span>
@@ -55,7 +55,7 @@ const Cart = () => {
                     src={`http://localhost:5000${art.ArtWorkImage}`}
                   />
                 </span>
-                <span style={{marginRight:'30px'}}>{art.ArtWorkName}</span>
+                <span style={{ marginRight: "30px" }}>{art.ArtWorkName}</span>
                 <div>
                   <button
                     className="cart-btns"
@@ -82,7 +82,10 @@ const Cart = () => {
           );
         })}
         <div className="cart-divvs"></div>
-        <span className="cart-spanss" style={{ fontWeight: "bold" }}>
+        <span
+          className="cart-spanss"
+          style={{ fontWeight: "bold", marginLeft: "1100px" }}
+        >
           Total Price
         </span>
         <span className="cart-spanss">&#8377;{CartTotalAmount}</span>

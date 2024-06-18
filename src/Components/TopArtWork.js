@@ -42,7 +42,7 @@ const TopArtWork = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{marginLeft:'10px'}}>
       <h4 className="topartwork-h4">TopArtWork</h4>
       <Row>
         {AllArtWorks.map((art) => {

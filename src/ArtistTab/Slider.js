@@ -26,7 +26,7 @@ const Slider = () => {
   ];
 
   return (
-    <div>
+    <div className="slider-div">
       <section className="testimonial">
         <div className="container">
           <div className="row">
@@ -75,3 +75,4 @@ const Slider = () => {
 };
 
 export default Slider;
+

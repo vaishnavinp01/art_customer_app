@@ -22,7 +22,7 @@ const TopArtist = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{marginLeft:'10px'}}>
       <h4 className="topartist-h4">Top Artist</h4>
       <Row>
         {AllArtists.map((art) => {

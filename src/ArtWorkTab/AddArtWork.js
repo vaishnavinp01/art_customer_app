@@ -30,7 +30,7 @@ const AddArtWork = () => {
       .post("http://localhost:5000/artapi/addartwork", addData)
       .then((result) => {
         navigator("/artistprofile");
-        console.log(result.data);
+        console.log(result.data?.data);
       })
       .catch((err) => {
         console.log(err);
