@@ -5,8 +5,7 @@ import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const ArtProfileTab = () => {
-  // const { UserData } = useSelector((state) => state.user);
-  // const artistData = useLocation().state;
+  const { UserData } = useSelector((state) => state.user);
   return (
     <div className="">
       <h4 className="artprofiletab-h4">ArtProfileTab</h4>
@@ -15,49 +14,52 @@ const ArtProfileTab = () => {
           <Row className="artprofiletab-p">
             <Col>Adhar Card Image: </Col>
             <Col>
-              {/* <img src={`http://localhost:5000${data?.ArtistAdharCardImage}`} /> */}
+              <img
+                src={`http://localhost:5000${UserData?.ArtistProfile?.ArtistAdharCardImage}`}
+              />
             </Col>
           </Row>
           <Row className="artprofiletab-p">
             <Col> Handicap Certificate Image:</Col>
             <Col>
               <img
-              // src={`http://localhost:5000${data?.ArtistHandicapCertificateImage}`}
+                src={`http://localhost:5000${UserData?.ArtistProfile?.ArtistHandicapCertificateImage}`}
               />
             </Col>
           </Row>
         </Card>
         <Card className="artprofiletab-cards">
           <p className="artprofiletab-p">
-            {/* <span>Name:</span> {artistData?.ArtistFullName} */}
+            <span>Name:</span> {UserData?.ArtistProfile?.ArtistFullName}
           </p>
           <p className="artprofiletab-p">
             <span>Address:</span>
-            {/* {artistData.ArtistAddress} */}
+            {UserData?.ArtistProfile?.ArtistAddress}
           </p>
           <p className="artprofiletab-p">
-            {/* <span>City:</span> {artistData.ArtistCity} */}
+            <span>City:</span> {UserData?.ArtistProfile?.ArtistCity}
           </p>
           <p className="artprofiletab-p">
             <span>Mobile No: </span>
-            {/* {artistData?.ArtistMobileNo} */}
+            {UserData?.ArtistProfile?.ArtistMobileNo}
           </p>
           <p className="artprofiletab-p">
-            {/* <span>Email:</span> {artistData.ArtistEmail} */}
+            <span>Email:</span> {UserData?.ArtistProfile?.ArtistEmail}
           </p>
           <p className="artprofiletab-p">
-            {/* <span>State:</span> {artistData.ArtistState} */}
+            <span>State:</span> {UserData?.ArtistProfile?.ArtistState}
           </p>
           <p className="artprofiletab-p">
             <span>Pin Code: </span>
-            {/* {artistData.ArtistPincode} */}
+            {UserData?.ArtistProfile?.ArtistPincode}
           </p>
           <p className="artprofiletab-p">
-            {/* <span>Adhar Card No:</span> {artistData.ArtistAdharCardNo} */}
+            <span>Adhar Card No:</span>{" "}
+            {UserData?.ArtistProfile?.ArtistAdharCardNo}
           </p>
           <p className="artprofiletab-p">
             <span>IsVerified: </span>
-            {/* {artistData.IsVerified} */}
+            {UserData?.ArtistProfile?.IsVerified}
           </p>
         </Card>
       </div>

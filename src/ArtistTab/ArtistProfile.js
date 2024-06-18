@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 
 const ArtistProfile = () => {
   const { UserData } = useSelector((state) => state.user);
+  console.log("ArtData",UserData.ArtistProfile)
   // const artistData = useLocation().state;
   const navigator = useNavigate();
   return (
@@ -21,7 +22,7 @@ const ArtistProfile = () => {
               <div className="artistprofile-names">
                 <h1 className="artistprofile-username">
                   <h4 style={{ marginLeft: "10px" }}>
-                    {UserData?.ArtistProfile?.ArtistFullName}
+                    {/* {UserData?.ArtistProfile?.ArtistFullName} */}
                     
                   </h4>
                 </h1>
@@ -30,7 +31,7 @@ const ArtistProfile = () => {
               <img
                 className="artistprofile-img"
                 // src={img1}
-                src={`http://localhost:5000${UserData?.ArtistProfile?.ArtistProfile}`}
+                // src={`http://localhost:5000${UserData?.ArtistProfile?.ArtistProfile}`}
               />
               <button
                 onClick={() => navigator("/addartwork")}

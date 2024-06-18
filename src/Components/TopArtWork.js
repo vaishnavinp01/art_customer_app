@@ -7,9 +7,8 @@ import { useDispatch } from "react-redux";
 import Snackbar from "@mui/material/Snackbar";
 import IconButton from "@mui/material/IconButton";
 import Alert from "@mui/material/Alert";
-import { FaRegCheckCircle } from "react-icons/fa";
+import { FaRegCheckCircle, FaShoppingCart } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
-import { CgShoppingCart } from "react-icons/cg";
 
 const TopArtWork = () => {
   // AllArtWorks
@@ -78,7 +77,7 @@ const TopArtWork = () => {
                         handleClick();
                       }}
                     >
-                      <CgShoppingCart />
+                      <FaShoppingCart />
                       Add to Cart
                     </button>
                     <Snackbar

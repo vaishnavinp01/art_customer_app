@@ -35,12 +35,13 @@ const AddArtist = () => {
       ArtistAdharCardImage: AdharCardImage,
       ArtistHandicapCertificateImage: HandicapCertificateImage,
       ArtistProfile: Profile,
-      UserId: UserData?._id
+      UserId: UserData?._id,
     };
     axios
       .post("http://localhost:5000/artapi/addartist", addData)
       .then((result) => {
         dispatcher(addArtistProfile(result.data));
+        console.log(result.data)
         navigator("/");
       })
       .catch((err) => {
@@ -95,7 +96,7 @@ const AddArtist = () => {
         <h4 className="addartist">AddArtist</h4>
         <Container>
           <Form className="addartist-form">
-            <Row> 
+            <Row>
               <Col>
                 <label className="addartist-label">Full Name</label>
                 <input
@@ -188,29 +189,34 @@ const AddArtist = () => {
                   onChange={uploadAdhar}
                 />
               </Col>
-              <Col>
-                <label className="addartist-label">
-                  Handicap Certificate Image
-                </label>
-                <input
-                  className="addartist-file"
-                  type="file"
-                  onChange={uploadCertificate}
-                />
-              </Col>
-              <Col>
-                <label className="addartist-label">Profile</label>
-                <input
-                  className="addartist-file"
-                  type="file"
-                  onChange={uploadProfile}
-                />
-              </Col>
+              <div style={{display:'flex',flexDirection:'row'}}>
+                <Col>
+                  <label className="addartist-label">
+                    Handicap Certificate Image
+                  </label>
+                  <input
+                    className="addartist-file"
+                    type="file"
+                    onChange={uploadCertificate}
+                  />
+                </Col>
+                <Col>
+                  <label className="addartist-label">Profile</label>
+                  <input
+                    className="addartist-file"
+                    type="file"
+                    onChange={uploadProfile}
+                  />
+                </Col>
+              </div>
             </Row>
           </Form>
-          <button className="addartist-button" onClick={() => {
-            doArtist()
-          }}>
+          <button
+            className="addartist-button"
+            onClick={() => {
+              doArtist();
+            }}
+          >
             Submit
           </button>
         </Container>

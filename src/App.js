@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import MyRoutes from "./layout/MyRoutes";
 import { useEffect, useState } from "react";
 import Loading from "./Components/Loading";
-// import Slider from "./ArtistTab/Slider";
+import Slider from "./ArtistTab/Slider";
 // import CustomSnackbar from "./Components/CustomSnackbar";
 
 function App() {
@@ -22,10 +22,10 @@ function App() {
       {loading ? (
         <Loading />
       ) : (
-        <BrowserRouter>
-          <MyRoutes />
-        </BrowserRouter>
-        // <Slider/>
+        // <BrowserRouter>
+        //   <MyRoutes />
+        // </BrowserRouter>
+        <Slider/>
       )}
       {/* <CustomSnackbar/> */}
     </div>

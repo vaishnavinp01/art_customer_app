@@ -27,9 +27,11 @@ const ArtTab = () => {
 
   return (
     <div>
-      <div style={{display:'flex'}}>
+      <div style={{ display: "flex" }}>
         <h4 className="arttab-h4">ArtistId: </h4>
-        <span style={{marginBottom:'10px'}}>{UserData?.ArtistProfile?._id}</span>
+        <span style={{ marginBottom: "10px" }}>
+          {UserData?.ArtistProfile?._id}
+        </span>
       </div>
       <Container>
         <Row>
@@ -42,7 +44,7 @@ const ArtTab = () => {
                 <Card>
                   <Card.Body>
                     <Card.Text>{art.ArtWorkName}</Card.Text>
-                    <Card.Text>&#8377;{art.ArtWorkPrice}</Card.Text>
+                    <Card.Text>&#8377;</Card.Text><Card.Text>{art.ArtWorkPrice}</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>

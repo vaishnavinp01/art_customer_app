@@ -18,12 +18,12 @@ const CustomerProfile = () => {
               <div className="customerprofile-names">
                 <h1 className="customerprofile-username">
                   <h4 style={{ marginLeft: "10px" }}>
-                    {/* {UserData?.CustomerProfile?.} */}
+                    {UserData?.CustomerProfile?.CustomerName}
                   </h4>
                 </h1>
                 <small className="customerprofile-titles"></small>
               </div>
-              <img className="customerprofile-img" />
+              <img className="customerprofile-img" src={`http://localhost:5000${UserData?.CustomerProfile?.CustomerProfile}`}/>
             </div>
           </div>
           <div className="customerprofile-info">
