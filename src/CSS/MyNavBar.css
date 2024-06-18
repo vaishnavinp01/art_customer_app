@@ -32,10 +32,11 @@
   align-items: center;
   font-weight: 600;
 }
-.logo {
-  height: 110px;
-  width: 110px;
+.nav-logo {
+  height: 50px;
+  width: 50px;
   margin-left: 20px;
+  margin-bottom: 20px;
   cursor: pointer;
 }
 .nav-icon {
