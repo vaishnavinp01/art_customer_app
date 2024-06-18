@@ -22,10 +22,10 @@ function App() {
       {loading ? (
         <Loading />
       ) : (
-        // <BrowserRouter>
-        //   <MyRoutes />
-        // </BrowserRouter>
-        <Slider/>
+        <BrowserRouter>
+          <MyRoutes />
+        </BrowserRouter>
+        // <Slider/>
       )}
       {/* <CustomSnackbar/> */}
     </div>
