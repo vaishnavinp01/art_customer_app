@@ -13,7 +13,7 @@ const ArtWorkTab = () => {
   const { UserData } = useSelector((state) => state.user);
   useEffect(() => {
     const artIdData = {
-      ArtistId: UserData?.data?._id,
+      ArtistId: UserData?._id,
     };
     axios
       .post("http://localhost:5000/artapi/getartworksbyartistid", artIdData)

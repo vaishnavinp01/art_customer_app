@@ -56,7 +56,7 @@ const Cart = () => {
                   />
                 </span>
                 <span style={{ marginRight: "30px" }}>{art.ArtWorkName}</span>
-                <div>
+                <span>
                   <button
                     className="cart-btns"
                     onClick={() => {
@@ -65,7 +65,9 @@ const Cart = () => {
                   >
                     -
                   </button>
-                  <span className="cart-spans">{art.quantity}</span>
+                  <span className="cart-spans" style={{ marginBottom: "15px" }}>
+                    {art.quantity}
+                  </span>
                   <button
                     className="cart-btns"
                     onClick={() => {
@@ -74,7 +76,7 @@ const Cart = () => {
                   >
                     +
                   </button>
-                </div>
+                </span>
                 <span>&#8377;{art.ArtWorkPrice}</span>
               </div>
               <div className="cart-divs"></div>
@@ -88,7 +90,7 @@ const Cart = () => {
         >
           Total Price
         </span>
-        <span className="cart-spanss">&#8377;{CartTotalAmount}</span>
+        <span className="cart-spanss">&#8377; {CartTotalAmount}</span>
         {/* <button
           style={{ marginTop: "20px" }}
           className="cart-btnss"

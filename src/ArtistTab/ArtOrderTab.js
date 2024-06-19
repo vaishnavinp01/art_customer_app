@@ -45,14 +45,14 @@ const ArtOrderTab = () => {
                     </Card.Text>
                   </Card.Body>
                   <div className="artordertab-div">
-                    <button
+                    {/* <button
                       className="artordertab-button"
                       onClick={() =>
                         navigator("/artorderdetails", { state: order })
                       }
                     >
                       OrderDetails
-                    </button>
+                    </button> */}
                     {/* <button
                       className="order-button"
                       onClick={() => {

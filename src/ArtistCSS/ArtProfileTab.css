@@ -1,0 +1,39 @@
+.artprofiletab-h4 {
+  color: #000;
+  font-weight: 500;
+}
+.artprofiletab-p {
+  color: #039ce8;
+}
+.artprofiletab-div {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.artprofiletab-card {
+  margin-left: 170px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  height: 78vh;
+  width: 40vw;
+  padding: 30px;
+  z-index: 1;
+}
+.artprofiletab-cards {
+  margin-left: 450px;
+  height: 85vh;
+  width: 45vw;
+  padding: 50px;
+  position: absolute;
+}
+.artprofiletab-span {
+  font-weight: 600;
+  color: black !important;
+  margin-right: 5px;
+}
+.artprofiletab-pp {
+  margin-left: 330px;
+  display: flex;
+}

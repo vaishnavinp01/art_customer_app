@@ -42,7 +42,7 @@ const TopArtWork = () => {
   }, []);
 
   return (
-    <div style={{marginLeft:'10px'}}>
+    <div style={{ marginLeft: "10px" }}>
       <h4 className="topartwork-h4">TopArtWork</h4>
       <Row>
         {AllArtWorks.map((art) => {
@@ -77,8 +77,7 @@ const TopArtWork = () => {
                         handleClick();
                       }}
                     >
-                      <FaShoppingCart />
-                      Add to Cart
+                      <FaShoppingCart style={{marginRight:'10px'}}/> Add to Cart
                     </button>
                     <Snackbar
                       open={open}

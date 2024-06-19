@@ -31,7 +31,7 @@
   content: "";
   width: 50px;
   height: 50px;
-  background-color: #71b85f;
+  background-color: #AF7AC5;
   border-radius: 50%;
 }
 .slider-div .testimonial .row .tabs li.active::after {
@@ -39,7 +39,7 @@
   content: "";
   width: 30px;
   height: 30px;
-  background-color: #71b85f;
+  background-color: #AF7AC5;
   border-radius: 50%;
 }
 .slider-div .testimonial .row .tabs li:nth-child(1) {

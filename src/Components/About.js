@@ -34,7 +34,7 @@ const About = () => {
   };
 
   return (
-    <div className="slider-div">
+    <div className="slider-div" style={{marginTop:'100px'}}>
       <section className="testimonial">
         <div className="container">
           <div className="row">

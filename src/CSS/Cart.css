@@ -61,13 +61,18 @@
   transform: scale(1.2);
 }
 .cart-btns {
-  margin-top: 10px;
+  /* margin-top: 10px; */
+  /* margin-left: 5px; */
+  /* margin-right: 5px; */
+  /* padding-bottom: 10px; */
+  /* margin-bottom: 80px; */
+  margin-right: 10px;
   margin-left: 10px;
   border: none;
-  width: 15px;
-  height: 20px;
-  border-radius: 4em;
-  gap: 12px;
+  width: 20px;
+  height: 25px;
+  border-radius: 10px;
+  /* gap: 12px; */
   background: #af7ac5;
   cursor: pointer;
   transition: all 450ms ease-in-out;

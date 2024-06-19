@@ -53,7 +53,7 @@ const ArtistProfileTab = ({ data }) => {
           </p>
           <p className="artistprofiletab-pp">
             <span className="artistprofiletab-span">Pin Code: </span>
-            {data?.ArtistPincode}
+            {data?.ArtistPinCode} 429345
           </p>
           <p className="artistprofiletab-pp">
             <span className="artistprofiletab-span">Adhar Card No:</span>
@@ -61,7 +61,7 @@ const ArtistProfileTab = ({ data }) => {
           </p>
           <p className="artistprofiletab-pp">
             <span className="artistprofiletab-span">IsVerified: </span>
-            {data?.IsVerified}
+            {data?.IsVerified} true
           </p>
         </Card>
       </div>

@@ -38,13 +38,14 @@ const ArtTab = () => {
           {AllArtWorks.map((art) => {
             return (
               <Col sm={12} md={9} lg={3}>
-                <Card.Img
+                <Card.Img style={{height:'200px',width:'307px'}}
                   src={`http://localhost:5000${art.ArtWorkImage}`}
                 ></Card.Img>
                 <Card>
                   <Card.Body>
-                    <Card.Text>{art.ArtWorkName}</Card.Text>
-                    <Card.Text>&#8377;</Card.Text><Card.Text>{art.ArtWorkPrice}</Card.Text>
+                    <Card.Text>Name: {art.ArtWorkName}</Card.Text>
+                    <Card.Text>&#8377; {art.ArtWorkPrice}</Card.Text>
+                    <Card.Text>Type: {art.ArtWorkType}</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
