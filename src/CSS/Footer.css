@@ -1,9 +1,97 @@
- *{
-    margin: 0;
-    padding: 0;
-    font-family: 'Courier New', Courier, monospace;
-    box-sizing: border-box;
- } 
- .footer-div{
-    background: #eef8ff;
- } 
+/* Footer.css */
+/* * {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", Courier, monospace;
+  box-sizing: border-box;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NL:wght@100..400&display=swap');
+
+footer {
+  width: 98.8vw;
+  /* position: absolute; */
+  bottom: 0;
+  background: linear-gradient(to right, #00093c, #2d0b00);
+  color: #fff;
+  padding: 100px 0 30px;
+  border-top-left-radius: 125px;
+  font-size: 13px;
+  line-height: 20px;
+  /* margin-left: 50px; */
+}
+
+.footer-row {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.footer-col {
+  flex-basis: 25%;
+  padding: 10px;
+}
+
+.footer-logo {
+  width: 80px;
+  margin-bottom: 30px;
+
+}
+.footer-h4{
+	font-family: "Playwrite NL", cursive;
+
+}
+
+.footer-col h3 {
+  width: fit-content;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.footer-p {
+  width: fit-content;
+  /* border-bottom: 1px solid #ccc; */
+  margin: 20px 0;
+  font-size: large;
+}
+.footer-h4s{
+	font-size: large;
+}
+.footer-ul li {
+  list-style: none;
+  margin-bottom: 12px;
+}
+
+.footer-d {
+  /* text-decoration: none; */
+  color: #fff;
+  display: flex;
+}
+.footer-icons{
+	margin-right: 10px;
+	/* margin-bottom: 20px; */
+	margin-bottom: 10px;
+}
+.footer-div{
+	font-size: large;
+}
+.footer-pp{
+	font-size: large;
+	text-transform: capitalize;
+}
+.footer-ps{
+	font-size: large;
+}
+.footer-sp{
+	font-size: large;
+}
+/* .footer-form {
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 50px;
+} */
