@@ -24,8 +24,8 @@ const Home = () => {
                     certain aesthetic qualities  
                   </p>
                 </li>
-                <li className="home-skehing">
-                  <h4>skehing</h4>
+                <li className="home-sketching">
+                  <h4>sketching</h4>
                   <p className="home-p">
                     A sketch is a quick and rough drawing that provides a
                     summary or broad 

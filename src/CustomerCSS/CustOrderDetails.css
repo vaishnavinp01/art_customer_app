@@ -1,7 +1,3 @@
-/* .custorderdetail-p{
-    font-weight: bold;
-    font-style: italic;
-} */
 .custorderdetails-span {
   font-weight: bold;
 }
@@ -24,9 +20,6 @@
 .custorderdetails-img {
   width: 80px;
   height: 80px;
-}
-.custorderdetails-card span {
-  /* margin-left: 300px; */
 }
 .custorderdetails-divs {
     border: 0.96px solid gray;

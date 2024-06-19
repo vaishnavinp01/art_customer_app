@@ -33,8 +33,6 @@
   display: inline-block;
   padding: 2px 2px;
   font-size: 18px;
-  /* text-align: center; */
-  /* text-decoration: none; */
   color: #fff;
   background-color: #AF7AC5;
   border: 2px solid #000;
@@ -51,7 +49,6 @@
   border: 2px solid #AF7AC5;
   box-shadow: 5px 5px 0px #AF7AC5;
 }
-
 .topartwork-button:active {
   background-color: #EBDEF0;
   box-shadow: none;

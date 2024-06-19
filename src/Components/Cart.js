@@ -35,7 +35,7 @@ const Cart = () => {
     } catch (error) {}
   };
   return (
-    <div className="cart-main-div">
+    <div className="cart-main-div" style={{ marginLeft: "10px" }}>
       <div style={{ marginTop: "40px" }}>
         <div className="cart-div">
           <span className="cart-span">Order</span>
@@ -55,8 +55,8 @@ const Cart = () => {
                     src={`http://localhost:5000${art.ArtWorkImage}`}
                   />
                 </span>
-                <span style={{marginRight:'30px'}}>{art.ArtWorkName}</span>
-                <div>
+                <span style={{ marginRight: "30px" }}>{art.ArtWorkName}</span>
+                <span>
                   <button
                     className="cart-btns"
                     onClick={() => {
@@ -65,7 +65,9 @@ const Cart = () => {
                   >
                     -
                   </button>
-                  <span className="cart-spans">{art.quantity}</span>
+                  <span className="cart-spans" style={{ marginBottom: "15px" }}>
+                    {art.quantity}
+                  </span>
                   <button
                     className="cart-btns"
                     onClick={() => {
@@ -74,7 +76,7 @@ const Cart = () => {
                   >
                     +
                   </button>
-                </div>
+                </span>
                 <span>&#8377;{art.ArtWorkPrice}</span>
               </div>
               <div className="cart-divs"></div>
@@ -82,10 +84,13 @@ const Cart = () => {
           );
         })}
         <div className="cart-divvs"></div>
-        <span className="cart-spanss" style={{ fontWeight: "bold" }}>
+        <span
+          className="cart-spanss"
+          style={{ fontWeight: "bold", marginLeft: "1100px" }}
+        >
           Total Price
         </span>
-        <span className="cart-spanss">&#8377;{CartTotalAmount}</span>
+        <span className="cart-spanss">&#8377; {CartTotalAmount}</span>
         {/* <button
           style={{ marginTop: "20px" }}
           className="cart-btnss"
