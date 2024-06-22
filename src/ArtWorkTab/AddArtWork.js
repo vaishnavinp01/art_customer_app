@@ -1,13 +1,15 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "../ArtWorkCSS/AddArtWork.css";
 import { useNavigate } from "react-router-dom";
+import { addArtistProfile } from "../reduxwork/UserSlice";
 
 const AddArtWork = () => {
   const { UserData } = useSelector((state) => state.user);
   const navigator = useNavigate();
+  // const dispatcher = useDispatch();
 
   const [Name, setName] = useState("");
   const [Type, setType] = useState("");
@@ -30,6 +32,7 @@ const AddArtWork = () => {
       .post("http://localhost:5000/artapi/addartwork", addData)
       .then((result) => {
         navigator("/artistprofile");
+        // dispatcher(addArtistProfile(result.data))
         console.log(result.data?.data);
       })
       .catch((err) => {

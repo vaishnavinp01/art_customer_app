@@ -6,7 +6,6 @@
   box-sizing: border-box;
 } */
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+NL:wght@100..400&display=swap');
-
 footer {
   width: 98.8vw;
   /* position: absolute; */
@@ -19,7 +18,6 @@ footer {
   line-height: 20px;
   /* margin-left: 50px; */
 }
-
 .footer-row {
   width: 85%;
   margin: auto;
@@ -28,42 +26,45 @@ footer {
   align-items: flex-start;
   justify-content: space-between;
 }
-
 .footer-col {
   flex-basis: 25%;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
-
 .footer-logo {
   width: 80px;
   margin-bottom: 30px;
-
 }
 .footer-h4{
 	font-family: "Playwrite NL", cursive;
-
 }
-
 .footer-col h3 {
   width: fit-content;
   margin-bottom: 40px;
   position: relative;
 }
-
 .footer-p {
   width: fit-content;
   /* border-bottom: 1px solid #ccc; */
-  margin: 20px 0;
+  margin: 10px 0;
   font-size: large;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  /* 7847596310 */
 }
 .footer-h4s{
 	font-size: large;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px 0;
 }
 .footer-ul li {
   list-style: none;
   margin-bottom: 12px;
 }
-
 .footer-d {
   /* text-decoration: none; */
   color: #fff;

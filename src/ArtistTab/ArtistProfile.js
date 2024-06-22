@@ -22,8 +22,8 @@ const ArtistProfile = () => {
               <div className="artistprofile-names">
                 <h1 className="artistprofile-username">
                   <h4 style={{ marginLeft: "10px" }}>
-                    {UserData?.ArtistProfile?.ArtistFullName}
-                    Vaishnawi Patil
+                    {UserData?.ArtistProfile?.data?.ArtistFullName}
+                    {/* Vaishnawi Patil */}
                   </h4>
                 </h1>
                 <small className="artistprofile-titles"></small>

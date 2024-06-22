@@ -4,7 +4,7 @@ import "../CSS/Footer.css";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaTwitterSquare } from "react-icons/fa";
-
+import {Link} from 'react-scroll'
 import img1 from "../images/nav-removebg-preview.png";
 
 const Footer = () => {
@@ -17,11 +17,11 @@ const Footer = () => {
         </div>
         <div className="footer-col">
           <h3>Menu</h3>
-          <p className="footer-p">Home</p>
-          <p className="footer-p">About</p>
-          <p className="footer-p">Top Artist</p>
-          <p className="footer-p">Top Artwork</p>
-          <h4 className="footer-h4s">Contact Us</h4>
+          <Link to="home" className="footer-p">Home</Link>
+          <Link to="about" className="footer-p">About</Link>
+          <Link to="topartist" className="footer-p">Top Artist</Link>
+          <Link to="topartwork" className="footer-p">Top Artwork</Link>
+          <Link className="footer-h4s">Contact Us</Link>
         </div>
         <div className="footer-col">
           <h3>Connect With Us</h3>

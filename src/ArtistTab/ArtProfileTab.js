@@ -7,6 +7,7 @@ import img1 from '../images/aadhar/adhar_card.png'
 import img2 from '../images/handicapped/Hadicapped_Certificate.jpeg'
 const ArtProfileTab = () => {
   const { UserData } = useSelector((state) => state.user);
+  // {UserData?.ArtistProfile?.ArtistFullName}
   return (
     <div className="">
       <h4 className="artprofiletab-h4">ArtProfileTab</h4>
@@ -52,7 +53,7 @@ const ArtProfileTab = () => {
           </p>
           <p className="artprofiletab-pp">
             <span className="artprofiletab-span">State:</span> Chhattisgarh
-            {UserData?.ArtistProfile?.ArtistState}
+            {/* {UserData?.ArtistProfile?.ArtistState} */}
           </p>
           <p className="artprofiletab-pp">
             <span className="artprofiletab-span">Pin Code: </span> 429345
