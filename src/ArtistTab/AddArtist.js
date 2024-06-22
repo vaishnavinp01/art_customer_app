@@ -30,7 +30,7 @@ const AddArtist = () => {
       ArtistMobileNo: Number(MobileNo),
       ArtistEmail: Email,
       ArtistState: State,
-      ArtistPincode: Number(PinCode),
+      ArtistPinCode: Number(PinCode),
       ArtistAdharCardNo: Number(AdharCardNo),
       ArtistAdharCardImage: AdharCardImage,
       ArtistHandicapCertificateImage: HandicapCertificateImage,

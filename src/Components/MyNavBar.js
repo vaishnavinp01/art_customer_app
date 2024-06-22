@@ -11,7 +11,7 @@ import { BsPersonWorkspace } from "react-icons/bs";
 import { GrArticle } from "react-icons/gr";
 import { BiLogIn, BiLogOut } from "react-icons/bi";
 import { Link } from "react-scroll";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { FaShoppingCart } from "react-icons/fa";
 
 const ArtistNavBar = () => {
@@ -112,7 +112,7 @@ const ArtistNavBar = () => {
                   className="nav-icon nav-links"
                   onClick={() => {
                     if (UserData?.data.User_Type === "Customer") {
-                      navigator("/customerprofile", { state: UserData });
+                      navigator("/customerprofile");
                     } else {
                       navigator("/artistprofile");
                     }

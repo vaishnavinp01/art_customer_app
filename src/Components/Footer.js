@@ -9,7 +9,7 @@ import img1 from "../images/nav-removebg-preview.png";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer style={{marginTop:'30px'}}>
       <div className="footer-row">
         <div className="footer-col">
           <img src={img1} className="footer-logo" alt="Logo" />
@@ -49,12 +49,13 @@ const Footer = () => {
         <div className="footer-col">
           <h3>Registered Office</h3>
           <p className="footer-pp">
-            shree Datta prasad, 24/4, prabhat Colony,
-            jalgaon, maharashtra,
+            shree Datta prasad, 24/4, prabhat Colony, jalgaon, maharashtra,
           </p>
-		  <p style={{textTransform:'capitalize', fontSize:'large'}}>pin: 425001</p>
-		  <p className="footer-ps">Mobile No: +91 8888813277, +91 7620979777</p>
-		  <p className="footer-sp">Email Id: contact@technoweit.com</p>
+          <p style={{ textTransform: "capitalize", fontSize: "large" }}>
+            pin: 425001
+          </p>
+          <p className="footer-ps">Mobile No: +91 8888813277, +91 7620979777</p>
+          <p className="footer-sp">Email Id: contact@technoweit.com</p>
         </div>
       </div>
     </footer>
